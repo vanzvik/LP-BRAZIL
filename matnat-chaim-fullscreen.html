@@ -331,7 +331,7 @@
     .screen.minutes .copy { min-width: 0; }
     .screen.minutes .media {
       position: absolute; z-index: 3; height: auto; overflow: hidden;
-      transition: top 0.85s ease-in, bottom 0.85s ease-in, inset-inline-start 0.85s ease-in, inset-inline-end 0.85s ease-in;
+      transition: top 0.42s ease-in, bottom 0.42s ease-in, inset-inline-start 0.42s ease-in, inset-inline-end 0.42s ease-in;
     }
     .minutes .play-open {
       position: relative; display: block; width: 100%; height: 100%;
@@ -340,7 +340,7 @@
     .minutes .play-open img { width: 100%; height: 100%; object-fit: cover; }
     .minutes-frame {
       position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-      opacity: 0; pointer-events: none; transition: opacity 0.4s ease-in;
+      opacity: 0; pointer-events: none; transition: opacity 0.25s ease-in;
     }
     .minutes-frame.is-ready { opacity: 1; pointer-events: auto; }
     .minutes.is-playing .play-btn { opacity: 0; transition: opacity 0.3s ease-in; }
@@ -626,14 +626,14 @@
           frame.src = "https://www.youtube.com/embed/O-5mpzNuGv0?autoplay=1&rel=0&playsinline=1&hl=he";
         }
         frame.classList.add("is-ready");
-      }, 880);
+      }, 440);
     }
     function closeMinutes() {
       var frame = minutes.querySelector(".minutes-frame");
       window.clearTimeout(minutesTimer);
       frame.classList.remove("is-ready");
       minutes.classList.remove("is-playing");
-      minutesTimer = window.setTimeout(function () { frame.removeAttribute("src"); }, 880);
+      minutesTimer = window.setTimeout(function () { frame.removeAttribute("src"); }, 440);
     }
     minutesButton.addEventListener("click", openMinutes);
     minutesClose.addEventListener("click", closeMinutes);
