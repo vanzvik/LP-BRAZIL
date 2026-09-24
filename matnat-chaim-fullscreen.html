@@ -170,7 +170,7 @@
       position: absolute; inset-inline: 0; bottom: 22%; z-index: 2;
       display: flex; justify-content: center; padding: 0 1rem; pointer-events: none;
     }
-    .cue p { max-width: 40rem; text-align: center; color: var(--cream); font-weight: 500; text-shadow: 0 1px 8px rgb(0 0 0 / 0.6); }
+    .cue p { max-width: 40rem; text-align: center; color: var(--cream); font-weight: 500; font-size: clamp(1.2rem, 1.8vw, 1.45rem); line-height: 1.35; text-shadow: 0 1px 8px rgb(0 0 0 / 0.6); }
     .player-meta { width: min(100%, 68rem); display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; color: var(--muted); font-size: 0.95rem; }
     .sources { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; margin: 0.25rem 0 0; padding: 0; list-style: none; font-size: 0.95rem; font-weight: 500; }
     .stat-screen { color: var(--cream); }
@@ -722,6 +722,7 @@
     var VIDEO_ID = "ao8tiqnuS3Y";
     function showCue(t) {
       if (!captionsOn || nativeCaptions) { cueEl.hidden = true; return; }
+      t += 0.55;
       var c = null;
       for (var i = 0; i < CUES.length; i++) {
         if (t >= CUES[i].start && t < CUES[i].end) { c = CUES[i]; break; }
@@ -869,9 +870,12 @@
         return;
       }
       mountPlayer(0);
-      setInterval(function () {
-        if (ytPlayer && ytPlayer.getCurrentTime && !nativeCaptions) showCue(ytPlayer.getCurrentTime());
-      }, 200);
+      (function watchCues() {
+        if (ytPlayer && ytPlayer.getCurrentTime && !nativeCaptions) {
+          try { showCue(ytPlayer.getCurrentTime()); } catch (e) {}
+        }
+        requestAnimationFrame(watchCues);
+      })();
     };
     var tag = document.createElement("script");
     tag.src = "https://www.youtube.com/iframe_api";
