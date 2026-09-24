@@ -142,7 +142,8 @@
     .copy h2,
     .copy h3,
     .aid > h2,
-    .title-xl {
+    .title-xl,
+    .price {
       margin-top: 0.75rem;
       font-size: clamp(2rem, 4.2vw, 3.7rem);
       line-height: 1.15;
@@ -273,7 +274,7 @@
     @media (min-width: 800px) { .two { grid-template-columns: 1fr 1fr; gap: 8vw; } }
     .screen.split .copy .two { grid-template-columns: 1fr; gap: 1.1rem; }
     .screen.split .num { margin: 0.2rem 0; font-size: clamp(3.2rem, 6vw, 5rem); font-weight: 500; line-height: 0.9; letter-spacing: -0.04em; }
-    .copy p:not(.kicker):not(.title-xl):not(.num):not(.or),
+    .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price),
     .faq-a p,
     .aid article p,
     .two p { font-size: 1.12rem; line-height: 1.55; }
@@ -286,7 +287,7 @@
     .two p { margin-top: 0.8rem; color: var(--muted); max-width: 28rem; }
     .close { color: var(--cream); text-align: center; align-items: center; }
     .close .kicker { color: rgb(246 243 234 / 0.7); }
-    .close .price { font-size: clamp(2rem, 4.5vw, 3.6rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.2; margin-top: 1.5rem; }
+    .close .price { font-weight: 500; letter-spacing: -0.03em; line-height: 1.15; margin-top: 1.25rem; }
     .strike { opacity: 0.45; text-decoration: line-through; }
     .dim { opacity: 0.4; padding: 0 0.6rem; }
     .close .btn { margin-top: 2rem; }
@@ -309,8 +310,8 @@
     }
     @media (max-width: 700px) {
       .hero { justify-content: flex-end; }
-      .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl { font-size: clamp(2.1rem, 9vw, 2.8rem); }
-      .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or) { font-size: 1.02rem; }
+      .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl, .price { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+      .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price) { font-size: 1.02rem; }
       .screen.split { grid-template-rows: 30svh 1fr; }
       .screen.split .copy { padding: 0.85rem 5vw; }
       .screen.split .prose { font-size: 1.02rem; line-height: 1.4; gap: 0.5rem; }
