@@ -129,7 +129,6 @@
       background: linear-gradient(180deg, rgb(16 24 32 / 0.34) 0%, rgb(16 24 32 / 0.18) 46%, rgb(16 24 32 / 0.55) 100%);
     }
     .tone-light .kicker, .tone-light .muted, .tone-light .player-meta, .tone-light .sources { color: rgb(246 243 234 / 0.82); }
-    .tone-light .cc-btn { background: var(--cream); color: var(--ink); }
     .hero {
       justify-content: flex-end;
       padding-bottom: 8vh;
@@ -173,7 +172,6 @@
     }
     .cue p { max-width: 40rem; text-align: center; color: var(--cream); font-weight: 500; text-shadow: 0 1px 8px rgb(0 0 0 / 0.6); }
     .player-meta { width: min(100%, 68rem); display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; color: var(--muted); font-size: 0.95rem; }
-    .cc-btn { background: var(--fg); color: var(--cream); }
     .sources { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; margin: 0.25rem 0 0; padding: 0; list-style: none; font-size: 0.95rem; font-weight: 500; }
     .stat-screen { color: var(--cream); }
     .stat-screen .num { font-size: clamp(6rem, 18vw, 12rem); font-weight: 500; line-height: 0.85; letter-spacing: -0.04em; }
@@ -421,7 +419,6 @@
           </div>
           <div class="player-meta">
             <p>In Waves and War</p>
-            <button type="button" class="btn btn-sm cc-btn" id="cc-toggle" aria-pressed="true">כתוביות פועלות</button>
           </div>
         </div>
       </div>
@@ -722,7 +719,6 @@
     var nativeCaptions = false;
     var ytPlayer = null;
     var cueEl = document.getElementById("cue");
-    var ccBtn = document.getElementById("cc-toggle");
     var VIDEO_ID = "ao8tiqnuS3Y";
     function showCue(t) {
       if (!captionsOn || nativeCaptions) { cueEl.hidden = true; return; }
@@ -774,13 +770,6 @@
         }
       });
     }
-    function setCaptions(on) {
-      captionsOn = on;
-      ccBtn.textContent = on ? "כתוביות פועלות" : "כתוביות כבויות";
-      ccBtn.setAttribute("aria-pressed", on ? "true" : "false");
-      if (!captionsOn) cueEl.hidden = true;
-    }
-    ccBtn.addEventListener("click", function () { setCaptions(!captionsOn); });
     var nav = document.querySelector("header.nav");
     var darkScreens = ["hero"];
     function paintNav() {
