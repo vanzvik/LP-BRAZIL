@@ -273,8 +273,9 @@
     .two { display: grid; gap: 3rem; }
     @media (min-width: 800px) { .two { grid-template-columns: 1fr 1fr; gap: 8vw; } }
     .screen.split .copy .two { grid-template-columns: 1fr; gap: 1.1rem; }
-    .screen.split .num { margin: 0.2rem 0; font-size: clamp(3.2rem, 6vw, 5rem); font-weight: 500; line-height: 0.9; letter-spacing: -0.04em; }
-    .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price),
+    .screen.split .num { margin: 0.15rem 0 0.35rem; font-size: clamp(4.5rem, 9vw, 8rem); font-weight: 500; line-height: 0.85; letter-spacing: -0.04em; }
+    .stat-line { margin: 0; font-size: 1.4rem; font-weight: 700; line-height: 1.35; color: var(--fg); }
+    .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
     .faq-a p,
     .aid article p,
     .two p { font-size: 1.12rem; line-height: 1.55; }
@@ -311,7 +312,8 @@
     @media (max-width: 700px) {
       .hero { justify-content: flex-end; }
       .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl, .price { font-size: clamp(2.1rem, 9vw, 2.8rem); }
-      .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price) { font-size: 1.02rem; }
+      .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line) { font-size: 1.02rem; }
+      .stat-line { font-size: 1.2rem; }
       .screen.split { grid-template-rows: 30svh 1fr; }
       .screen.split .copy { padding: 0.85rem 5vw; }
       .screen.split .prose { font-size: 1.02rem; line-height: 1.4; gap: 0.5rem; }
@@ -386,7 +388,7 @@
       <div class="copy">
         <p class="kicker">אוניברסיטת סטנפורד</p>
         <p class="num">90%</p>
-        <p style="color:var(--muted)">ירידה בסימפטומים בקרב 30 לוחמי קומנדו</p>
+        <p class="stat-line">ירידה בסימפטומים בקרב 30 לוחמי קומנדו</p>
         <div class="prose">
           <p>ב-18 באפריל 2026, באירוע חגיגי בבית הלבן, חתם הנשיא טראמפ על צו המזרז את המחקר והשימוש באייבוגן, חומר המופק משורש של שיח אפריקאי, שהוכיח את עצמו בשנים האחרונות כפתרון קסם ללוחמי יחידות עילית הסובלים פוסט טראומה, דכאון, חרדה ופגיעות מוחיות.</p>
           <p>מה ששכנע את טראמפ לנקוט בצעד כה דרמטי ויוצא הדופן, הן תוצאותיו הדרמטיות ויוצאות הדופן של מחקר שערכה אוניברסיטת סטנפורד בקרב 30 לוחמי קומנדו אמריקאים. המחקר הראה כי לוחמים שעברו טיפול באייבוגן חוו ירידה של כ-90% בסימפטומים הקשים מהם הם סבלו בעקבות חשיפה למוות, אובדן, אלימות ופעמים רבות גם פגיעות פיזיות במהלך שירותם הצבאי.</p>
