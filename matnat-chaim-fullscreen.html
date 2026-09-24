@@ -248,7 +248,7 @@
       stroke-linecap: round;
       stroke-linejoin: round;
     }
-    .aid article p { margin-top: 0.65rem; color: var(--muted); font-size: 0.95rem; line-height: 1.45; }
+    .aid article p { margin-top: 0.65rem; color: var(--muted); }
     .consult { color: var(--cream); }
     .consult .btn { margin-top: 2rem; }
     .faq-item { border-top: 1px solid rgb(26 51 68 / 0.18); }
@@ -261,7 +261,7 @@
     .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.45s ease-in; }
     .faq-item.is-open .faq-a { grid-template-rows: 1fr; }
     .faq-a > div { overflow: hidden; }
-    .faq-a p { color: var(--muted); margin: 0; padding-bottom: 1rem; max-width: 40rem; font-size: 1.02rem; }
+    .faq-a p { color: var(--muted); margin: 0; padding-bottom: 1rem; max-width: 40rem; }
     @media (min-width: 900px) {
       .screen.faq-screen .media { order: 0; }
       .screen.faq-screen .copy { order: 1; }
@@ -273,13 +273,17 @@
     @media (min-width: 800px) { .two { grid-template-columns: 1fr 1fr; gap: 8vw; } }
     .screen.split .copy .two { grid-template-columns: 1fr; gap: 1.1rem; }
     .screen.split .num { margin: 0.2rem 0; font-size: clamp(3.2rem, 6vw, 5rem); font-weight: 500; line-height: 0.9; letter-spacing: -0.04em; }
-    .screen.split .prose { font-size: 0.95rem; gap: 0.65rem; margin-top: 0.7rem; }
+    .copy p:not(.kicker):not(.title-xl):not(.num):not(.or),
+    .faq-a p,
+    .aid article p,
+    .two p { font-size: 1.12rem; line-height: 1.55; }
+    .screen.split .prose { font-size: 1.12rem; gap: 0.75rem; margin-top: 0.85rem; }
 
     .screen.split.close { color: var(--fg); text-align: start; align-items: stretch; }
     .screen.split.close .kicker { color: var(--muted); }
     .screen.split.close .price { color: var(--fg); }
     .screen.split.close .btn { background: var(--fg); color: var(--cream); }
-    .two p { margin-top: 0.8rem; color: var(--muted); font-size: 1.15rem; max-width: 28rem; }
+    .two p { margin-top: 0.8rem; color: var(--muted); max-width: 28rem; }
     .close { color: var(--cream); text-align: center; align-items: center; }
     .close .kicker { color: rgb(246 243 234 / 0.7); }
     .close .price { font-size: clamp(2rem, 4.5vw, 3.6rem); font-weight: 500; letter-spacing: -0.03em; line-height: 1.2; margin-top: 1.5rem; }
@@ -306,15 +310,15 @@
     @media (max-width: 700px) {
       .hero { justify-content: flex-end; }
       .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl { font-size: clamp(2.1rem, 9vw, 2.8rem); }
-      .prose, .faq-a p { font-size: 0.98rem; }
-      .screen.split { grid-template-rows: 32svh 1fr; }
+      .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or) { font-size: 1.02rem; }
+      .screen.split { grid-template-rows: 30svh 1fr; }
       .screen.split .copy { padding: 0.85rem 5vw; }
-      .screen.split .prose { font-size: 0.78rem; line-height: 1.32; gap: 0.4rem; }
+      .screen.split .prose { font-size: 1.02rem; line-height: 1.4; gap: 0.5rem; }
       .aid { --aid-icon: 2.15rem; justify-content: flex-start; padding-top: 4.6rem; padding-bottom: 1rem; }
 
       .aid .points { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem 0.85rem; margin-top: 0.85rem; }
       .aid h3 { gap: 0.4rem; font-size: 1rem; }
-      .aid article p { font-size: 0.8rem; line-height: 1.35; margin-top: 0.3rem; }
+      .aid article p { font-size: 0.92rem; line-height: 1.4; margin-top: 0.35rem; }
       .stat-screen .num { font-size: 4.25rem; }
       .stat-screen .prose { gap: 0.7rem; margin-top: 0.8rem; font-size: 0.92rem; line-height: 1.45; }
       form { gap: 0.95rem; }
