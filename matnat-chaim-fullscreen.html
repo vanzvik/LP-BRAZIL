@@ -327,8 +327,12 @@
       form { gap: 0.95rem; }
       input[type="text"], input[type="tel"] { font-size: 1.1rem; padding: 0.45rem 0; }
     }
-    .minutes { transition: grid-template-columns 0.85s ease-in, grid-template-rows 0.85s ease-in; }
-    .minutes .copy { overflow: hidden; min-width: 0; }
+    .screen.minutes { position: relative; }
+    .screen.minutes .copy { min-width: 0; }
+    .screen.minutes .media {
+      position: absolute; z-index: 3; height: auto; overflow: hidden;
+      transition: top 0.85s ease-in, bottom 0.85s ease-in, inset-inline-start 0.85s ease-in, inset-inline-end 0.85s ease-in;
+    }
     .minutes .play-open {
       position: relative; display: block; width: 100%; height: 100%;
       padding: 0; border: 0; background: #101820; cursor: pointer;
@@ -336,15 +340,27 @@
     .minutes .play-open img { width: 100%; height: 100%; object-fit: cover; }
     .minutes-frame {
       position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-      opacity: 0; pointer-events: none; transition: opacity 0.45s ease-in;
+      opacity: 0; pointer-events: none; transition: opacity 0.4s ease-in;
     }
     .minutes-frame.is-ready { opacity: 1; pointer-events: auto; }
     .minutes.is-playing .play-btn { opacity: 0; transition: opacity 0.3s ease-in; }
+    .minutes-close {
+      position: absolute; z-index: 4; top: 4.5rem; inset-inline-start: 0.85rem;
+      width: 2.75rem; height: 2.75rem; border: 0; border-radius: 50%;
+      background: var(--cream); color: var(--ink); cursor: pointer;
+      font-size: 1.6rem; line-height: 1;
+      opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in;
+    }
+    .minutes.is-playing .minutes-close { opacity: 1; pointer-events: auto; }
     @media (min-width: 900px) {
-      .minutes.is-playing { grid-template-columns: minmax(0, 1fr) minmax(0, 0fr); }
+      .screen.minutes .copy { grid-column: 2; }
+      .screen.minutes .media { top: 0; bottom: 0; inset-inline-start: 0; inset-inline-end: 50%; }
+      .screen.minutes.is-playing .media { top: 1.75rem; bottom: 1.75rem; inset-inline-start: 1.75rem; inset-inline-end: 1.75rem; }
     }
     @media (max-width: 899px) {
-      .minutes.is-playing { grid-template-rows: minmax(0, 1fr) minmax(0, 0fr); }
+      .screen.minutes .copy { grid-row: 2; }
+      .screen.minutes .media { top: 0; height: 30svh; bottom: auto; inset-inline: 0; }
+      .screen.minutes.is-playing .media { top: 1rem; bottom: 1rem; height: auto; inset-inline: 1rem; }
     }
   </style>
 </head>
@@ -490,6 +506,7 @@
           <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></span>
         </button>
         <iframe class="minutes-frame" title="60 Minutes" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        <button type="button" class="minutes-close" aria-label="סגור את הסרטון">×</button>
       </div>
       <div class="copy">
         <p class="kicker">60 Minutes</p>
@@ -597,17 +614,29 @@
   <script>
     var minutes = document.querySelector(".minutes");
     var minutesButton = minutes.querySelector(".play-open");
-    minutesButton.addEventListener("click", function () {
+    var minutesClose = minutes.querySelector(".minutes-close");
+    var minutesTimer = 0;
+    function openMinutes() {
       if (minutes.classList.contains("is-playing")) return;
+      window.clearTimeout(minutesTimer);
       minutes.classList.add("is-playing");
-      window.setTimeout(function () {
+      minutesTimer = window.setTimeout(function () {
         var frame = minutes.querySelector(".minutes-frame");
         if (!frame.getAttribute("src")) {
           frame.src = "https://www.youtube.com/embed/O-5mpzNuGv0?autoplay=1&rel=0&playsinline=1&hl=he";
         }
         frame.classList.add("is-ready");
       }, 880);
-    });
+    }
+    function closeMinutes() {
+      var frame = minutes.querySelector(".minutes-frame");
+      window.clearTimeout(minutesTimer);
+      frame.classList.remove("is-ready");
+      minutes.classList.remove("is-playing");
+      minutesTimer = window.setTimeout(function () { frame.removeAttribute("src"); }, 880);
+    }
+    minutesButton.addEventListener("click", openMinutes);
+    minutesClose.addEventListener("click", closeMinutes);
     document.querySelectorAll(".faq-item").forEach(function (item) {
       var button = item.querySelector(".faq-q");
       button.addEventListener("click", function () {
