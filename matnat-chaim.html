@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>מתנת חיים | חב״ד סאו פאולו</title>
+  <meta name="description" content="הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, עכשיו ללוחמים שלנו. מתנת חיים מבית חב״ד סאו פאולו." />
+  <meta property="og:title" content="מתנת חיים | חב״ד סאו פאולו" />
+  <meta property="og:description" content="הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, עכשיו ללוחמים שלנו. מתנת חיים מבית חב״ד סאו פאולו." />
+  <meta property="og:image" content="og.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="he_IL" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f0e8;
+      --surface: #fcfaf5;
+      --fg: #1a1d21;
+      --muted: #5c626a;
+      --primary: #1a3344;
+      --primary-fg: #f3f0e8;
+      --accent: #2c5348;
+      --accent-fg: #f6f4ee;
+      --border: #d9d2c4;
+      --hero: #101820;
+      --hero-fg: #f6f3ea;
+      --display: "Google Sans", "Segoe UI", system-ui, sans-serif;
+      --sans: "Google Sans", "Segoe UI", system-ui, sans-serif;
+      --shadow: 0 12px 28px -22px rgb(16 24 32 / 0.28);
+    }
+    * { box-sizing: border-box; }
+    html { -webkit-font-smoothing: antialiased; scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background-color: var(--bg);
+      background-image: radial-gradient(rgb(26 51 68 / 0.045) 0.55px, transparent 0.55px);
+      background-size: 3px 3px;
+      color: var(--fg);
+      font-family: var(--sans);
+      line-height: 1.7;
+    }
+    img { max-width: 100%; display: block; }
+    figure { margin: 0; }
+    button, [type="submit"] { font-family: inherit; cursor: pointer; }
+    h1, h2, h3 { font-family: var(--display); font-weight: 500; line-height: 1.35; letter-spacing: 0; text-wrap: balance; margin: 0; }
+    p { text-wrap: pretty; }
+    a { color: inherit; }
+    .wrap { max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+    .narrow { max-width: 48rem; }
+    header.top {
+      position: sticky; top: 0; z-index: 40;
+      background: var(--primary);
+      color: var(--primary-fg);
+      border-bottom: 1px solid var(--primary);
+    }
+    .top-inner { display: flex; align-items: center; justify-content: space-between; height: 4rem; }
+    .brand { display: flex; align-items: center; gap: 0.75rem; text-decoration: none; font-family: var(--display); font-size: 1.125rem; }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 2.75rem; padding: 0 1.25rem; border-radius: 8px; border: 0;
+      font-weight: 500; text-decoration: none; transition: transform 150ms ease, background 150ms ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-inverse { background: var(--hero-fg); color: var(--hero); }
+    .btn-accent { background: var(--accent); color: var(--accent-fg); width: 100%; }
+    .btn-lg { min-height: 3rem; padding: 0 1.75rem; font-size: 1rem; }
+    .hero { background: var(--bg); color: var(--fg); }
+    .hero-grid { display: grid; gap: 2.5rem; align-items: center; padding-top: 4.5rem; padding-bottom: 1rem; }
+    .hero-grid > * { min-width: 0; }
+    @media (min-width: 900px) { .hero-grid { grid-template-columns: 1.1fr 0.9fr; padding-top: 5.5rem; padding-bottom: 1.5rem; } }
+    .eyebrow { font-size: 0.875rem; font-weight: 500; letter-spacing: 0.01em; color: var(--muted); }
+    .hero h1 { margin-top: 1rem; max-width: 40rem; font-size: clamp(1.85rem, 3.2vw, 2.65rem); color: var(--primary); }
+    .proof { padding-top: 2.5rem; }
+    .proof .player { max-width: 48rem; }
+    .chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1.25rem 0 0; padding: 0; list-style: none; }
+    .chip {
+      border: 1px solid var(--primary); background: transparent; color: var(--primary);
+      border-radius: 6px; padding: 0.35rem 0.7rem;
+      font-size: 0.75rem; font-weight: 500;
+    }
+    .player { overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--hero); box-shadow: var(--shadow); }
+    .player-frame { position: relative; aspect-ratio: 16/9; background: var(--hero); }
+    .player-frame iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+    .yt-poster { position: absolute; inset: 0; display: block; }
+    .yt-poster img { width: 100%; height: 100%; object-fit: cover; }
+    .cue {
+      position: absolute; inset-inline: 0; bottom: 14%; z-index: 10;
+      display: flex; justify-content: center; padding: 0 1rem; pointer-events: none;
+    }
+    .cue p {
+      max-width: 92%; margin: 0; background: rgb(16 24 32 / 0.82);
+      border-radius: 8px; padding: 0.4rem 0.8rem; text-align: center;
+      font-weight: 500; font-size: 1.05rem; line-height: 1.4;
+    }
+    .player-meta { display: flex; align-items: center; justify-content: space-between; gap: 0.75rem; margin-top: 0.75rem; font-size: 0.875rem; color: var(--muted); }
+    .cc-btn {
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--primary); border-radius: 8px; padding: 0.35rem 0.75rem; font-size: 0.75rem;
+    }
+    .surface { background: var(--surface); }
+    .section { padding: 4rem 0; }
+    @media (min-width: 640px) { .section { padding: 6rem 0; } }
+    .split { display: grid; gap: 2.5rem; }
+    @media (min-width: 1024px) {
+      .split-news { grid-template-columns: 1.2fr 0.8fr; }
+      .split-2 { grid-template-columns: 1fr 1fr; }
+    }
+    .stat {
+      border: 1px solid var(--border); background: var(--bg);
+      border-radius: 12px; padding: 1.75rem; align-self: start;
+    }
+    .stat b { display: block; margin-top: 0.75rem; font-family: var(--display); font-size: 3rem; color: var(--primary); font-weight: 500; }
+    .bridge { background: transparent; color: var(--primary); text-align: center; padding: 1.75rem 1rem; border-block: 1px solid var(--border); font-family: var(--display); font-size: clamp(1.25rem, 2.4vw, 1.6rem); }
+    .card { border: 1px solid var(--border); background: var(--bg); border-radius: 12px; padding: 1.5rem; }
+    .or { text-align: center; font-size: 0.875rem; font-weight: 500; letter-spacing: 0.04em; color: var(--muted); }
+    form.lead {
+      border: 1px solid var(--border); background: var(--surface);
+      border-radius: 12px; padding: 1.75rem; box-shadow: none;
+    }
+    form.lead h3 { font-size: 1.5rem; }
+    .field { display: grid; gap: 0.5rem; margin-top: 1.25rem; }
+    label, legend { font-size: 0.875rem; font-weight: 500; }
+    input[type="text"], input[type="tel"] {
+      height: 3rem; width: 100%; border: 1px solid var(--border); border-radius: 8px;
+      background: var(--surface); color: var(--fg); padding: 0 0.9rem; font-size: 1rem;
+    }
+    .radio {
+      display: flex; align-items: center; gap: 0.75rem; min-height: 3rem;
+      border: 1px solid var(--border); border-radius: 8px; padding: 0 0.9rem;
+      background: var(--bg); cursor: pointer;
+    }
+    .err { color: var(--accent); font-size: 0.875rem; font-weight: 500; }
+    .ok { text-align: center; padding: 2rem 1rem; }
+    .grid-benefits { display: grid; gap: 1rem; }
+    @media (min-width: 640px) { .grid-benefits { grid-template-columns: 1fr 1fr; } }
+    @media (min-width: 1024px) { .grid-benefits { grid-template-columns: repeat(3, 1fr); } }
+    .benefit { border: 1px solid var(--border); background: var(--surface); border-radius: 12px; padding: 1.5rem; box-shadow: none; }
+    .benefit svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.5; }
+    .benefit h3 { margin-top: 1rem; font-size: 1.25rem; }
+    .benefit p { margin: 0.5rem 0 0; color: var(--muted); }
+    .consult { background: var(--accent); color: var(--accent-fg); }
+    .consult .wrap { display: flex; flex-direction: column; gap: 1.5rem; align-items: flex-start; padding: 3rem 1.5rem; }
+    @media (min-width: 640px) { .consult .wrap { flex-direction: row; align-items: center; justify-content: space-between; } }
+    .minutes { background: var(--bg); color: var(--fg); }
+    .photo { overflow: hidden; border-radius: 12px; border: 1px solid var(--border); background: var(--surface); aspect-ratio: 3 / 2; }
+    .photo img { width: 100%; height: 100%; object-fit: cover; }
+    .muted { color: var(--muted); }
+    details { border-bottom: 1px solid var(--border); }
+    details summary {
+      list-style: none; cursor: pointer; padding: 1.25rem 0;
+      font-family: var(--display); font-size: 1.125rem; display: flex; justify-content: space-between; gap: 1rem;
+    }
+    details summary::-webkit-details-marker { display: none; }
+    details summary::after { content: "▾"; color: var(--muted); }
+    details[open] summary::after { transform: rotate(180deg); }
+    details p { margin: 0 0 1.25rem; color: var(--muted); }
+    .why { background: var(--surface); color: var(--fg); }
+    .close { background: var(--primary); color: var(--primary-fg); text-align: center; padding: 5rem 1.5rem 7rem; }
+    .strike { opacity: 0.55; text-decoration: line-through; }
+    footer { border-top: 1px solid var(--border); padding: 2rem 0 6rem; color: var(--muted); font-size: 0.875rem; }
+    @media (min-width: 640px) { footer { padding-bottom: 2rem; } footer .wrap { display: flex; justify-content: space-between; } }
+    .mobile-bar {
+      position: fixed; inset-inline: 0; bottom: 0; z-index: 40;
+      border-top: 1px solid var(--border); background: var(--bg);
+      padding: 0.75rem; padding-bottom: max(0.75rem, env(safe-area-inset-bottom));
+    }
+    @media (min-width: 640px) { .mobile-bar { display: none; } }
+  </style>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap top-inner">
+      <a class="brand" href="#top">
+        <svg width="28" height="28" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+          <rect width="32" height="32" rx="6" fill="#F3F0E8"/>
+          <path d="M8 22.5h16M16 8.5v14M10.5 11.5v11M21.5 11.5v11M12.8 9.8v2.2M19.2 9.8v2.2" stroke="#1A3344" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        חב"ד סאו פאולו
+      </a>
+      <a class="btn btn-inverse" href="#form">השארת פרטים</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">חב"ד סאו פאולו · סאו פאולו, ברזיל</p>
+          <h1>הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, עכשיו ללוחמים שלנו!</h1>
+        </div>
+        <figure class="photo hero-photo">
+          <img src="images/hero-garden.jpg" alt="" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="section proof">
+      <div class="wrap">
+        <div class="player">
+          <div class="player-frame">
+            <div id="yt-player"></div>
+            <div class="cue" id="cue" hidden><p></p></div>
+          </div>
+        </div>
+        <div class="player-meta" style="max-width:48rem">
+          <p>In Waves and War</p>
+          <button type="button" class="cc-btn" id="cc-toggle" aria-pressed="true">כתוביות פועלות</button>
+        </div>
+        <ul class="chips">
+          <li class="chip">בית הלבן · אפריל 2026</li>
+          <li class="chip">אוניברסיטת סטנפורד</li>
+          <li class="chip">60 Minutes</li>
+          <li class="chip">חב"ד סאו פאולו</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="surface section">
+      <div class="wrap split split-news">
+        <div class="narrow" style="font-size:1.125rem">
+          <p>ב-18 באפריל 2026, באירוע חגיגי בבית הלבן, חתם הנשיא טראמפ על צו המזרז את המחקר והשימוש באייבוגן, חומר המופק משורש של שיח אפריקאי, שהוכיח את עצמו בשנים האחרונות כפתרון קסם ללוחמי יחידות עילית הסובלים פוסט טראומה, דכאון, חרדה ופגיעות מוחיות.</p>
+          <p>מה ששכנע את טראמפ לנקוט בצעד כה דרמטי ויוצא הדופן, הן תוצאותיו הדרמטיות ויוצאות הדופן של מחקר שערכה אוניברסיטת סטנפורד בקרב 30 לוחמי קומנדו אמריקאים. המחקר הראה כי לוחמים שעברו טיפול באייבוגן חוו ירידה של כ-90% בסימפטומים הקשים מהם הם סבלו בעקבות חשיפה למוות, אובדן, אלימות ופעמים רבות גם פגיעות פיזיות במהלך שירותם הצבאי.</p>
+        </div>
+        <aside class="stat">
+          <p class="eyebrow" style="color:var(--muted)">אוניברסיטת סטנפורד</p>
+          <b>90%</b>
+          <p class="muted">ירידה בסימפטומים בקרב 30 לוחמי קומנדו</p>
+        </aside>
+      </div>
+    </section>
+    <div class="bridge">אבל מה מה עם החיילים שלנו? >>></div>
+
+    <section class="section">
+      <div class="wrap narrow">
+        <h2 style="font-size:clamp(1.875rem,3vw,2.25rem)">חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
+        <p style="font-size:1.125rem">כהוקרה על התרומה האדירה שלך למדינת ישראל ולעם היהודי, חב"ד סאו פאולו השיג תרומה יעודית המאפשרת לנו לסדר לכם טיפול פה, בברזיל, עם מעטפת מקצועית ורפואית.</p>
+        <p class="muted" style="font-size:1.125rem">מדוע דווקא בברזיל? בעוד ארה"ב מגלה את האייבוגן רק בשנים האחרונות, במדינת סאו פאולו השימוש בו מוסדר וחוקי כבר עשרות שנים. הניסיון הרב שנאסף בקרב הרופאים והמוסדות העוסקים בכך, מבטיח טיפול מקצועי ובטוח. אז אם אתם מגיעים לדרום אמריקה בכדי לנקות את הראש או מעוניינים להגיע עד לפה בכדי לזכות בהתחלה חדשה, אתם מוזמנים להשאיר פרטים.</p>
+      </div>
+    </section>
+
+    <section class="surface section" id="form">
+      <div class="wrap split split-2">
+        <div>
+          <h2 style="font-size:1.875rem">מי זכאי למתנת חיים?</h2>
+          <div class="card" style="margin-top:2rem"><p style="font-size:1.125rem;margin:0">חיילים המוכרים על ידי משרד הביטחון כסובלים מפוסט טראומה.</p></div>
+          <p class="or">או</p>
+          <div class="card"><p style="font-size:1.125rem;margin:0">אנחנו יודעים שקבלת הכרה על ידי משרד הביטחון לוקחת זמן והתעסקות. אם אתם חיילי מילואים או סדיר, ששרתו למעלה מ-200 ימים במלחמה גם אתם מוזמנים להשאיר פרטים ונחזור אליכם לשיחת סינון.</p></div>
+        </div>
+        <form class="lead" id="lead-form" novalidate>
+          <h3>תשאירו פרטים ונחזור אליכם:</h3>
+          <div class="field">
+            <label for="full-name">שם מלא</label>
+            <input id="full-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="phone">טלפון</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+          </div>
+          <fieldset class="field" style="border:0;padding:0;margin-top:1.25rem">
+            <legend>האם אני</legend>
+            <label class="radio" style="margin-top:0.5rem"><input type="radio" name="eligibility" value="מוכר משרד הביטחון" required /> מוכר משרד הביטחון</label>
+            <label class="radio" style="margin-top:0.5rem"><input type="radio" name="eligibility" value="שרתתי למעלה מ-200 יום" /> שרתתי למעלה מ-200 יום</label>
+          </fieldset>
+          <p class="err" id="form-err" hidden>שדה חובה</p>
+          <div style="margin-top:1.25rem">
+            <button class="btn btn-accent" type="submit">שליחת פרטים</button>
+          </div>
+        </form>
+        <div class="lead ok" id="lead-ok" hidden>
+          <h3>קיבלנו. נחזור אליכם.</h3>
+          <p class="muted">תודה. הפרטים נקלטו ונחזור אליכם לשיחת סינון.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <h2 style="font-size:1.875rem">במה אייבוגן יכול לסייע</h2>
+        <div class="grid-benefits" style="margin-top:2.5rem">
+          <article class="benefit">
+            <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+            <h3>שחרור רגשי</h3>
+            <p>עבודה על הזיכרונות והדפוסים שעוצרים אתכם - פוסט-טראומה, דיכאון, חרדה ותגובות לחץ.</p>
+          </article>
+          <article class="benefit">
+            <svg viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.477 10.896a4 4 0 0 1 .585-.396"/><path d="M19.938 10.5a4 4 0 0 1 .585.396"/><path d="M6 18a4 4 0 0 1-1.967-.516"/><path d="M19.967 17.484A4 4 0 0 1 18 18"/></svg>
+            <h3>מפוגג ערפל מוחי</h3>
+            <p>מחקרים שכללו צילומי MRI לפני ואחרי הראו שינויים במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית האחראית על פונקציות ניהוליות כמו תכנון, מיקוד וקשב.</p>
+          </article>
+          <article class="benefit">
+            <svg viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+            <h3>שינה והתאוששות</h3>
+            <p>ויסות מערכת העצבים, חזרה לשינה תקינה ובניית תשתית לרווחה לטווח ארוך.</p>
+          </article>
+          <article class="benefit">
+            <svg viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="m2 2 20 20"/></svg>
+            <h3>קהות רגשית והמנעות</h3>
+            <p>ניתוק רגשי ממשפחה ובנות זוג, אובדן יכולת להרגיש שמחה (אנהדוניה), והימנעות אקטיבית ממקומות, אנשים או טריגרים המזכירים את הטראומה.</p>
+          </article>
+          <article class="benefit">
+            <svg viewBox="0 0 24 24"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>
+            <h3>דריכות יתר  ועוררות</h3>
+            <p>שהייה רציפה במצב הישרדותי (Fight or Flight), תגובות בהלה מוגזמות לרעשים או תנועות, קושי להרפות ולהירגע, התפרצויות זעם ועצבנות קיצונית.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="consult">
+      <div class="wrap">
+        <p style="font-family:var(--display);font-size:clamp(1.5rem,3vw,1.875rem);margin:0;max-width:40rem">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</p>
+        <a class="btn btn-inverse btn-lg" href="#form">לפרטים והרשמה</a>
+      </div>
+    </section>
+
+    <section class="minutes section">
+      <div class="wrap narrow">
+        <p class="eyebrow">60 Minutes</p>
+        <h2 style="margin-top:0.75rem;font-size:1.875rem">צפו בתחקיר 60 Minutes - תוכנית התחקירים המובילה באמריקה: הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
+        <p style="opacity:.7">צפו בתחקיר של 60 Minutes תוכנית התחקירים המובילה בארה"ב על הפוטנציאל הרפואי ומדוע חשוב שהטיפול יעשה במסגרת קלינית</p>
+      </div>
+    </section>
+
+    <section class="surface section">
+      <div class="wrap split split-2" style="align-items:center">
+        <div class="photo"><img src="images/iboga.jpg" alt="שיח איבוגה" /></div>
+        <div>
+          <h2 style="font-size:1.875rem">אייבוגן- התרופה שמסתתרת בשורש</h2>
+          <p style="font-size:1.125rem">אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה (PTSD) ובהתמכרויות.</p>
+          <h3 style="margin-top:2.5rem;font-size:1.5rem">איך זה עובד בפועל?</h3>
+          <p class="muted">אייבוגאין פועל במקביל על המון נקודות במוח כדי לעזור לו לבנות קשרים עצביים חדשים מחוץ למעגל הטראומה. בניגוד לחומרים פסיכדליים רגילים שעלולים לנתק אותך מהמציאות, אייבוגאין מכניס את המטופל למצב שדומה לחלום בהקיץ - מסע פנימי אינטנסיבי מאוד שנמשך 12 עד 36 שעות רצופות.</p>
+          <p class="muted">במהלך השעות האלה, המטופל לרוב רואה את אירועי החיים שלו רצים מולו כמו סרט, מתמודד ראש בראש עם שורש הטראומה שיושבת לו בראש, ומשחרר את המטען הרגשי והפיזי שתקוע שם. חשוב מאוד לציין, ברוב המוחלט של המקרים לא מדובר בחוויה נעימה או קלה. זו לא "סטלה" של בריחה, אלא עבודת עומק שנועדה לפרק את הכאב מהיסוד.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split split-2" style="align-items:center">
+        <div>
+          <p class="eyebrow" style="color:var(--accent)">מעטפת רפואית</p>
+          <h2 style="margin-top:0.75rem;font-size:1.875rem">טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
+          <p class="muted" style="font-size:1.125rem">המסע הזה הוא לא משחק, והוא חייב להיעשות באחריות מקסימלית. אייבוגאין משפיע ישירות על מערכת העצבים – הוא יכול להוריד את קצב הדופק ולשנות את הפעילות החשמלית של הלב. לכן, הטיפול חייב להתבצע אך ורק בקליניקה רפואית, תחת השגחת רופא וחיבור למוניטור. לפני שבכלל מתחילים, כל מטופל עובר סינון שכולל א.ק.ג ובדיקות דם כדי לוודא שאין לו בעיות לב רקע שיכולות לסכן אותו.</p>
+        </div>
+        <div class="photo"><img src="images/clinic.jpg" alt="חדר טיפול קליני" /></div>
+      </div>
+    </section>
+
+    <section class="surface section">
+      <div class="wrap" style="max-width:48rem">
+        <h2 style="font-size:1.875rem">שאלות ותשובות</h2>
+        <div style="margin-top:2rem">
+          <details>
+            <summary>איך נראה הטיפול?</summary>
+            <p>שורש האייבוגה הוא הלוצינוגן שנמצא בשימוש של תרבויות ילידיות באפריקה כבר מאות שנים. מחקרים מהשנים האחרונות מראים כי שימוש חד-פעמי בו מוביל לתיקון של פגיעות מוחיות ולריפוי טראומות, וישנם סימנים מעודדים המראים אף על סיוע בטיפול בפרקינסון, אלצהיימר ומחלות נוירולוגיות נוספות.</p>
+          </details>
+          <details>
+            <summary>אז למה לא לקחת אותו בבית?</summary>
+            <p>בניגוד לחומרים אחרים, השימוש באייבוגה שלא במסגרת רפואית מסוכן. לקיחתו מובילה לאטקסיה (אובדן שיווי משקל וקואורדינציה) למשך 12–24 שעות, ומצריכה מעקב רפואי צמוד אחר פעילות הלב. חשוב לדעת: הטיפול ניתן במסגרת קלינית בניטור מלא, אך ורק לאחר בדיקות סינון שנעשות במקום</p>
+          </details>
+          <details>
+            <summary>מה קורה במהלך הטיפול?</summary>
+            <p>המטופל שוכב על מיטה במשך כ-12 שעות, עם עיניים מכוסות, בשעה שהחומר עובד. רוב המשתמשים מדווחים על חזיונות המעלים אירועים טראומטיים ומשמעותיים. צילומי MRI שנעשו לחיילים לפני ואחרי הטיפול הראו שינויים לטובה במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית.</p>
+          </details>
+          <details>
+            <summary>האם יש תועלות ושימושים נוספים לאייבוגה?</summary>
+            <p>הטיפול בשורש האייבוגה נחשב כבר עשרות שנים לטיפול פורץ דרך בהתמכרויות - מסיגריות, מריחואנה ואלכוהול ועד לסמים הקשים ביותר. בניגוד לטיפולי גמילה אחרים, מטופלים רבים מדווחים על סימני גמילה מופחתים משמעותית לאחר הטיפול.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap split split-2">
+        <article class="benefit">
+          <h3>מה כוללת מתנת חיים?</h3>
+          <p>מעטפת לוגיסטית מלאה בשבוע של הטיפול הכולת: לינה, אוכל כשר, הסעות, ליווי, שיחה מקדימה עם איש טיפול ושיחת אינטגרציה לאחריו.</p>
+        </article>
+        <article class="benefit" style="box-shadow:none">
+          <p class="eyebrow" style="color:var(--muted);margin:0">לא כלול</p>
+          <h3 style="margin-top:0.75rem">מה לא כוללת מתנת חיים?</h3>
+          <p>טיסה מישראל לסאו פאולו ובחזרה.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section why">
+      <div class="wrap split split-2" style="align-items:center">
+        <div>
+          <h2 style="font-size:clamp(1.875rem,3vw,2.25rem)">למה ברזיל?</h2>
+          <p style="font-size:1.125rem;opacity:.85">בזמן שרוב העולם עדיין מנסה להבין איך לגשת לטיפול הזה, לברזיל יש כבר כמה עשורים של ניסיון קליני, חוקי ומפוקח עם אייבוגאין. ברחבי ברזיל פועלות קליניקות שלמות המנוהלות על ידי רופאים ופסיכיאטרים שמתמחים ספציפית בעבודה עם השורש הזה. הם למדו לשלב את העוצמה של החומר עם פרוטוקולים מחמירים של רפואה מערבית, כדי להעניק ללוחמים סביבה בטוחה, מקצועית ומבוקרת לחלוטין.</p>
+        </div>
+        <figure class="photo"><img src="images/sao-paulo.jpg" alt="" /></figure>
+      </div>
+    </section>
+
+    <section class="close">
+      <p class="eyebrow">חב"ד למטייל סאו פאולו - ברזיל</p>
+      <p class="eyebrow">בשיתוף בית חב"ד למטייל</p>
+      <p class="eyebrow">סאו פאולו, ברזיל</p>
+      <p style="font-family:var(--display);font-size:clamp(1.875rem,4vw,2.25rem);margin:2.5rem 0 0">
+        <span class="strike">$8,500 במקסיקו</span>
+        <span style="opacity:.4;padding:0 0.75rem">←</span>
+        <span>בחינם עבורכם</span>
+      </p>
+      <p style="font-size:1.125rem;opacity:.85;max-width:40rem;margin:2rem auto 0">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
+      <p style="font-family:var(--display);font-size:1.5rem;margin:1rem 0 0">אנחנו אוהבים אתכם. מגיע לכם.</p>
+      <p style="margin:2.5rem 0 0"><a class="btn btn-inverse btn-lg" href="#form">לפרטים והרשמה</a></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>חב"ד למטייל סאו פאולו - ברזיל · סאו פאולו, ברזיל</p>
+      <p>בשיתוף בית חב"ד למטייל</p>
+    </div>
+  </footer>
+  <div class="mobile-bar"><a class="btn btn-accent" href="#form">השארת פרטים</a></div>
+
+  <script>
+    var LEAD_EMAIL = "demo@example.com";
+    var CUES = [
+      { start: 4, end: 9.7, text: "בהתחלה פשוט תהיתי מתי זה יתחיל." },
+      { start: 10, end: 13.8, text: "התרופה מוציאה דברים שהיא רוצה שתראה, ואתה לא יודע למה." },
+      { start: 14, end: 16.7, text: "היה לי הרבה מה לעבוד עליו." },
+      { start: 17, end: 19.7, text: "האימונים של השייטת הם מהדברים התובעניים ביותר על פני כדור הארץ." },
+      { start: 20, end: 23.7, text: "זה היה כמו להיות מגויס ולהגיע לפטריוטס." },
+      { start: 24, end: 25.4, text: "זה היה כל מה שרציתי." },
+      { start: 25.5, end: 29.5, text: "ככל שהמקום היה גרוע יותר — כך יותר רצינו להגיע לשם." },
+      { start: 30, end: 33.6, text: "זה הרגיש כמו רולטה רוסית. בכל פעם שהוא יוצא, אולי הוא לא חוזר הביתה." },
+      { start: 34, end: 37.5, text: "כל מה שיכול היה להשתבש — השתבש." },
+      { start: 38, end: 39.7, text: "גילו אותנו." },
+      { start: 40, end: 44.5, text: "אני לא יכול לירות בחזרה כי אני לא רואה אף אחד." },
+      { start: 45, end: 49.4, text: "חשבתי שהזרוע שלי נעלמה, ואני לא מרגיש כלום." },
+      { start: 50, end: 54.5, text: "דם וכדורים נשפכו על כל הדבר הזה." },
+      { start: 55, end: 60.5, text: "אתה יוצא לחו״ל ורואה חצי מהמחלקה שלך נהרגת. לא אמורים לעזוב אותם." },
+      { start: 61, end: 63.8, text: "פשוט התחננתי. תעזרו לו, בבקשה." },
+      { start: 64, end: 69.5, text: "הפגיעה המוחית ואובדן הזיכרון. פגשתי מישהו. אין לי מושג מה השם שלך." },
+      { start: 70, end: 74.8, text: "הוא עשה את כל מה שאמרו לו לעשות. ובפועל הוא נהיה יותר גרוע." },
+      { start: 75, end: 79.5, text: "קיבלתי את התיק הרפואי שלו. שיניתי לגמרי את הגישה." },
+      { start: 80, end: 85.5, text: "תרופות פסיכדליות הוכחו כיעילות, אבל שתיהן לא חוקיות בארצות הברית." },
+      { start: 86, end: 98.5, text: "אז מרקוס היה צריך לנסוע למקסיקו. אם אתה אוהב את אשתך — תיסע למקסיקו." },
+      { start: 99, end: 104.5, text: "כל שריון הגוף שלבשת — הכל יורד." },
+      { start: 105, end: 110.5, text: "האחים שלי, חברי הצוות שלי, מגיע לכם להיות מאושרים ולחיות חיים טובים." },
+      { start: 111, end: 119.5, text: "זה אחד הרגעים ברפואה שבהם צריך אומץ לקפוץ." },
+      { start: 120, end: 123.7, text: "התרופה הזו לוקחת אותך עד לפסגה — ואתה נופל." },
+      { start: 124, end: 133, text: "נכנסים לקו העבודה הזה כי זה מרגיש מי שאנחנו. אז מי לעזאזל אני עכשיו?" }
+    ];
+    var captionsOn = true;
+    var nativeCaptions = false;
+    var ytPlayer = null;
+    var cueEl = document.getElementById("cue");
+    var ccBtn = document.getElementById("cc-toggle");
+    var VIDEO_ID = "ao8tiqnuS3Y";
+    function showCue(t) {
+      if (!captionsOn || nativeCaptions) { cueEl.hidden = true; return; }
+      var c = null;
+      for (var i = 0; i < CUES.length; i++) {
+        if (t >= CUES[i].start && t < CUES[i].end) { c = CUES[i]; break; }
+      }
+      if (c) { cueEl.hidden = false; cueEl.querySelector("p").textContent = c.text; }
+      else { cueEl.hidden = true; }
+    }
+    function showPoster() {
+      var frame = document.querySelector(".player-frame");
+      if (!frame || frame.querySelector(".yt-poster")) return;
+      frame.innerHTML = '<a class="yt-poster" href="https://www.youtube.com/watch?v=' + VIDEO_ID + '" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/' + VIDEO_ID + '/hqdefault.jpg" alt="In Waves and War"></a>';
+    }
+    function mountPlayer(start) {
+      var node = document.getElementById("yt-player");
+      if (!node) return;
+      if (ytPlayer && ytPlayer.destroy) {
+        try { ytPlayer.destroy(); } catch (e) {}
+        ytPlayer = null;
+      }
+      nativeCaptions = captionsOn;
+      cueEl.hidden = true;
+      ytPlayer = new YT.Player("yt-player", {
+        videoId: VIDEO_ID,
+        host: "https://www.youtube.com",
+        playerVars: {
+          rel: 0,
+          playsinline: 1,
+          hl: "he",
+          cc_load_policy: captionsOn ? 1 : 0,
+          cc_lang_pref: "iw",
+          start: Math.max(0, Math.floor(start || 0))
+        },
+        events: {
+          onReady: function (e) {
+            nativeCaptions = captionsOn;
+            cueEl.hidden = true;
+            if (start > 0.5) {
+              e.target.seekTo(start, true);
+              e.target.playVideo();
+            }
+          },
+          onError: function (e) { if (e.data === 153) showPoster(); }
+        }
+      });
+    }
+    function setCaptions(on) {
+      captionsOn = on;
+      ccBtn.textContent = on ? "כתוביות פועלות" : "כתוביות כבויות";
+      ccBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      if (!ytPlayer || !document.getElementById("yt-player")) { cueEl.hidden = true; return; }
+      var t = 0;
+      try { t = ytPlayer.getCurrentTime ? ytPlayer.getCurrentTime() : 0; } catch (e) {}
+      mountPlayer(t);
+    }
+    ccBtn.addEventListener("click", function () { setCaptions(!captionsOn); });
+    window.onYouTubeIframeAPIReady = function () {
+      if (location.protocol !== "http:" && location.protocol !== "https:") {
+        showPoster();
+        return;
+      }
+      mountPlayer(0);
+      setInterval(function () {
+        if (ytPlayer && ytPlayer.getCurrentTime && !nativeCaptions) showCue(ytPlayer.getCurrentTime());
+      }, 200);
+    };
+    var tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+
+    document.getElementById("lead-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("full-name").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var elig = document.querySelector('input[name="eligibility"]:checked');
+      var err = document.getElementById("form-err");
+      if (!name || !phone || !elig) { err.hidden = false; return; }
+      err.hidden = true;
+      var body = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + elig.value;
+      window.location.href = "mailto:" + LEAD_EMAIL + "?subject=" + encodeURIComponent("מתנת חיים — פנייה חדשה") + "&body=" + encodeURIComponent(body);
+      document.getElementById("lead-form").hidden = true;
+      document.getElementById("lead-ok").hidden = false;
+    });
+  </script>
+</body>
+</html>

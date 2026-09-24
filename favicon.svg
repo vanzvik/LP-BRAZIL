@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" role="img" aria-label="מתנת חיים">
+  <rect width="16" height="16" rx="3" fill="#F3F0E8"/>
+  <g fill="#1A3344">
+    <rect x="2" y="4" width="1" height="6"/>
+    <rect x="4" y="4" width="1" height="6"/>
+    <rect x="6" y="4" width="1" height="6"/>
+    <rect x="8" y="3" width="1" height="7"/>
+    <rect x="10" y="4" width="1" height="6"/>
+    <rect x="12" y="4" width="1" height="6"/>
+    <rect x="14" y="4" width="1" height="6"/>
+    <rect x="2" y="9" width="13" height="1"/>
+    <rect x="8" y="10" width="1" height="3"/>
+    <rect x="5" y="13" width="7" height="1"/>
+  </g>
+</svg>
