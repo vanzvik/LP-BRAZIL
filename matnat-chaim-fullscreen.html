@@ -654,7 +654,7 @@
       minutesTimer = window.setTimeout(function () {
         var frame = minutes.querySelector(".minutes-frame");
         if (!frame.getAttribute("src")) {
-          frame.src = "https://www.youtube.com/embed/_zpe_G8_k1s?autoplay=1&rel=0&playsinline=1&hl=he";
+          frame.src = "https://www.youtube.com/embed/_zpe_G8_k1s?autoplay=1&rel=0&playsinline=1&hl=he&controls=0&modestbranding=1&fs=0&disablekb=1&iv_load_policy=3";
         }
         frame.classList.add("is-ready");
       }, 440);
@@ -752,6 +752,11 @@
         playerVars: {
           rel: 0,
           playsinline: 1,
+          controls: 0,
+          modestbranding: 1,
+          fs: 0,
+          disablekb: 1,
+          iv_load_policy: 3,
           hl: "he",
           cc_load_policy: 0,
           cc_lang_pref: "he",
