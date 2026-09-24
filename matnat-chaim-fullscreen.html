@@ -56,6 +56,13 @@
     header.nav.on-dark { color: var(--cream); }
     header.nav a { pointer-events: auto; text-decoration: none; font-weight: 500; }
     header.nav a:not(.btn) { text-shadow: 0 0 14px rgb(243 240 232 / 0.95), 0 1px 2px rgb(243 240 232 / 0.8); }
+    .brand { display: inline-flex; align-items: center; gap: 0.6rem; min-width: 0; white-space: nowrap; }
+    header.nav .btn { flex: none; white-space: nowrap; }
+    .brand img {
+      width: 2.65rem; height: 2.65rem; flex: none; object-fit: cover;
+      border-radius: 0.55rem;
+      box-shadow: 0 1px 8px rgb(16 24 32 / 0.22);
+    }
     .btn {
       display: inline-flex; align-items: center; justify-content: center;
       min-height: 3rem; padding: 0 1.35rem; border: 0; border-radius: 999px;
@@ -329,6 +336,8 @@
       .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl, .price { font-size: clamp(2.1rem, 9vw, 2.8rem); }
       .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line) { font-size: 1.02rem; }
       .stat-line { font-size: 1.5rem; }
+      .brand { gap: 0.4rem; font-size: 0.82rem; }
+      .brand img { width: 2rem; height: 2rem; border-radius: 0.4rem; }
       .screen.split { grid-template-rows: 30svh 1fr; }
       @media (max-height: 760px) {
         .screen.split { grid-template-rows: 20svh 1fr; }
@@ -385,7 +394,7 @@
 </head>
 <body>
   <header class="nav">
-    <a href="#top">חב"ד למטייל סאו פאולו</a>
+    <a class="brand" href="#top"><img src="images/logo.jpeg" alt="" /><span>חב"ד למטייל סאו פאולו</span></a>
     <a class="btn" href="#form">השארת פרטים</a>
   </header>
   <nav class="rail" aria-label="מיקום בעמוד"></nav>
