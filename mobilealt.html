@@ -26,9 +26,11 @@
       font-size: 16px;
       line-height: 1.45;
     }
-    .page { max-width: 430px; margin: 0 auto; background: var(--bg); min-height: 100dvh; overflow-x: hidden; }
+    .page { max-width: 430px; margin: 0 auto; background: var(--bg); min-height: 100dvh; padding-top: 64px; }
     header {
-      position: sticky; top: 0; z-index: 5;
+      position: fixed; top: 0; z-index: 5;
+      width: min(430px, 100%);
+      left: 50%; transform: translateX(-50%);
       height: 64px; padding: 0 16px;
       display: flex; align-items: center; justify-content: space-between; gap: 8px;
       background: rgb(243 240 232 / 0.96);
