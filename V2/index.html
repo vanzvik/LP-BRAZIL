@@ -1,0 +1,1789 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>מתנת חיים | חב״ד סאו פאולו</title>
+  <meta name="description" content="הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, עכשיו ללוחמים שלנו. מתנת חיים מבית חב״ד סאו פאולו." />
+  <meta property="og:title" content="מתנת חיים | חב״ד סאו פאולו" />
+  <meta property="og:description" content="הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, עכשיו ללוחמים שלנו. מתנת חיים מבית חב״ד סאו פאולו." />
+  <meta property="og:image" content="../og.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="he_IL" />
+  <link rel="icon" href="../favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    @media (max-width: 899px) {
+      .desk { display: none !important; }
+
+:root{
+  --ink:#1a3344; --ink-deep:#101820; --cream:#f6f3ea; --cream-soft:#f3f0e8;
+  --muted:#5c656c; --yellow:#f1e51d; --red:#e10600;
+  --rule:rgb(26 51 68 / .14); --rule-soft:rgb(26 51 68 / .08);
+  --gut:20px; --hdr:56px; --obstruct:58px;
+  --font:"Google Sans","Segoe UI",system-ui,-apple-system,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:#e7e2d7; color:var(--ink);
+  font-family:var(--font); font-size:17px; line-height:1.62; font-weight:400;
+  -webkit-font-smoothing:antialiased;
+}
+.page{max-width:480px; margin-inline:auto; background:var(--cream); padding-top:var(--obstruct); overflow:clip}
+img{max-width:100%}
+
+/* ---------- header ---------- */
+.hdr{
+  position:fixed; inset-block-start:0; z-index:40;
+  width:min(480px,100%); left:50%; transform:translateX(-50%);
+  min-height:56px; padding-inline:16px; padding-block:8px;   /* design minimum; --hdr is the MEASURED height, used only for positioning */
+  display:flex; align-items:center; gap:8px;
+  background:var(--cream-soft); border-block-end:1px solid var(--rule-soft);
+}
+.brand{display:flex; align-items:center; gap:8px; min-width:0; flex:1 1 auto; min-height:44px;
+  color:inherit; text-decoration:none; font-size:14px; font-weight:500; line-height:1.25}
+.brand img{width:32px; height:32px; flex:none; border-radius:7px; object-fit:cover}
+.brand span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
+.hdr .pill{flex:none; max-width:126px}
+.menu-btn{
+  flex:none; width:44px; height:44px; display:grid; place-items:center;
+  border:0; border-radius:12px; background:transparent; color:var(--ink); cursor:pointer;
+}
+.menu-btn:active{background:var(--rule-soft)}
+.menu-btn svg{width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round}
+.bar{position:fixed; inset-block-start:var(--hdr); left:50%; transform:translateX(-50%);
+  width:min(480px,100%); height:2px; z-index:41; background:var(--rule-soft)}
+.bar i{display:block; height:100%; width:0; background:var(--ink); margin-inline-start:auto}
+
+/* ---------- buttons ---------- */
+.pill{
+  display:inline-flex; align-items:center; justify-content:center;
+  min-height:44px; padding-inline:18px; border:0; border-radius:999px;
+  background:var(--ink); color:var(--cream); text-decoration:none; cursor:pointer;
+  font:500 16px/1.2 var(--font); letter-spacing:-.01em;
+}
+.hdr .pill{min-height:44px; font-size:14px; padding-inline:14px}
+.pill:active{background:#16293a}
+.pill.ghost{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--rule)}
+.pill.wide{width:100%}
+
+/* ---------- section rhythm ---------- */
+section{scroll-margin-top:calc(var(--obstruct) + 16px)}
+.sec{padding-block:48px}
+.sec > * + *{margin-block-start:20px}
+.inner{padding-inline:var(--gut)}
+.decision{padding-block-start:72px; border-block-start:1px solid var(--rule)}
+figure{margin:0}
+figure img{display:block; width:100%; aspect-ratio:16/10; max-height:270px; object-fit:cover; background:#d9d3c6}
+
+/* ---------- type ---------- */
+h1,h2,h3{margin:0; font-weight:500; letter-spacing:-.02em; line-height:1.14; text-wrap:balance}
+h1{font-size:clamp(28px,8.6vw,34px)}
+h2{font-size:clamp(23px,6.7vw,26px); line-height:1.22}
+h3{font-size:18px; line-height:1.34; letter-spacing:-.01em}
+p{margin:0}
+.sec p + p{margin-block-start:16px}
+.kicker{font-size:14px; font-weight:500; color:var(--muted); line-height:1.4}
+.muted{color:var(--muted)}
+.lede{font-size:18px; line-height:1.58}
+.mark{color:var(--yellow)}
+.bridge{margin-block-start:26px !important; padding-block-start:22px; border-block-start:1px solid var(--rule);
+  font-size:21px; font-weight:500; line-height:1.3; letter-spacing:-.015em}
+
+/* ---------- opening ---------- */
+.open{position:relative; padding:0; background:var(--ink-deep);
+  display:grid; min-height:clamp(360px,62svh,480px)}
+.open > img,.open > .over{grid-area:1 / 1}
+.open img{display:block; width:100%; height:100%; object-fit:cover; opacity:.62}
+.open .over{align-self:end; padding:110px var(--gut) 30px;
+  background:linear-gradient(to top,rgb(16 24 32 / .92) 42%,rgb(16 24 32 / 0))}
+.open h1{color:#fff}
+.open .who{margin-block-start:14px; color:rgb(255 255 255 / .74); font-size:14px}
+.open .pill{margin-block-start:20px; background:var(--cream); color:var(--ink)}
+.flag{position:absolute; inset-block-start:14px; inset-inline-start:var(--gut); z-index:2;
+  padding:6px 12px; border-radius:999px; background:rgb(16 24 32 / .62); color:#fff;
+  font-size:13px; font-weight:500; letter-spacing:0; backdrop-filter:blur(6px)}
+
+/* ---------- stat ---------- */
+.stat{margin-inline:var(--gut); padding:20px; border:1px solid var(--rule); border-radius:16px; background:rgb(255 255 255 / .5)}
+.stat .kicker{margin-block-end:6px}
+.stat .row{display:flex; align-items:center; gap:12px}
+.stat .num{font-size:clamp(48px,14vw,58px); line-height:.92; font-weight:500; letter-spacing:-.045em}
+.stat svg{width:24px; height:40px; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+.stat .desc{margin-block-start:10px; font-size:19px; font-weight:700; line-height:1.3; letter-spacing:-.01em}
+
+/* ---------- media facade ---------- */
+.media{position:relative; background:var(--ink-deep)}
+.media img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover}
+.media iframe{display:block; width:100%; aspect-ratio:16/9; border:0}
+.media .play{position:absolute; inset:0; width:100%; border:0; padding:0; background:transparent; cursor:pointer}
+.media .play i{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
+  width:62px; height:62px; border-radius:50%; background:var(--cream); color:var(--ink);
+  display:grid; place-items:center; box-shadow:0 6px 22px rgb(16 24 32 / .4)}
+.media .play svg{width:22px; height:22px; fill:currentColor}
+.media .play:active i{background:#fff}
+.alt{display:block; padding:10px var(--gut); color:var(--muted); font-size:13px; text-align:center}
+.alt a{color:inherit}
+
+/* ---------- dark section ---------- */
+.dark{background:var(--ink-deep); color:var(--cream)}
+.dark h2{color:#fff}
+.dark .muted,.dark p{color:rgb(246 243 234 / .76)}
+.dark .kicker{color:rgb(246 243 234 / .6)}
+.list{display:grid; gap:2px; margin-block-start:24px}
+.list article{padding:20px var(--gut); background:rgb(246 243 234 / .05)}
+.list h3{display:flex; align-items:center; gap:10px; color:#fff}
+.list svg{width:24px; height:24px; flex:none; fill:none; stroke:var(--yellow); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round}
+.list p{margin-block-start:8px; font-size:16px; line-height:1.55}
+
+/* ---------- form ---------- */
+form{margin-block-start:24px}
+label,legend{display:block; font-size:14px; font-weight:500; color:var(--muted)}
+input[type=text],input[type=tel]{
+  width:100%; height:50px; margin-block-start:7px; padding-inline:14px;
+  border:1px solid var(--rule); border-radius:12px; background:#fff;
+  font:400 17px/1 var(--font); color:var(--ink);
+}
+input:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
+.field + .field{margin-block-start:18px}
+fieldset{margin:22px 0 0; padding:0; border:0}
+.choice{display:flex; align-items:center; gap:12px; min-height:48px; padding-inline:14px;
+  margin-block-start:8px; border:1px solid var(--rule); border-radius:12px; background:#fff;
+  font-size:16px; font-weight:400; color:var(--ink); cursor:pointer}
+.choice input{width:20px; height:20px; accent-color:var(--ink); flex:none}
+.choice:has(input:checked){border-color:var(--ink); box-shadow:inset 0 0 0 1px var(--ink)}
+.note{margin-block-start:14px; font-size:13px; color:var(--muted)}
+#done{padding:22px; border:1px dashed var(--rule); border-radius:16px; background:rgb(255 255 255 / .5)}
+
+/* ---------- faq ---------- */
+.faq{margin-block-start:22px; border-block-start:1px solid var(--rule)}
+.faq details{border-block-end:1px solid var(--rule)}
+.faq summary{
+  display:flex; align-items:center; justify-content:space-between; gap:14px;
+  min-height:56px; padding-block:12px; cursor:pointer; list-style:none;
+  font-size:17px; font-weight:500; line-height:1.35;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:""; flex:none; width:11px; height:11px; margin-inline-start:2px;
+  border-inline-end:1.8px solid var(--muted); border-block-end:1.8px solid var(--muted);
+  transform:rotate(45deg); transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq .a{overflow:hidden; color:var(--muted); font-size:16px; line-height:1.6}
+.faq .a p{padding-block-end:18px}
+.faq details[open] .a{animation:open .3s ease}
+@keyframes open{from{opacity:0; transform:translateY(-4px)}to{opacity:1; transform:none}}
+
+/* ---------- close ---------- */
+.price{font-size:26px; font-weight:500; line-height:1.3; letter-spacing:-.02em}
+.price .was{color:var(--muted); font-weight:400; text-decoration:line-through}
+.price .arrow{color:var(--muted)}
+.heart{color:var(--red)}
+.emph{font-size:19px; font-weight:700; line-height:1.35; letter-spacing:-.01em}
+footer{padding:36px var(--gut) 48px; border-block-start:1px solid var(--rule); color:var(--muted); font-size:13px; text-align:center}
+
+/* ---------- chapter sheet ---------- */
+dialog.sheet:not([open]){display:none}
+dialog.sheet[open]{
+  width:min(480px,100%); max-width:100%; max-height:76svh; margin:0 auto 0;
+  margin-block-start:auto; padding:0; border:0; border-radius:20px 20px 0 0;
+  background:var(--cream-soft); color:var(--ink);
+  display:flex; flex-direction:column; overflow:hidden;
+}
+@media (prefers-reduced-motion:no-preference){
+  dialog.sheet[open]{animation:sheet-up .26s cubic-bezier(.2,.7,.2,1)}
+}
+@keyframes sheet-up{from{transform:translateY(14px)}to{transform:none}}
+dialog.sheet::backdrop{background:rgb(16 24 32 / .45)}
+.sheet-top{display:flex; align-items:center; justify-content:space-between; gap:12px;
+  padding:14px 12px 12px 16px; border-block-end:1px solid var(--rule-soft); flex:none}
+.sheet-top h2{font-size:17px; font-weight:500; letter-spacing:0}
+.sheet-x{width:44px; height:44px; flex:none; display:grid; place-items:center; border:0;
+  border-radius:12px; background:transparent; color:var(--ink); font-size:26px; line-height:1; cursor:pointer}
+.sheet-x:active{background:var(--rule-soft)}
+.sheet nav{overflow-y:auto; -webkit-overflow-scrolling:touch; padding:6px 6px calc(14px + env(safe-area-inset-bottom))}
+.sheet a{display:flex; align-items:center; gap:12px; min-height:48px; padding-inline:12px;
+  border-radius:12px; color:var(--ink); text-decoration:none; font-size:16px; font-weight:500}
+.sheet a b{width:20px; flex:none; color:var(--muted); font-weight:500; font-size:13px; font-variant-numeric:tabular-nums}
+.sheet a[aria-current]{background:var(--ink); color:var(--cream)}
+.sheet a[aria-current] b{color:rgb(246 243 234 / .6)}
+.sheet a:active{background:var(--rule-soft)}
+.jump-inline{display:flex; align-items:center; justify-content:center; gap:8px; width:100%;
+  min-height:48px; border:1px solid var(--rule); border-radius:14px; background:transparent;
+  color:var(--muted); font:500 15px/1 var(--font); cursor:pointer}
+
+/* ---------- motion ---------- */
+.rise.staged{opacity:0}
+.rise.in{animation:rise .46s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rise,.rise.staged,.rise.in{opacity:1; animation:none !important}
+  .faq details[open] .a{animation:none}
+  .faq summary::after{transition:none}
+  *{transition-duration:.01ms !important}
+}
+
+    }
+    @media (min-width: 900px) {
+      .mob { display: none !important; }
+
+    :root {
+      --bg: #f3f0e8;
+      --fg: #1a3344;
+      --muted: #5c656c;
+      --ink: #101820;
+      --green: #2c5348;
+      --cream: #f6f3ea;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-snap-type: y mandatory; scroll-behavior: auto; overscroll-behavior: none; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "Google Sans", "Segoe UI", system-ui, sans-serif;
+      font-weight: 400;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    button, input { font-family: inherit; }
+    a { color: inherit; text-decoration-thickness: 1px; text-underline-offset: 0.25em; }
+    p { text-wrap: pretty; margin: 0; }
+    h1, h2, h3 { font-weight: 500; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; margin: 0; }
+    h1 { font-size: clamp(2.6rem, 6.4vw, 5.4rem); }
+    h2 { font-size: clamp(2.1rem, 4.6vw, 3.8rem); }
+    h3 { font-size: clamp(1.45rem, 2.4vw, 2rem); }
+    .kicker { font-size: 0.95rem; font-weight: 500; letter-spacing: 0.01em; opacity: 0.72; }
+    .measure { max-width: 38rem; }
+    .close-lines { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.35rem; }
+    .close-lines .title-xl { margin-top: 0; font-size: clamp(1.7rem, 2.7vw, 2.2rem); }
+    .heart { color: #e10600; }
+    .wide { max-width: 46rem; }
+    header.nav {
+      position: fixed; inset-inline: 0; top: 0; z-index: 40;
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+      padding: 1.15rem 6vw;
+      color: var(--fg);
+      pointer-events: none;
+    }
+    header.nav.on-dark { color: var(--cream); }
+    header.nav a { pointer-events: auto; text-decoration: none; font-weight: 500; }
+    header.nav a:not(.btn) { text-shadow: 0 0 14px rgb(243 240 232 / 0.95), 0 1px 2px rgb(243 240 232 / 0.8); }
+    .brand { display: inline-flex; align-items: center; gap: 0.6rem; min-width: 0; white-space: nowrap; }
+    header.nav .btn { flex: none; white-space: nowrap; }
+    .brand img {
+      width: 2.65rem; height: 2.65rem; flex: none; object-fit: cover;
+      border-radius: 0.55rem;
+      box-shadow: 0 1px 8px rgb(16 24 32 / 0.22);
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 3rem; padding: 0 1.35rem; border: 0; border-radius: 999px;
+      background: var(--fg); color: var(--cream);
+      font-size: 1rem; font-weight: 500; line-height: 1; text-decoration: none;
+      cursor: pointer; pointer-events: auto;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn-sm { min-height: 2.5rem; padding: 0 0.95rem; font-size: 0.9rem; }
+    header.nav.on-dark .btn, .consult .btn, .close .btn { background: var(--cream); color: var(--ink); }
+    .rail {
+      position: fixed; z-index: 50; top: 50%; inset-inline-end: 0.7rem;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 0.55rem;
+    }
+    .rail button {
+      position: relative; width: 0.55rem; height: 0.55rem; padding: 0;
+      border: 0; border-radius: 999px; cursor: pointer;
+      background: rgb(26 51 68 / 0.35);
+    }
+    .rail button::before { content: ""; position: absolute; inset: -0.4rem; }
+    .rail.on-dark button { background: rgb(246 243 234 / 0.5); }
+    .rail button[aria-current="true"] { height: 1.35rem; background: var(--fg); }
+    .rail.on-dark button[aria-current="true"] { background: var(--cream); }
+    .rail button span {
+      position: absolute; top: 50%; inset-inline-end: calc(100% + 0.7rem);
+      transform: translateY(-50%);
+      white-space: nowrap; pointer-events: none; opacity: 0;
+      font-size: 0.78rem; font-weight: 500; color: var(--fg);
+      background: var(--cream); border-radius: 999px; padding: 0.28rem 0.65rem;
+      box-shadow: 0 1px 8px rgb(16 24 32 / 0.16);
+    }
+    .rail button:hover span, .rail button:focus-visible span { opacity: 1; }
+    .screen {
+      position: relative;
+      isolation: isolate;
+      height: 100svh;
+      min-height: 100svh;
+      max-height: 100svh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 5.5rem 6vw 2.75rem;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      background: transparent;
+    }
+    .wash, .mist { position: absolute; pointer-events: none; }
+    .wash {
+      inset: -14%;
+      z-index: 0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(16px) saturate(1.08);
+      transform: scale(1.04);
+    }
+    .mist { inset: 0; z-index: 1; }
+    .screen > :not(.wash):not(.mist) { position: relative; z-index: 2; }
+    .tone-ink .mist {
+      background: linear-gradient(180deg, rgb(243 240 232 / 0.55) 0%, rgb(243 240 232 / 0.38) 48%, rgb(243 240 232 / 0.62) 100%);
+    }
+    .tone-light { color: var(--cream); }
+    .tone-light .mist {
+      background: linear-gradient(180deg, rgb(16 24 32 / 0.34) 0%, rgb(16 24 32 / 0.18) 46%, rgb(16 24 32 / 0.55) 100%);
+    }
+    .tone-light .kicker, .tone-light .muted, .tone-light .player-meta, .tone-light .sources { color: rgb(246 243 234 / 0.82); }
+    .hero {
+      justify-content: flex-end;
+      padding-bottom: 8vh;
+    }
+    .hero .mist {
+      background: linear-gradient(180deg, rgb(16 24 32 / 0.3) 0%, rgb(16 24 32 / 0.08) 36%, rgb(16 24 32 / 0.62) 100%);
+    }
+    .hero .copy { position: relative; max-width: 52rem; text-shadow: 0 1px 16px rgb(16 24 32 / 0.55); }
+    .hero .kicker { opacity: 1; }
+    .hero { padding: 0; justify-content: stretch; }
+    .hero-grid {
+      position: relative; z-index: 2; height: 100%;
+      display: grid; grid-template-columns: 1fr; align-items: center;
+      gap: 1.25rem; padding: 5.25rem 5vw 1.5rem;
+    }
+    .hero .copy { color: var(--cream); }
+    .hero h1 .mark { color: #f1e51d; }
+    .hero h1,
+    .copy h2,
+    .copy h3,
+    .aid > h2,
+    .title-xl,
+    .price {
+      margin-top: 0.75rem;
+      font-size: clamp(2rem, 4.2vw, 3.7rem);
+      line-height: 1.15;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+    .hero .player { width: 100%; background: #101820 url("https://i.ytimg.com/vi/ao8tiqnuS3Y/hqdefault.jpg") center / cover; border-radius: 0.55rem; overflow: hidden; }
+    .hero .player-frame, .hero .player-frame iframe { border-radius: 0.55rem; }
+    .hero .sources { margin-top: 1.35rem; }
+    @media (min-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr 1fr; gap: 4vw; padding: 0 4.5vw; }
+    }
+    @media (max-width: 899px) {
+      .hero-grid {
+        align-content: center;
+        gap: 0.85rem;
+        padding: 4.6rem 5vw 1.1rem;
+      }
+      .hero-film { order: -1; }
+      .hero .copy h1 { margin-top: 0.15rem; font-size: clamp(1.6rem, 6.4vw, 2.05rem); }
+      .hero .sources { margin-top: 0.7rem; font-size: 0.8rem; gap: 0.2rem 0.75rem; }
+      .player-meta { font-size: 0.82rem; margin-top: 0.3rem; }
+    }
+    .film { align-items: flex-start; gap: 0.9rem; }
+    .player { width: min(100%, calc((100svh - 14.5rem) * 16 / 9)); background: var(--ink); }
+    .player-frame { position: relative; aspect-ratio: 16/9; }
+    .player-frame iframe, .yt-poster, .yt-poster img { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; object-fit: cover; }
+    .cue {
+      position: absolute; inset-inline: 0; bottom: 22%; z-index: 2;
+      display: flex; justify-content: center; padding: 0 1rem; pointer-events: none;
+    }
+    .cue p { max-width: 40rem; text-align: center; color: var(--cream); font-weight: 500; font-size: clamp(1.2rem, 1.8vw, 1.45rem); line-height: 1.35; text-shadow: 0 1px 8px rgb(0 0 0 / 0.6); }
+    .player-meta { width: min(100%, 68rem); display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; color: var(--muted); font-size: 0.95rem; }
+    .sources { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; margin: 0.25rem 0 0; padding: 0; list-style: none; font-size: 0.95rem; font-weight: 500; }
+    .stat-screen { color: var(--cream); }
+    .stat-screen .num { font-size: clamp(6rem, 18vw, 12rem); font-weight: 500; line-height: 0.85; letter-spacing: -0.04em; }
+    .stat-screen .kicker, .stat-screen .muted { color: rgb(246 243 234 / 0.72); }
+    .prose { display: grid; gap: 1.25rem; margin-top: 1.75rem; font-size: 1.15rem; }
+    .bridge {
+      color: var(--cream);
+      align-items: center;
+      text-align: center;
+      font-size: clamp(2rem, 5vw, 4rem);
+      font-weight: 500;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+    .pair { display: grid; gap: 3rem; align-items: center; }
+    @media (min-width: 900px) {
+      .pair { grid-template-columns: 1fr 1fr; gap: 6vw; }
+    }
+    .screen.split {
+      display: grid;
+      grid-template-rows: 42svh 1fr;
+      padding: 0;
+      background: var(--bg);
+    }
+    .screen.split .wash, .screen.split .mist { display: none; }
+    .screen.split .media { min-height: 0; height: 100%; overflow: hidden; position: relative; }
+    .screen.split .media img { width: 100%; height: 100%; object-fit: cover; }
+    a.media.play { display: block; color: inherit; }
+    .play-btn {
+      position: absolute; inset: 0; margin: auto;
+      width: 4.75rem; height: 4.75rem; border-radius: 50%;
+      background: rgb(246 243 234 / 0.94); color: var(--ink);
+      display: grid; place-items: center;
+    }
+    .play-btn svg { width: 1.7rem; height: 1.7rem; fill: currentColor; margin-inline-start: 0.15rem; }
+    .screen.split .copy {
+      padding: 1.5rem 6vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 0.75rem;
+      min-height: 0;
+    }
+    @media (min-width: 900px) {
+      .screen.split { grid-template-columns: 1fr 1fr; grid-template-rows: 1fr; }
+      .screen.split .copy { padding: 4rem 6vw; }
+      .screen.split.flip .media { order: 2; }
+    }
+    .or {
+      justify-self: start; width: fit-content; margin: 0.2rem 0;
+      padding: 0.42rem 1.05rem; border-radius: 999px;
+      background: var(--ink); color: #fff;
+      font-size: 1.05rem; font-weight: 500; letter-spacing: 0.04em; line-height: 1;
+    }
+    form { display: grid; gap: 1.6rem; }
+    label, legend { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
+    input[type="text"], input[type="tel"] {
+      width: 100%; border: 0; border-bottom: 1px solid rgb(26 51 68 / 0.35);
+      border-radius: 0; background: transparent; color: var(--fg);
+      padding: 0.7rem 0; font-size: 1.35rem; outline: none;
+    }
+    input:focus { border-bottom-color: var(--fg); }
+    fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 0.7rem; }
+    .choice { display: flex; align-items: center; gap: 0.7rem; font-size: 1.15rem; cursor: pointer; color: var(--fg); }
+    .choice input { accent-color: var(--green); width: 1.05rem; height: 1.05rem; }
+    button[type="submit"] { justify-self: start; margin-top: 0.35rem; }
+    .err { color: var(--green); font-weight: 500; }
+    .aid {
+      /* ICON SIZE — edit this one value */
+      --aid-icon: 3.5rem;
+    }
+    .aid .points {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 1.75rem;
+      margin-top: 2.75rem;
+      align-items: start;
+    }
+    .aid h3 { display: flex; flex-direction: column; align-items: flex-start; gap: 0.85rem; font-size: clamp(1.05rem, 1.4vw, 1.35rem); }
+    .aid h3 svg {
+      width: var(--aid-icon);
+      height: var(--aid-icon);
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .aid article p { margin-top: 0.65rem; color: var(--muted); }
+    .consult { color: var(--cream); }
+    .consult .btn { margin-top: 2rem; }
+    .faq-item { border-top: 1px solid rgb(26 51 68 / 0.18); }
+    .faq-item:last-child { border-bottom: 1px solid rgb(26 51 68 / 0.18); }
+    .faq-q {
+      width: 100%; text-align: start; background: none; border: 0; cursor: pointer;
+      padding: 0.85rem 0; color: inherit;
+      font: inherit; font-size: clamp(1.05rem, 1.5vw, 1.3rem); font-weight: 500; letter-spacing: -0.02em;
+    }
+    .faq-a { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 0.22s ease-in; }
+    .faq-item.is-open .faq-a { grid-template-rows: 1fr; }
+    .faq-a > div { overflow: hidden; }
+    .faq-a p { color: var(--muted); margin: 0; padding-bottom: 1rem; max-width: 40rem; }
+    .screen.faq-screen .copy.faq { overflow: hidden; }
+    .faq-list { min-height: 0; max-height: 100%; overflow: auto; }
+    @media (min-width: 900px) {
+      .screen.faq-screen .media { order: 0; }
+      .screen.faq-screen .copy { order: 1; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .faq-a { transition: none; }
+    }
+    .two { display: grid; gap: 3rem; }
+    @media (min-width: 800px) { .two { grid-template-columns: 1fr 1fr; gap: 8vw; } }
+    .screen.split .copy .two { grid-template-columns: 1fr; gap: 1.1rem; }
+    .screen.split .num { margin: 0.15rem 0 0.35rem; font-size: clamp(4.5rem, 9vw, 8rem); font-weight: 500; line-height: 0.85; letter-spacing: -0.04em; }
+    .stat-figure { display: flex; align-items: center; gap: 0.85rem; }
+    .stat-figure .num { margin: 0; }
+    .num-arrow {
+      flex: none;
+      width: 0.57em;
+      height: 0.78em;
+      font-size: clamp(4.5rem, 9vw, 8rem);
+      color: var(--fg);
+    }
+    .num-arrow svg {
+      display: block; width: 100%; height: 100%;
+      fill: none; stroke: currentColor; stroke-width: 5.75;
+      stroke-linecap: round; stroke-linejoin: round;
+    }
+    .stat-line { margin: 0; font-size: clamp(1.7rem, 2.7vw, 2.2rem); font-weight: 700; line-height: 1.25; color: var(--fg); -webkit-text-stroke: 0.45px currentColor; paint-order: stroke fill; }
+    .minutes .stat-line { -webkit-text-stroke: 0; paint-order: normal; }
+    .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+    .faq-a p,
+    .aid article p,
+    .two p { font-size: 1.12rem; line-height: 1.55; }
+    .screen.split .prose { font-size: 1.12rem; gap: 0.75rem; margin-top: 0.85rem; }
+
+    .screen.split.close { color: var(--fg); text-align: start; align-items: stretch; }
+    .screen.split.close .kicker { color: var(--muted); }
+    .screen.split.close .price { color: var(--fg); }
+    .screen.split.close .btn { background: var(--fg); color: var(--cream); }
+    .two p { margin-top: 0.8rem; color: var(--muted); max-width: 28rem; }
+    .close { color: var(--cream); text-align: center; align-items: center; }
+    .close .kicker { color: rgb(246 243 234 / 0.7); }
+    .close .price { font-weight: 500; letter-spacing: -0.03em; line-height: 1.15; margin-top: 1.25rem; }
+    .strike { opacity: 0.45; text-decoration: line-through; }
+    .dim { opacity: 0.4; padding: 0 0.6rem; }
+    .close .btn { margin-top: 2rem; }
+    footer {
+      min-height: auto;
+      padding: 2rem 6vw 5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 0.5rem 2rem;
+    }
+    @media (max-height: 720px) {
+      .screen { padding-top: 4.4rem; padding-bottom: 1.4rem; }
+      .screen.split, .hero { padding: 0; }
+      .screen.split .copy { padding: 1.1rem 6vw; gap: 0.55rem; }
+
+      .prose { gap: 0.7rem; margin-top: 1rem; font-size: 1rem; line-height: 1.45; }
+    }
+    @media (max-width: 700px) {
+      .hero { justify-content: flex-end; }
+      .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl, .price { font-size: clamp(2.1rem, 9vw, 2.8rem); }
+      .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line) { font-size: 1.02rem; }
+      .stat-line, .close-lines .title-xl { font-size: 1.5rem; }
+      header.nav { padding: 0.7rem 4vw; gap: 0.45rem; }
+      header.nav .btn { min-height: 2rem; padding: 0 0.65rem; font-size: 0.75rem; }
+      .brand { gap: 0.4rem; font-size: 0.82rem; }
+      .brand img { width: 2rem; height: 2rem; border-radius: 0.4rem; }
+      .hero .player, .hero .player-frame, .hero .player-frame iframe { border-radius: 0.4rem; }
+      .screen.split .copy { padding: 1.15rem 5vw 0.9rem; }
+      .screen.split .prose { font-size: 1.02rem; line-height: 1.4; gap: 0.5rem; }
+      .aid { --aid-icon: 2.15rem; justify-content: flex-start; padding-top: 4.6rem; padding-bottom: 1rem; }
+
+      .aid .points { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.85rem 0.85rem; margin-top: 0.85rem; }
+      .aid h3 { gap: 0.4rem; font-size: 1rem; }
+      .aid article p { font-size: 0.92rem; line-height: 1.4; margin-top: 0.35rem; }
+      .stat-screen .num { font-size: 4.25rem; }
+      .stat-screen .prose { gap: 0.7rem; margin-top: 0.8rem; font-size: 0.92rem; line-height: 1.45; }
+      form { gap: 0.95rem; }
+      input[type="text"], input[type="tel"] { font-size: 1.1rem; padding: 0.45rem 0; }
+    }
+    .screen.minutes { position: relative; }
+    .screen.minutes .copy { min-width: 0; }
+    .screen.minutes .media {
+      position: absolute; z-index: 3; height: auto; overflow: hidden; background: #000;
+      transition: top 0.42s ease-in, bottom 0.42s ease-in, inset-inline-start 0.42s ease-in, inset-inline-end 0.42s ease-in;
+    }
+    .minutes .play-open {
+      position: relative; display: block; width: 100%; height: 100%;
+      padding: 0; border: 0; background: #000; cursor: pointer;
+    }
+    .minutes .play-open img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.28s ease-in; }
+    .minutes.is-playing .play-open img { opacity: 0; transition-delay: 0.42s; }
+    .minutes-stage {
+      position: absolute; z-index: 4; left: 50%; top: 50%;
+      width: min(60vw, calc(60svh * 16 / 9));
+      aspect-ratio: 16 / 9;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
+    .minutes-frame {
+      position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
+      opacity: 0; pointer-events: none; transition: opacity 0.28s ease-in;
+    }
+    .minutes-frame.is-ready { opacity: 1; pointer-events: auto; }
+    .minutes.is-playing .play-btn { opacity: 0; transition: opacity 0.3s ease-in; }
+    .minutes-close {
+      position: absolute; z-index: 5; top: -0.85rem; inset-inline-start: -0.85rem;
+      width: 2.75rem; height: 2.75rem; border: 0; border-radius: 50%;
+      background: var(--cream); color: var(--ink); cursor: pointer;
+      font-size: 1.6rem; line-height: 1;
+      opacity: 0; pointer-events: none; transition: opacity 0.28s ease-in 0.42s;
+    }
+    .minutes.is-playing .minutes-close { opacity: 1; pointer-events: auto; }
+    @media (min-width: 900px) {
+      .screen.minutes .copy { grid-column: 2; }
+      .screen.minutes .media { top: 0; bottom: 0; inset-inline-start: 0; inset-inline-end: 50%; }
+      .screen.minutes.is-playing .media { top: 0; bottom: 0; inset-inline-start: 0; inset-inline-end: 0; }
+    }
+    @media (max-width: 899px) {
+      .screen {
+        height: 100dvh;
+        min-height: 100dvh;
+        max-height: 100dvh;
+      }
+      .screen.split {
+        grid-template-columns: 1fr;
+        grid-template-rows: 33.333dvh minmax(0, 1fr);
+        padding: 0;
+      }
+      .screen.split .copy {
+        justify-content: flex-start;
+        position: relative;
+        padding: 0.8rem 5vw 0.6rem;
+        gap: 0.4rem;
+        overflow: visible;
+      }
+      .copy h2, .copy h3, .aid > h2 { font-size: clamp(1.28rem, 5.2vw, 1.58rem); line-height: 1.12; }
+      .screen.split .num { font-size: 3.15rem; }
+      .stat-line, .close-lines .title-xl { font-size: 1.12rem; line-height: 1.2; }
+      .screen.split .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+      .faq-a p { font-size: 0.9rem; line-height: 1.3; }
+      .screen.split .prose { gap: 0.35rem; margin-top: 0.15rem; }
+      .faq-q { padding: 0.42rem 0; font-size: 0.95rem; }
+      .faq-a p { padding-bottom: 0.4rem; }
+      .faq-list { overflow: hidden; max-height: none; }
+      .close .btn { margin-top: 0.8rem; }
+      @media (max-height: 760px) {
+        .screen.split .num { font-size: 2.55rem; }
+        .stat-line, .close-lines .title-xl { font-size: 1.02rem; }
+        .screen.split .prose p,
+        .screen.split .copy > p,
+        .faq-a p { font-size: 0.8rem; line-height: 1.24; }
+        .copy h2, .copy h3, .aid > h2 { font-size: 1.22rem; }
+        .aid { padding-top: 3.5rem; --aid-icon: 1.65rem; }
+        .aid .points { gap: 0.45rem 0.55rem; margin-top: 0.45rem; }
+        .aid h3 { font-size: 0.88rem; }
+        .aid article p { font-size: 0.78rem; line-height: 1.28; margin-top: 0.2rem; }
+      }
+      .screen.split .copy > .kicker:first-child,
+      .hero .copy > .kicker:first-child {
+        position: absolute;
+        top: 0.15rem;
+        margin: 0;
+      }
+      .screen.split.close .copy > .kicker:first-child { position: static; }
+      .screen.split .copy h2,
+      .screen.split .copy h3,
+      .screen.split .copy .title-xl,
+      .screen.split .copy .stat-line,
+      .screen.split .copy .stat-figure,
+      .hero .copy h1 { margin-top: 0; }
+      .hero { justify-content: stretch; padding: 0; }
+      .hero-grid {
+        flex: 1;
+        height: 100%;
+        min-height: 0;
+        grid-template-rows: 33.333dvh minmax(0, 1fr);
+        align-items: stretch;
+        align-content: stretch;
+        gap: 0;
+        padding: 0;
+      }
+      .hero-film { order: -1; position: relative; height: 33.333dvh; min-height: 0; }
+      .hero .player,
+      .hero .player-frame,
+      .hero .player-frame iframe { height: 100%; border-radius: 0; }
+      .hero .player-frame { aspect-ratio: auto; }
+      .hero .copy { position: relative; padding: 1.15rem 5vw 0.9rem; }
+      .hero-film .player-meta {
+        position: absolute; bottom: 0.45rem; inset-inline: 0.8rem; margin: 0;
+        width: auto; max-width: calc(100% - 1.6rem);
+        color: var(--cream); text-shadow: 0 1px 8px rgb(0 0 0 / 0.45);
+      }
+      .screen.minutes .copy { grid-row: 2; }
+      .screen.minutes .media { top: 0; height: 33.333dvh; bottom: auto; inset-inline: 0; }
+      .screen.minutes.is-playing .media { top: 0; bottom: 0; height: auto; inset-inline: 0; }
+    }
+    @media (max-width: 899px) and (max-height: 780px) {
+      .screen.split .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+      .faq-a p { font-size: 0.78rem; line-height: 1.22; }
+      .screen.split .num { font-size: 2.3rem; }
+      .screen.split .copy { gap: 0.25rem; padding-top: 0.55rem; padding-bottom: 0.4rem; }
+    }
+    @media (max-width: 899px) {
+      .screen.split .media::after,
+      .hero-film::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        height: 58%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .photo-dark .media::after,
+      .hero-film::after { background: linear-gradient(to top, rgb(10 16 22 / 0.72), transparent); }
+      .photo-light .media::after { background: linear-gradient(to top, rgb(246 243 234 / 0.78), transparent); }
+      .screen.split .on-photo,
+      .hero .copy h1.on-photo {
+        position: absolute;
+        z-index: 5;
+        inset-inline: 5vw;
+        bottom: calc(100% + 0.7rem);
+        margin: 0;
+        font-size: clamp(1.85rem, 7.4vw, 2.45rem);
+        line-height: 1.12;
+        font-weight: 500;
+      }
+      .photo-dark .on-photo,
+      .hero .on-photo { color: #f7f4ec; text-shadow: 0 1px 14px rgb(0 0 0 / 0.45); }
+      .photo-light .on-photo { color: #14202b; text-shadow: 0 1px 12px rgb(246 243 234 / 0.7); }
+      .hero .on-photo .mark { color: #f1e51d; }
+      .aid > h2 { font-size: clamp(1.85rem, 7.2vw, 2.35rem); }
+      .screen.minutes .copy { z-index: 4; }
+      html { scroll-snap-type: none; overflow-x: hidden; touch-action: none; }
+      body { overflow-x: hidden; max-width: 100%; }
+      .wash { inset: 0; transform: none; }
+      .screen {
+        height: var(--frame, 100dvh);
+        min-height: var(--frame, 100dvh);
+        max-height: var(--frame, 100dvh);
+        overflow: hidden;
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+      }
+      .screen.split { grid-template-rows: var(--photo, 33.333dvh) minmax(0, 1fr); }
+      .hero-grid { height: 100%; grid-template-rows: var(--photo, 33.333dvh) minmax(0, 1fr); }
+      .hero-film { height: 100%; }
+      .hero .copy h1.on-photo,
+      .screen.split.minutes h2.on-photo {
+        position: static;
+        inset: auto;
+        bottom: auto;
+        margin: 0.35rem 0 0;
+      }
+      .screen.split.minutes h2.on-photo { color: var(--fg); text-shadow: none; }
+      .screen.faq-screen .copy.faq { overflow: visible; }
+      .screen.minutes .media { height: var(--photo, 33.333dvh); }
+    }
+    @media (max-width: 899px) {
+      .screen.split .copy > .kicker:first-child {
+        position: static;
+        top: auto;
+        margin: 0 0 0.4rem;
+      }
+      .screen.split .num,
+      .screen.split .num-arrow { font-size: 3.15rem; }
+      .screen.split .num-arrow { height: 0.68em; width: 0.4em; }
+    }
+    @media (max-width: 899px) and (max-height: 780px) {
+      .screen.split .num,
+      .screen.split .num-arrow { font-size: 2.3rem; }
+    }
+  
+    }
+  </style>
+</head>
+<body>
+  <div class="desk">
+
+  <header class="nav">
+    <a class="brand" href="#top"><img src="../images/logo.jpeg" alt="" /><span>חב"ד למטייל סאו פאולו</span></a>
+    <a class="btn" href="#form">השארת פרטים</a>
+  </header>
+  <nav class="rail" aria-label="מיקום בעמוד"></nav>
+
+  <main>
+    <section class="screen hero tone-light" id="top" data-bg="../images/hero-garden.jpg" data-label="פתיח">
+      <div class="hero-grid">
+        <div class="copy">
+          <h1 class="on-photo">הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, <span class="mark">עכשיו ללוחמים שלנו!</span></h1>
+        </div>
+        <div class="hero-film">
+          <div class="player">
+            <div class="player-frame">
+              <div id="yt-player"></div>
+              <div class="cue" id="cue" hidden><p></p></div>
+            </div>
+          </div>
+          <div class="player-meta">
+            <p>In Waves and War</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen split flip" data-label="סטנפורד">
+      <div class="media"><img src="../images/stanford.jpg" alt="" /></div>
+      <div class="copy">
+        <p class="kicker">אוניברסיטת סטנפורד</p>
+        <div class="stat-figure">
+          <p class="num">90%</p>
+          <span class="num-arrow" aria-hidden="true"><svg viewBox="0 0 40 64"><path d="M20 4v48"/><path d="M2 34l18 20 18-20"/></svg></span>
+        </div>
+        <p class="stat-line">ירידה בסימפטומים בקרב<br>30 לוחמי קומנדו</p>
+        <div class="prose">
+          <p>ב-18 באפריל 2026, באירוע חגיגי בבית הלבן, חתם הנשיא טראמפ על צו המזרז את המחקר והשימוש באייבוגן, חומר המופק משורש של שיח אפריקאי, שהוכיח את עצמו בשנים האחרונות כפתרון קסם ללוחמי יחידות עילית הסובלים פוסט טראומה, דכאון, חרדה ופגיעות מוחיות.</p>
+          <p>מה ששכנע את טראמפ לנקוט בצעד כה דרמטי ויוצא הדופן, הן תוצאותיו הדרמטיות ויוצאות הדופן של מחקר שערכה אוניברסיטת סטנפורד בקרב 30 לוחמי קומנדו אמריקאים. המחקר הראה כי לוחמים שעברו טיפול באייבוגן חוו ירידה של כ-90% בסימפטומים הקשים מהם הם סבלו בעקבות חשיפה למוות, אובדן, אלימות ופעמים רבות גם פגיעות פיזיות במהלך שירותם הצבאי.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen split photo-dark" data-label="מתנת חיים">
+      <div class="media"><img src="../images/hero-garden.jpg" alt="" /></div>
+      <div class="copy">
+        <h2 class="on-photo">חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
+        <div class="prose">
+          <p>כהוקרה על התרומה האדירה שלך למדינת ישראל ולעם היהודי, חב"ד סאו פאולו השיג תרומה יעודית המאפשרת לנו לסדר לכם טיפול פה, בברזיל, עם מעטפת מקצועית ורפואית.</p>
+          <p style="color:var(--muted)">מדוע דווקא בברזיל? בעוד ארה"ב מגלה את האייבוגן רק בשנים האחרונות, במדינת סאו פאולו השימוש בו מוסדר וחוקי כבר עשרות שנים. הניסיון הרב שנאסף בקרב הרופאים והמוסדות העוסקים בכך, מבטיח טיפול מקצועי ובטוח. אז אם אתם מגיעים לדרום אמריקה בכדי לנקות את הראש או מעוניינים להגיע עד לפה בכדי לזכות בהתחלה חדשה, אתם מוזמנים להשאיר פרטים.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen split flip photo-dark" data-label="זכאות">
+      <div class="media"><img src="../images/eligibility.jpg" alt="" /></div>
+      <div class="copy">
+        <div>
+          <h2 class="on-photo">מי זכאי למתנת חיים?</h2>
+          <div class="prose">
+            <p>חיילים המוכרים על ידי משרד הביטחון כסובלים מפוסט טראומה.</p>
+            <p class="or">או</p>
+            <p>אנחנו יודעים שקבלת הכרה על ידי משרד הביטחון לוקחת זמן והתעסקות. אם אתם חיילי מילואים או סדיר, ששרתו למעלה מ-200 ימים במלחמה גם אתם מוזמנים להשאיר פרטים ונחזור אליכם לשיחת סינון.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen split photo-dark" id="form" data-label="פרטים">
+      <div class="media"><img src="../images/form-desk.jpg" alt="" /></div>
+      <div class="copy">
+        <form id="lead-form" novalidate>
+          <h3 class="on-photo">תשאירו פרטים ונחזור אליכם:</h3>
+          <div>
+            <label for="full-name">שם מלא</label>
+            <input id="full-name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div>
+            <label for="phone">טלפון</label>
+            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+          </div>
+          <fieldset>
+            <legend>האם אני</legend>
+            <label class="choice"><input type="radio" name="eligibility" value="מוכר משרד הביטחון" required /> מוכר משרד הביטחון</label>
+            <label class="choice"><input type="radio" name="eligibility" value="שרתתי למעלה מ-200 יום" /> שרתתי למעלה מ-200 יום</label>
+          </fieldset>
+          <p class="err" id="form-err" hidden>שדה חובה</p>
+          <button class="btn" type="submit">שליחת פרטים</button>
+        </form>
+        <div id="lead-ok" hidden>
+          <h3>קיבלנו. נחזור אליכם.</h3>
+          <p style="color:var(--muted);margin-top:0.75rem">תודה. הפרטים נקלטו ונחזור אליכם לשיחת סינון.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="screen aid tone-ink" data-bg="../images/iboga.jpg" data-label="אייבוגן">
+      <h2>במה אייבוגן יכול לסייע</h2>
+      <div class="points">
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18.2C7.2 14.8 5 12.4 5 9.7 5 7.7 6.6 6.2 8.6 6.2c1.2 0 2.3.6 3.4 1.8 1.1-1.2 2.2-1.8 3.4-1.8 2 0 3.6 1.5 3.6 3.5 0 2.7-2.2 5.1-7 8.5z"/></svg>שחרור רגשי</h3>
+          <p>עבודה על הזיכרונות והדפוסים שעוצרים אתכם - פוסט-טראומה, דיכאון, חרדה ותגובות לחץ.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.5h9.2a2.8 2.8 0 0 0 .5-5.5 3.7 3.7 0 0 0-7.1-1.1A2.9 2.9 0 0 0 7 16.5z"/><path d="M8 19.2h7"/></svg>מפוגג ערפל מוחי</h3>
+          <p>מחקרים שכללו צילומי MRI לפני ואחרי הראו שינויים במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית האחראית על פונקציות ניהוליות כמו תכנון, מיקוד וקשב.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 4.8a6.4 6.4 0 1 0 4.2 10.8A5.3 5.3 0 0 1 15.2 4.8z"/></svg>שינה והתאוששות</h3>
+          <p>ויסות מערכת העצבים, חזרה לשינה תקינה ובניית תשתית לרווחה לטווח ארוך.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"/><circle cx="12" cy="12" r="7.2"/></svg>קהות רגשית והמנעות</h3>
+          <p>ניתוק רגשי ממשפחה ובנות זוג, אובדן יכולת להרגיש שמחה (אנהדוניה), והימנעות אקטיבית ממקומות, אנשים או טריגרים המזכירים את הטראומה.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12h3.5l2-6 4 12 2-6h7.5"/></svg>דריכות יתר  ועוררות</h3>
+          <p>שהייה רציפה במצב הישרדותי (Fight or Flight), תגובות בהלה מוגזמות לרעשים או תנועות, קושי להרפות ולהירגע, התפרצויות זעם ועצבנות קיצונית.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="screen split flip photo-dark" data-label="התייעצות">
+      <div class="media"><img src="../images/consult.jpg" alt="" /></div>
+      <div class="copy">
+        <p class="title-xl on-photo">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</p>
+        <a class="btn" href="#form">לפרטים והרשמה</a>
+      </div>
+    </section>
+
+    <section class="screen split minutes photo-dark" data-label="60 Minutes">
+      <div class="media">
+        <button type="button" class="play-open" aria-label="נגן את התחקיר של 60 Minutes">
+          <img src="../images/60minutes.jpg" alt="60 Minutes" />
+          <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></span>
+        </button>
+        <div class="minutes-stage">
+          <iframe class="minutes-frame" title="60 Minutes" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <button type="button" class="minutes-close" aria-label="סגור את הסרטון">×</button>
+        </div>
+      </div>
+      <div class="copy">
+        <p class="kicker">60 Minutes</p>
+        <p class="stat-line">צפו בתחקיר 60Minutes - תוכנית התחקירים המובילה באמריקה:</p>
+        <h2 class="on-photo">הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
+      </div>
+    </section>
+
+    <section class="screen split flip photo-light" data-label="השורש">
+      <div class="media"><img src="../images/iboga.jpg" alt="שיח איבוגה" /></div>
+      <div class="copy">
+        <h2 class="on-photo">אייבוגן- התרופה שמסתתרת בשורש</h2>
+        <p>אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה (PTSD) ובהתמכרויות.</p>
+      </div>
+    </section>
+
+    <section class="screen split photo-dark" data-label="איך זה עובד">
+      <div class="media"><img src="../images/iboga-fruit.jpg" alt="" /></div>
+      <div class="copy">
+        <h3 class="on-photo">איך זה עובד בפועל?</h3>
+        <p style="color:var(--muted)">אייבוגאין פועל במקביל על המון נקודות במוח כדי לעזור לו לבנות קשרים עצביים חדשים מחוץ למעגל הטראומה. בניגוד לחומרים פסיכדליים רגילים שעלולים לנתק אותך מהמציאות, אייבוגאין מכניס את המטופל למצב שדומה לחלום בהקיץ - מסע פנימי אינטנסיבי מאוד שנמשך 12 עד 36 שעות רצופות.</p>
+        <p style="color:var(--muted)">במהלך השעות האלה, המטופל לרוב רואה את אירועי החיים שלו רצים מולו כמו סרט, מתמודד ראש בראש עם שורש הטראומה שיושבת לו בראש, ומשחרר את המטען הרגשי והפיזי שתקוע שם. חשוב מאוד לציין, ברוב המוחלט של המקרים לא מדובר בחוויה נעימה או קלה. זו לא "סטלה" של בריחה, אלא עבודת עומק שנועדה לפרק את הכאב מהיסוד.</p>
+      </div>
+    </section>
+
+    <section class="screen split flip photo-dark" data-label="מעטפת">
+      <div class="media"><img src="../images/clinic.jpg" alt="חדר טיפול קליני" /></div>
+      <div class="copy">
+        <p class="kicker" style="color:var(--green)">מעטפת רפואית</p>
+        <h2 class="on-photo">טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
+        <p style="color:var(--muted)">המסע הזה הוא לא משחק, והוא חייב להיעשות באחריות מקסימלית. אייבוגאין משפיע ישירות על מערכת העצבים – הוא יכול להוריד את קצב הדופק ולשנות את הפעילות החשמלית של הלב. לכן, הטיפול חייב להתבצע אך ורק בקליניקה רפואית, תחת השגחת רופא וחיבור למוניטור. לפני שבכלל מתחילים, כל מטופל עובר סינון שכולל א.ק.ג ובדיקות דם כדי לוודא שאין לו בעיות לב רקע שיכולות לסכן אותו.</p>
+      </div>
+    </section>
+
+    <section class="screen split faq-screen photo-dark" data-label="שאלות">
+      <div class="media"><img src="../images/faq.jpg" alt="" /></div>
+      <div class="copy faq">
+      <h2 class="on-photo">שאלות ותשובות</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">איך נראה הטיפול?</button>
+          <div class="faq-a"><div><p>שורש האייבוגה הוא הלוצינוגן שנמצא בשימוש של תרבויות ילידיות באפריקה כבר מאות שנים. מחקרים מהשנים האחרונות מראים כי שימוש חד-פעמי בו מוביל לתיקון של פגיעות מוחיות ולריפוי טראומות, וישנם סימנים מעודדים המראים אף על סיוע בטיפול בפרקינסון, אלצהיימר ומחלות נוירולוגיות נוספות.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">אז למה לא לקחת אותו בבית?</button>
+          <div class="faq-a"><div><p>בניגוד לחומרים אחרים, השימוש באייבוגה שלא במסגרת רפואית מסוכן. לקיחתו מובילה לאטקסיה (אובדן שיווי משקל וקואורדינציה) למשך 12–24 שעות, ומצריכה מעקב רפואי צמוד אחר פעילות הלב. חשוב לדעת: הטיפול ניתן במסגרת קלינית בניטור מלא, אך ורק לאחר בדיקות סינון שנעשות במקום</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">מה קורה במהלך הטיפול?</button>
+          <div class="faq-a"><div><p>המטופל שוכב על מיטה במשך כ-12 שעות, עם עיניים מכוסות, בשעה שהחומר עובד. רוב המשתמשים מדווחים על חזיונות המעלים אירועים טראומטיים ומשמעותיים. צילומי MRI שנעשו לחיילים לפני ואחרי הטיפול הראו שינויים לטובה במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">האם יש תועלות ושימושים נוספים לאייבוגה?</button>
+          <div class="faq-a"><div><p>הטיפול בשורש האייבוגה נחשב כבר עשרות שנים לטיפול פורץ דרך בהתמכרויות - מסיגריות, מריחואנה ואלכוהול ועד לסמים הקשים ביותר. בניגוד לטיפולי גמילה אחרים, מטופלים רבים מדווחים על סימני גמילה מופחתים משמעותית לאחר הטיפול.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">מה כוללת מתנת חיים?</button>
+          <div class="faq-a"><div><p>מעטפת לוגיסטית מלאה בשבוע של הטיפול הכולת: לינה, אוכל כשר, הסעות, ליווי, שיחה מקדימה עם איש טיפול ושיחת אינטגרציה לאחריו.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">מה לא כוללת מתנת חיים?</button>
+          <div class="faq-a"><div><p>טיסה מישראל לסאו פאולו ובחזרה.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">למה ברזיל?</button>
+          <div class="faq-a"><div><p>בזמן שרוב העולם עדיין מנסה להבין איך לגשת לטיפול הזה, לברזיל יש כבר כמה עשורים של ניסיון קליני, חוקי ומפוקח עם אייבוגאין. ברחבי ברזיל פועלות קליניקות שלמות המנוהלות על ידי רופאים ופסיכיאטרים שמתמחים ספציפית בעבודה עם השורש הזה. הם למדו לשלב את העוצמה של החומר עם פרוטוקולים מחמירים של רפואה מערבית, כדי להעניק ללוחמים סביבה בטוחה, מקצועית ומבוקרת לחלוטין.</p></div></div>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <section class="screen split flip close" data-label="סיום">
+      <div class="media"><img src="../images/close-house.jpg" alt="" /></div>
+      <div class="copy">
+      <p class="kicker">חב"ד למטייל סאו פאולו - ברזיל</p>
+      <p class="kicker">בשיתוף בית חב"ד למטייל</p>
+      <p class="kicker">סאו פאולו, ברזיל</p>
+      <p class="price">
+        <span class="strike">$8,500 במקסיקו</span>
+        <span class="dim">←</span>
+        <span>בחינם עבורכם</span>
+      </p>
+      <div class="close-lines">
+        <p class="title-xl">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
+        <p class="title-xl">אנחנו אוהבים אתכם. מגיע לכם. <span class="heart" aria-hidden="true">♥</span></p>
+      </div>
+      <a class="btn" href="https://arsenlf.github.io/ibogaine/#contact" target="_blank" rel="noopener noreferrer">לפרטים והרשמה</a>
+      </div>
+    </section>
+  </main>
+
+
+
+  
+  </div>
+  <div class="mob">
+<div class="page" dir="rtl" lang="he">
+  <header class="hdr">
+    <a class="brand" href="#m-top"><img src="../images/logo.jpeg" width="32" height="32" alt="" /><span>חב"ד למטייל סאו פאולו</span></a>
+    <a class="pill" href="#m-form">השארת פרטים</a>
+    <button class="menu-btn" type="button" id="m-open-sheet" aria-label="פרקי הדף" aria-haspopup="dialog">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+  </header>
+  <div class="bar" aria-hidden="true"><i id="m-prog"></i></div>
+
+  <main>
+    <!-- 1 -->
+    <section class="open" id="m-top" aria-labelledby="m-h-top">
+      <span class="flag">תצוגה מקדימה</span>
+      <img src="../images/hero-garden.jpg" width="430" height="347" alt="" fetchpriority="high" decoding="async" />
+      <div class="over">
+        <h1 id="m-h-top">הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, <span class="mark">עכשיו ללוחמים שלנו!</span></h1>
+        <p class="who">חב"ד למטייל סאו פאולו — ברזיל</p>
+        <a class="pill" href="#m-form">השארת פרטים</a>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section class="sec" id="m-trailer" aria-labelledby="m-h-trailer">
+      <div class="inner"><p class="kicker" id="m-h-trailer"><bdi dir="ltr">In Waves and War</bdi></p></div>
+      <div class="media rise" data-yt="ao8tiqnuS3Y" data-title="In Waves and War — Official Trailer">
+        <img src="https://i.ytimg.com/vi/ao8tiqnuS3Y/hqdefault.jpg" width="430" height="242" alt="תמונת פתיחה מתוך הסרט התיעודי In Waves and War" loading="lazy" decoding="async" />
+        <button class="play" type="button" aria-label="נגן את הטריילר של In Waves and War"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></i></button>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section class="sec" id="m-stanford" aria-labelledby="m-h-stanford">
+      <figure class="rise"><img src="../images/stanford.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="stat rise">
+        <p class="kicker" id="m-h-stanford">אוניברסיטת סטנפורד</p>
+        <div class="row">
+          <span class="num"><bdi dir="ltr">90%</bdi></span>
+          <svg viewBox="0 0 40 64" aria-hidden="true"><path d="M20 4v48"/><path d="M2 34l18 20 18-20"/></svg>
+        </div>
+        <p class="desc">ירידה בסימפטומים בקרב<br /><bdi dir="ltr">30</bdi> לוחמי קומנדו</p>
+      </div>
+      <div class="inner rise">
+        <p>ב-18 באפריל 2026, באירוע חגיגי בבית הלבן, חתם הנשיא טראמפ על צו המזרז את המחקר והשימוש באייבוגן, חומר המופק משורש של שיח אפריקאי, שהוכיח את עצמו בשנים האחרונות כפתרון קסם ללוחמי יחידות עילית הסובלים פוסט טראומה, דכאון, חרדה ופגיעות מוחיות.</p>
+        <p class="muted">מה ששכנע את טראמפ לנקוט בצעד כה דרמטי ויוצא הדופן, הן תוצאותיו הדרמטיות ויוצאות הדופן של מחקר שערכה אוניברסיטת סטנפורד בקרב 30 לוחמי קומנדו אמריקאים. המחקר הראה כי לוחמים שעברו טיפול באייבוגן חוו ירידה של כ-90% בסימפטומים הקשים מהם הם סבלו בעקבות חשיפה למוות, אובדן, אלימות ופעמים רבות גם פגיעות פיזיות במהלך שירותם הצבאי.</p>
+        <p class="bridge rise">אבל מה עם החיילים שלנו?</p>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section class="sec" id="m-offer" aria-labelledby="m-h-offer">
+      <figure class="rise"><img src="../images/sao-paulo.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <h2 id="m-h-offer">חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
+        <p class="lede rise">כהוקרה על התרומה האדירה שלך למדינת ישראל ולעם היהודי, חב"ד סאו פאולו השיג תרומה יעודית המאפשרת לנו לסדר לכם טיפול פה, בברזיל, עם מעטפת מקצועית ורפואית.</p>
+        <p class="muted rise">מדוע דווקא בברזיל? בעוד ארה"ב מגלה את האייבוגן רק בשנים האחרונות, במדינת סאו פאולו השימוש בו מוסדר וחוקי כבר עשרות שנים. הניסיון הרב שנאסף בקרב הרופאים והמוסדות העוסקים בכך, מבטיח טיפול מקצועי ובטוח. אז אם אתם מגיעים לדרום אמריקה בכדי לנקות את הראש או מעוניינים להגיע עד לפה בכדי לזכות בהתחלה חדשה, אתם מוזמנים להשאיר פרטים.</p>
+        <button class="jump-inline" type="button" data-sheet>דילוג לפרק אחר בדף</button>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section class="sec decision" id="m-eligibility" aria-labelledby="m-h-elig">
+      <div class="inner"><h2 id="m-h-elig">מי זכאי למתנת חיים?</h2></div>
+      <figure class="rise"><img src="../images/eligibility.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <p class="lede">חיילים המוכרים על ידי משרד הביטחון כסובלים מפוסט טראומה.</p>
+        <p class="kicker" style="margin-block-start:16px">או</p>
+        <p class="lede">אנחנו יודעים שקבלת הכרה על ידי משרד הביטחון לוקחת זמן והתעסקות. אם אתם חיילי מילואים או סדיר, ששרתו למעלה מ-200 ימים במלחמה גם אתם מוזמנים להשאיר פרטים ונחזור אליכם לשיחת סינון.</p>
+        <a class="pill wide" href="#m-form">השארת פרטים</a>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section class="sec decision" id="m-form" aria-labelledby="m-h-form">
+      <div class="inner"><h2 id="m-h-form" tabindex="-1">תשאירו פרטים ונחזור אליכם:</h2></div>
+      <figure class="rise"><img src="../images/form-desk.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <form id="m-lead" novalidate style="margin-block-start:0">
+          <div class="field">
+            <label for="m-nm">שם מלא</label>
+            <input id="m-nm" name="name" type="text" dir="auto" autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="m-ph">טלפון</label>
+            <input id="m-ph" name="phone" type="tel" dir="ltr" inputmode="tel" autocomplete="tel" />
+          </div>
+          <fieldset>
+            <legend>האם אני</legend>
+            <label class="choice"><input type="radio" name="elig" value="מוכר משרד הביטחון" /> מוכר משרד הביטחון</label>
+            <label class="choice"><input type="radio" name="elig" value="שרתתי למעלה מ-200 יום" /> שרתתי למעלה מ-200 יום</label>
+          </fieldset>
+          <p style="margin-block-start:22px"><button class="pill wide" type="button" id="m-send">שליחת פרטים</button></p>
+          <p style="margin-block-start:12px"><button class="pill wide ghost" type="button" id="m-cal">תיאום שיחה ביומן</button></p>
+          <p class="note">זוהי תצוגה מקדימה של העיצוב בלבד. הטופס אינו מחובר לשום מערכת ושום פרט שתקלידו כאן לא נשלח ולא נשמר.</p>
+        </form>
+        <div id="m-done" hidden>
+          <h3>כך תיראה הודעת התודה</h3>
+          <p class="muted" style="margin-block-start:10px">בגרסה החיה יופיע כאן אישור קליטת הפרטים. בתצוגה המקדימה הזו לא נשלח דבר.</p>
+          <p style="margin-block-start:16px"><button class="jump-inline" type="button" id="m-back">חזרה לטופס</button></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section class="sec dark" id="m-symptoms" aria-labelledby="m-h-symp">
+      <div class="inner"><h2 id="m-h-symp">במה אייבוגן יכול לסייע</h2></div>
+      <div class="list">
+        <article class="rise">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18.2C7.2 14.8 5 12.4 5 9.7 5 7.7 6.6 6.2 8.6 6.2c1.2 0 2.3.6 3.4 1.8 1.1-1.2 2.2-1.8 3.4-1.8 2 0 3.6 1.5 3.6 3.5 0 2.7-2.2 5.1-7 8.5z"/></svg>שחרור רגשי</h3>
+          <p>עבודה על הזיכרונות והדפוסים שעוצרים אתכם - פוסט-טראומה, דיכאון, חרדה ותגובות לחץ.</p>
+        </article>
+        <article class="rise">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.5h9.2a2.8 2.8 0 0 0 .5-5.5 3.7 3.7 0 0 0-7.1-1.1A2.9 2.9 0 0 0 7 16.5z"/><path d="M8 19.2h7"/></svg>מפוגג ערפל מוחי</h3>
+          <p>מחקרים שכללו צילומי <bdi dir="ltr">MRI</bdi> לפני ואחרי הראו שינויים במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית האחראית על פונקציות ניהוליות כמו תכנון, מיקוד וקשב.</p>
+        </article>
+        <article class="rise">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 4.8a6.4 6.4 0 1 0 4.2 10.8A5.3 5.3 0 0 1 15.2 4.8z"/></svg>שינה והתאוששות</h3>
+          <p>ויסות מערכת העצבים, חזרה לשינה תקינה ובניית תשתית לרווחה לטווח ארוך.</p>
+        </article>
+        <article class="rise">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"/><circle cx="12" cy="12" r="7.2"/></svg>קהות רגשית והמנעות</h3>
+          <p>ניתוק רגשי ממשפחה ובנות זוג, אובדן יכולת להרגיש שמחה (אנהדוניה), והימנעות אקטיבית ממקומות, אנשים או טריגרים המזכירים את הטראומה.</p>
+        </article>
+        <article class="rise">
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12h3.5l2-6 4 12 2-6h7.5"/></svg>דריכות יתר ועוררות</h3>
+          <p>שהייה רציפה במצב הישרדותי <bdi dir="ltr">(Fight or Flight)</bdi>, תגובות בהלה מוגזמות לרעשים או תנועות, קושי להרפות ולהירגע, התפרצויות זעם ועצבנות קיצונית.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section class="sec" id="m-consult" aria-labelledby="m-h-cons">
+      <figure class="rise"><img src="../images/consult.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <h2 id="m-h-cons">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</h2>
+        <a class="pill wide" href="#m-form">לפרטים והרשמה</a>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section class="sec" id="m-minutes" aria-labelledby="m-h-min">
+      <div class="inner"><p class="kicker" id="m-h-min"><bdi dir="ltr">60 Minutes</bdi></p></div>
+      <div class="media rise" data-yt="_zpe_G8_k1s" data-title="60 Minutes">
+        <img src="../images/60minutes.jpg" width="430" height="242" alt="תמונת פתיחה מתוך התחקיר של 60 Minutes" loading="lazy" decoding="async" />
+        <button class="play" type="button" aria-label="נגן את התחקיר של 60 Minutes"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></i></button>
+      </div>
+      <div class="inner rise">
+        <p class="emph">צפו בתחקיר <bdi dir="ltr">60Minutes</bdi> - תוכנית התחקירים המובילה באמריקה:</p>
+        <h2 style="margin-block-start:14px">הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
+      </div>
+    </section>
+
+    <!-- 10 -->
+    <section class="sec" id="m-root" aria-labelledby="m-h-root">
+      <figure class="rise"><img src="../images/iboga.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <h2 id="m-h-root">אייבוגן- התרופה שמסתתרת בשורש</h2>
+        <p class="rise">אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה <bdi dir="ltr">(PTSD)</bdi> ובהתמכרויות.</p>
+      </div>
+    </section>
+
+    <!-- 11 -->
+    <section class="sec" id="m-how" aria-labelledby="m-h-how">
+      <figure class="rise"><img src="../images/iboga-fruit.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <h2 id="m-h-how">איך זה עובד בפועל?</h2>
+        <p class="muted rise">אייבוגאין פועל במקביל על המון נקודות במוח כדי לעזור לו לבנות קשרים עצביים חדשים מחוץ למעגל הטראומה. בניגוד לחומרים פסיכדליים רגילים שעלולים לנתק אותך מהמציאות, אייבוגאין מכניס את המטופל למצב שדומה לחלום בהקיץ - מסע פנימי אינטנסיבי מאוד שנמשך 12 עד 36 שעות רצופות.</p>
+        <p class="muted rise">במהלך השעות האלה, המטופל לרוב רואה את אירועי החיים שלו רצים מולו כמו סרט, מתמודד ראש בראש עם שורש הטראומה שיושבת לו בראש, ומשחרר את המטען הרגשי והפיזי שתקוע שם. חשוב מאוד לציין, ברוב המוחלט של המקרים לא מדובר בחוויה נעימה או קלה. זו לא "סטלה" של בריחה, אלא עבודת עומק שנועדה לפרק את הכאב מהיסוד.</p>
+      </div>
+    </section>
+
+    <!-- 12 -->
+    <section class="sec decision" id="m-safety" aria-labelledby="m-h-safe">
+      <div class="inner">
+        <p class="kicker">מעטפת רפואית</p>
+        <h2 id="m-h-safe" style="margin-block-start:8px">טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
+      </div>
+      <figure class="rise"><img src="../images/clinic.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <p class="lede">המסע הזה הוא לא משחק, והוא חייב להיעשות באחריות מקסימלית. אייבוגאין משפיע ישירות על מערכת העצבים – הוא יכול להוריד את קצב הדופק ולשנות את הפעילות החשמלית של הלב. לכן, הטיפול חייב להתבצע אך ורק בקליניקה רפואית, תחת השגחת רופא וחיבור למוניטור. לפני שבכלל מתחילים, כל מטופל עובר סינון שכולל א.ק.ג ובדיקות דם כדי לוודא שאין לו בעיות לב רקע שיכולות לסכן אותו.</p>
+      </div>
+    </section>
+
+    <!-- 13 -->
+    <section class="sec" id="m-faq" aria-labelledby="m-h-faq">
+      <figure class="rise"><img src="../images/faq.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <h2 id="m-h-faq">שאלות ותשובות</h2>
+        <div class="faq">
+          <details name="faq"><summary>איך נראה הטיפול?</summary><div class="a"><p>שורש האייבוגה הוא הלוצינוגן שנמצא בשימוש של תרבויות ילידיות באפריקה כבר מאות שנים. מחקרים מהשנים האחרונות מראים כי שימוש חד-פעמי בו מוביל לתיקון של פגיעות מוחיות ולריפוי טראומות, וישנם סימנים מעודדים המראים אף על סיוע בטיפול בפרקינסון, אלצהיימר ומחלות נוירולוגיות נוספות.</p></div></details>
+          <details name="faq"><summary>אז למה לא לקחת אותו בבית?</summary><div class="a"><p>בניגוד לחומרים אחרים, השימוש באייבוגה שלא במסגרת רפואית מסוכן. לקיחתו מובילה לאטקסיה (אובדן שיווי משקל וקואורדינציה) למשך 12–24 שעות, ומצריכה מעקב רפואי צמוד אחר פעילות הלב. חשוב לדעת: הטיפול ניתן במסגרת קלינית בניטור מלא, אך ורק לאחר בדיקות סינון שנעשות במקום.</p></div></details>
+          <details name="faq"><summary>מה קורה במהלך הטיפול?</summary><div class="a"><p>המטופל שוכב על מיטה במשך כ-12 שעות, עם עיניים מכוסות, בשעה שהחומר עובד. רוב המשתמשים מדווחים על חזיונות המעלים אירועים טראומטיים ומשמעותיים. צילומי <bdi dir="ltr">MRI</bdi> שנעשו לחיילים לפני ואחרי הטיפול הראו שינויים לטובה במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית.</p></div></details>
+          <details name="faq"><summary>האם יש תועלות ושימושים נוספים לאייבוגה?</summary><div class="a"><p>הטיפול בשורש האייבוגה נחשב כבר עשרות שנים לטיפול פורץ דרך בהתמכרויות - מסיגריות, מריחואנה ואלכוהול ועד לסמים הקשים ביותר. בניגוד לטיפולי גמילה אחרים, מטופלים רבים מדווחים על סימני גמילה מופחתים משמעותית לאחר הטיפול.</p></div></details>
+          <details name="faq"><summary>מה כוללת מתנת חיים?</summary><div class="a"><p>מעטפת לוגיסטית מלאה בשבוע של הטיפול הכולת: לינה, אוכל כשר, הסעות, ליווי, שיחה מקדימה עם איש טיפול ושיחת אינטגרציה לאחריו.</p></div></details>
+          <details name="faq"><summary>מה לא כוללת מתנת חיים?</summary><div class="a"><p>טיסה מישראל לסאו פאולו ובחזרה.</p></div></details>
+          <details name="faq"><summary>למה ברזיל?</summary><div class="a"><p>בזמן שרוב העולם עדיין מנסה להבין איך לגשת לטיפול הזה, לברזיל יש כבר כמה עשורים של ניסיון קליני, חוקי ומפוקח עם אייבוגאין. ברחבי ברזיל פועלות קליניקות שלמות המנוהלות על ידי רופאים ופסיכיאטרים שמתמחים ספציפית בעבודה עם השורש הזה. הם למדו לשלב את העוצמה של החומר עם פרוטוקולים מחמירים של רפואה מערבית, כדי להעניק ללוחמים סביבה בטוחה, מקצועית ומבוקרת לחלוטין.</p></div></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14 -->
+    <section class="sec decision" id="m-close" aria-labelledby="m-h-close">
+      <figure class="rise"><img src="../images/close-house.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
+      <div class="inner">
+        <p class="kicker">בשיתוף בית חב"ד למטייל<br />סאו פאולו, ברזיל</p>
+        <p class="price" id="m-h-close"><span class="was"><bdi dir="ltr">$8,500</bdi> במקסיקו</span> <span class="arrow">←</span> בחינם עבורכם</p>
+        <p class="emph">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
+        <p class="emph">אנחנו אוהבים אתכם. מגיע לכם. <span class="heart">♥</span></p>
+        <a class="pill wide" href="https://arsenlf.github.io/ibogaine/#contact" target="_blank" rel="noopener noreferrer">לפרטים והרשמה</a>
+        <p class="note">הקישור הזה יוצא מהתצוגה המקדימה אל האתר החיצוני הקיים.</p>
+        <button class="jump-inline" type="button" data-sheet style="margin-block-start:14px">דילוג לפרק אחר בדף</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>תצוגה מקדימה של עיצוב מובייל. הטקסט לקוח ממסמך המקור; ההבדלים מפורטים בהודעה המלווה. הטופס אינו פעיל.</footer>
+</div>
+
+<dialog class="sheet" id="m-sheet" dir="rtl" lang="he" aria-label="פרקי הדף">
+  <div class="sheet-top">
+    <h2>פרקי הדף</h2>
+    <button class="sheet-x" type="button" id="m-close-sheet" aria-label="סגירה">&times;</button>
+  </div>
+  <nav id="m-chapters"></nav>
+</dialog>
+
+
+  </div>
+  <script>
+if (window.matchMedia('(min-width: 900px)').matches) {
+
+    var minutes = document.querySelector(".minutes");
+    var minutesButton = minutes.querySelector(".play-open");
+    var minutesClose = minutes.querySelector(".minutes-close");
+    var minutesTimer = 0;
+    function openMinutes() {
+      if (minutes.classList.contains("is-playing")) return;
+      window.clearTimeout(minutesTimer);
+      minutes.classList.add("is-playing");
+      minutesTimer = window.setTimeout(function () {
+        var frame = minutes.querySelector(".minutes-frame");
+        if (!frame.getAttribute("src")) {
+          frame.src = "https://www.youtube.com/embed/_zpe_G8_k1s?autoplay=1&rel=0&playsinline=1&hl=he";
+        }
+        frame.classList.add("is-ready");
+      }, 440);
+    }
+    function closeMinutes() {
+      var frame = minutes.querySelector(".minutes-frame");
+      window.clearTimeout(minutesTimer);
+      frame.classList.remove("is-ready");
+      minutes.classList.remove("is-playing");
+      minutesTimer = window.setTimeout(function () { frame.removeAttribute("src"); }, 440);
+    }
+    minutesButton.addEventListener("click", openMinutes);
+    minutesClose.addEventListener("click", closeMinutes);
+    document.querySelectorAll(".faq-item").forEach(function (item) {
+      var button = item.querySelector(".faq-q");
+      button.addEventListener("click", function () {
+        var willOpen = !item.classList.contains("is-open");
+        document.querySelectorAll(".faq-item").forEach(function (other) {
+          var on = other === item && willOpen;
+          other.classList.toggle("is-open", on);
+          other.querySelector(".faq-q").setAttribute("aria-expanded", on ? "true" : "false");
+        });
+      });
+    });
+    document.querySelectorAll(".screen[data-bg]").forEach(function (section) {
+      var wash = document.createElement("div");
+      wash.className = "wash";
+      wash.setAttribute("aria-hidden", "true");
+      wash.style.backgroundImage = "url('" + section.getAttribute("data-bg") + "')";
+      var mist = document.createElement("div");
+      mist.className = "mist";
+      mist.setAttribute("aria-hidden", "true");
+      section.insertBefore(mist, section.firstChild);
+      section.insertBefore(wash, section.firstChild);
+    });
+    var LEAD_EMAIL = "demo@example.com";
+    var CUES = [
+      { start: 0, end: 3.7, text: "בהתחלה פשוט תהיתי מתי זה יתחיל." },
+      { start: 4, end: 7.8, text: "התרופה מוציאה דברים שהיא רוצה שתראה, ואתה לא יודע למה." },
+      { start: 8, end: 10.7, text: "היה לי הרבה מה לעבוד עליו." },
+      { start: 11, end: 13.7, text: "האימונים של השייטת הם מהדברים התובעניים ביותר על פני כדור הארץ." },
+      { start: 14, end: 17.7, text: "זה היה כמו להיות מגויס ולהגיע לפטריוטס." },
+      { start: 18, end: 19.4, text: "זה היה כל מה שרציתי." },
+      { start: 19.5, end: 23.5, text: "ככל שהמקום היה גרוע יותר — כך יותר רצינו להגיע לשם." },
+      { start: 24, end: 27.6, text: "זה הרגיש כמו רולטה רוסית. בכל פעם שהוא יוצא, אולי הוא לא חוזר הביתה." },
+      { start: 28, end: 31.5, text: "כל מה שיכול היה להשתבש — השתבש." },
+      { start: 32, end: 33.7, text: "גילו אותנו." },
+      { start: 34, end: 38.5, text: "אני לא יכול לירות בחזרה כי אני לא רואה אף אחד." },
+      { start: 39, end: 43.4, text: "חשבתי שהזרוע שלי נעלמה, ואני לא מרגיש כלום." },
+      { start: 44, end: 48.5, text: "דם וכדורים נשפכו על כל הדבר הזה." },
+      { start: 49, end: 54.5, text: "אתה יוצא לחו״ל ורואה חצי מהמחלקה שלך נהרגת. לא אמורים לעזוב אותם." },
+      { start: 55, end: 57.8, text: "פשוט התחננתי. תעזרו לו, בבקשה." },
+      { start: 58, end: 63.5, text: "הפגיעה המוחית ואובדן הזיכרון. פגשתי מישהו. אין לי מושג מה השם שלך." },
+      { start: 64, end: 68.8, text: "הוא עשה את כל מה שאמרו לו לעשות. ובפועל הוא נהיה יותר גרוע." },
+      { start: 69, end: 73.5, text: "קיבלתי את התיק הרפואי שלו. שיניתי לגמרי את הגישה." },
+      { start: 74, end: 79.5, text: "תרופות פסיכדליות הוכחו כיעילות, אבל שתיהן לא חוקיות בארצות הברית." },
+      { start: 80, end: 92.5, text: "אז מרקוס היה צריך לנסוע למקסיקו. אם אתה אוהב את אשתך — תיסע למקסיקו." },
+      { start: 93, end: 98.5, text: "כל שריון הגוף שלבשת — הכל יורד." },
+      { start: 99, end: 104.5, text: "האחים שלי, חברי הצוות שלי, מגיע לכם להיות מאושרים ולחיות חיים טובים." },
+      { start: 105, end: 113.5, text: "זה אחד הרגעים ברפואה שבהם צריך אומץ לקפוץ." },
+      { start: 114, end: 117.7, text: "התרופה הזו לוקחת אותך עד לפסגה — ואתה נופל." },
+      { start: 118, end: 127, text: "נכנסים לקו העבודה הזה כי זה מרגיש מי שאנחנו. אז מי לעזאזל אני עכשיו?" }
+    ];
+    var captionsOn = true;
+    var nativeCaptions = false;
+    var ytPlayer = null;
+    var cueEl = document.getElementById("cue");
+    var VIDEO_ID = "ao8tiqnuS3Y";
+    function showCue(t) {
+      if (!captionsOn || nativeCaptions) { cueEl.hidden = true; return; }
+      var c = null;
+      for (var i = 0; i < CUES.length; i++) {
+        if (t >= CUES[i].start && t < CUES[i].end) { c = CUES[i]; break; }
+      }
+      if (c) { cueEl.hidden = false; cueEl.querySelector("p").textContent = c.text; }
+      else { cueEl.hidden = true; }
+    }
+    function showPoster() {
+      var frame = document.querySelector(".player-frame");
+      if (!frame || frame.querySelector(".yt-poster")) return;
+      frame.innerHTML = '<a class="yt-poster" href="https://www.youtube.com/watch?v=' + VIDEO_ID + '" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/' + VIDEO_ID + '/hqdefault.jpg" alt="In Waves and War"></a>';
+    }
+    function mountPlayer(start) {
+      var node = document.getElementById("yt-player");
+      if (!node) return;
+      if (ytPlayer && ytPlayer.destroy) {
+        try { ytPlayer.destroy(); } catch (e) {}
+        ytPlayer = null;
+      }
+      nativeCaptions = false;
+      ytPlayer = new YT.Player("yt-player", {
+        videoId: VIDEO_ID,
+        host: "https://www.youtube.com",
+        playerVars: {
+          rel: 0,
+          playsinline: 1,
+          hl: "he",
+          cc_load_policy: 0,
+          cc_lang_pref: "he",
+          start: Math.max(0, Math.floor(start || 0))
+        },
+        events: {
+          onReady: function (e) {
+            if (start > 0.5) {
+              e.target.seekTo(start, true);
+              e.target.playVideo();
+            }
+          },
+
+          onError: function (e) { if (e.data === 153) showPoster(); }
+        }
+      });
+    }
+    var nav = document.querySelector("header.nav");
+    var darkScreens = ["hero"];
+    function paintNav() {
+      nav.style.visibility = "hidden";
+      void document.body.offsetHeight;
+      var under = document.elementFromPoint(Math.floor(window.innerWidth / 2), 36);
+      nav.style.visibility = "";
+      var dark = false;
+      for (var node = under; node; node = node.parentElement) {
+        if (!node.classList) continue;
+        for (var i = 0; i < darkScreens.length; i++) {
+          if (node.classList.contains(darkScreens[i])) dark = true;
+        }
+      }
+      nav.classList.toggle("on-dark", dark);
+    }
+    paintNav();
+    window.addEventListener("scroll", paintNav, { passive: true });
+
+    var frames = Array.prototype.slice.call(document.querySelectorAll("main > .screen"));
+    var frameIndex = 0;
+    var frameLock = false;
+    function frameAt(y) {
+      var best = 0;
+      var bestDist = Infinity;
+      for (var i = 0; i < frames.length; i++) {
+        var dist = Math.abs(frames[i].offsetTop - y);
+        if (dist < bestDist) { bestDist = dist; best = i; }
+      }
+      return best;
+    }
+    var rail = document.querySelector(".rail");
+    frames.forEach(function (frame, i) {
+      var button = document.createElement("button");
+      button.type = "button";
+      button.setAttribute("aria-label", frame.getAttribute("data-label") || ("חלק " + (i + 1)));
+      var name = document.createElement("span");
+      name.textContent = frame.getAttribute("data-label") || "";
+      button.appendChild(name);
+      button.addEventListener("click", function () { goFrame(i); });
+      rail.appendChild(button);
+    });
+    function markRail() {
+      var buttons = rail.querySelectorAll("button");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].setAttribute("aria-current", i === frameIndex ? "true" : "false");
+      }
+      rail.classList.toggle("on-dark", nav.classList.contains("on-dark"));
+    }
+    var frameAnim = 0;
+    var frameGen = 0;
+    function layoutMobileFrames() {
+      if (!isMobile()) {
+        document.documentElement.style.removeProperty("--frame");
+        document.documentElement.style.removeProperty("--photo");
+        return;
+      }
+      var h = window.innerHeight;
+      document.documentElement.style.setProperty("--frame", h + "px");
+      document.documentElement.style.setProperty("--photo", Math.round(h / 3) + "px");
+    }
+    function goFrame(next) {
+      next = Math.max(0, Math.min(frames.length - 1, next));
+      frameIndex = next;
+      frameLock = true;
+      markRail();
+      var target = frames[next].offsetTop;
+      var mobile = isMobile();
+      var duration = mobile ? 280 : 700;
+      var gen = ++frameGen;
+      if (frameAnim) cancelAnimationFrame(frameAnim);
+      if (!mobile) {
+        window.scrollTo({ top: target, behavior: "smooth" });
+        window.setTimeout(function () {
+          if (gen !== frameGen) return;
+          frameLock = false;
+          paintNav();
+          markRail();
+        }, duration);
+        return;
+      }
+      var startY = window.scrollY;
+      var t0 = performance.now();
+      function step(now) {
+        if (gen !== frameGen) return;
+        var p = Math.min(1, (now - t0) / duration);
+        var eased = 1 - Math.pow(1 - p, 3);
+        window.scrollTo(0, startY + (target - startY) * eased);
+        if (p < 1) frameAnim = requestAnimationFrame(step);
+        else {
+          frameAnim = 0;
+          window.scrollTo(0, frames[next].offsetTop);
+          frameLock = false;
+          paintNav();
+          markRail();
+        }
+      }
+      frameAnim = requestAnimationFrame(step);
+    }
+    function frameNow() {
+      if (!frameLock) frameIndex = frameAt(window.scrollY);
+      return frameIndex;
+    }
+    function isMobile() {
+      return window.matchMedia("(max-width: 899px)").matches;
+    }
+    function scrollablePanel(node) {
+      if (!node || !node.closest) return null;
+      var list = node.closest(".faq-list");
+      if (list && list.scrollHeight > list.clientHeight + 1) return list;
+      return null;
+    }
+    window.addEventListener("wheel", function (e) {
+      var list = scrollablePanel(e.target);
+      if (list) {
+        var atTop = list.scrollTop <= 0;
+        var atBottom = list.scrollTop + list.clientHeight >= list.scrollHeight - 1;
+        if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) {
+          e.preventDefault();
+          list.scrollTop += e.deltaY;
+          return;
+        }
+      }
+      e.preventDefault();
+      if (frameLock || Math.abs(e.deltaY) < 8) return;
+      goFrame(frameNow() + (e.deltaY > 0 ? 1 : -1));
+    }, { passive: false });
+    var touchStartY = 0;
+    var touchFaq = null;
+    window.addEventListener("touchstart", function (e) {
+      touchStartY = e.touches[0].clientY;
+      touchFaq = scrollablePanel(e.target);
+    }, { passive: true });
+    window.addEventListener("touchmove", function (e) {
+      if (!isMobile()) return;
+      var tag = e.target && e.target.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (scrollablePanel(e.target)) return;
+      e.preventDefault();
+    }, { passive: false });
+    window.addEventListener("touchend", function (e) {
+      if (touchFaq && touchFaq.scrollHeight > touchFaq.clientHeight + 1) return;
+      var dy = touchStartY - e.changedTouches[0].clientY;
+      if (frameLock || Math.abs(dy) < 48) return;
+      goFrame(frameNow() + (dy > 0 ? 1 : -1));
+    }, { passive: true });
+    window.addEventListener("keydown", function (e) {
+      var tag = e.target && e.target.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); goFrame(frameNow() + 1); }
+      else if (e.key === "ArrowUp" || e.key === "PageUp") { e.preventDefault(); goFrame(frameNow() - 1); }
+      else if (e.key === "Home") { e.preventDefault(); goFrame(0); }
+      else if (e.key === "End") { e.preventDefault(); goFrame(frames.length - 1); }
+    });
+    document.addEventListener("click", function (e) {
+      var link = e.target.closest ? e.target.closest("a[href^='#']") : null;
+      if (!link) return;
+      var id = link.getAttribute("href").slice(1);
+      var target = document.getElementById(id);
+      if (!target) return;
+      var screen = target.classList.contains("screen") ? target : target.closest(".screen");
+      var i = frames.indexOf(screen);
+      if (i < 0) return;
+      e.preventDefault();
+      goFrame(i);
+    });
+    function settleFrame() {
+      if (frameLock) return;
+      var next = frameAt(window.scrollY);
+      if (next === frameIndex) return;
+      frameIndex = next;
+      markRail();
+    }
+    layoutMobileFrames();
+    frameIndex = frameAt(window.scrollY);
+    markRail();
+    window.addEventListener("resize", function () {
+      var index = frameNow();
+      layoutMobileFrames();
+      if (isMobile() && !frameLock) window.scrollTo(0, frames[index].offsetTop);
+    });
+    window.addEventListener("scroll", settleFrame, { passive: true });
+    window.addEventListener("pageshow", settleFrame);
+    window.addEventListener("load", settleFrame);
+    window.onYouTubeIframeAPIReady = function () {
+      if (location.protocol !== "http:" && location.protocol !== "https:") {
+        showPoster();
+        return;
+      }
+      mountPlayer(0);
+      (function watchCues() {
+        if (ytPlayer && ytPlayer.getCurrentTime && !nativeCaptions) {
+          try { showCue(ytPlayer.getCurrentTime()); } catch (e) {}
+        }
+        requestAnimationFrame(watchCues);
+      })();
+    };
+    var tag = document.createElement("script");
+    tag.src = "https://www.youtube.com/iframe_api";
+    document.head.appendChild(tag);
+
+    document.getElementById("lead-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      var name = document.getElementById("full-name").value.trim();
+      var phone = document.getElementById("phone").value.trim();
+      var elig = document.querySelector('input[name="eligibility"]:checked');
+      var err = document.getElementById("form-err");
+      if (!name || !phone || !elig) { err.hidden = false; return; }
+      err.hidden = true;
+      var body = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + elig.value;
+      window.location.href = "mailto:" + LEAD_EMAIL + "?subject=" + encodeURIComponent("מתנת חיים — פנייה חדשה") + "&body=" + encodeURIComponent(body);
+      document.getElementById("lead-form").hidden = true;
+      document.getElementById("lead-ok").hidden = false;
+    });
+  
+}
+
+  </script>
+  <script>
+if (window.matchMedia('(max-width: 899px)').matches) {
+
+(function () {
+  "use strict";
+  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var staged = [];   /* elements still waiting to be revealed; must exist before measure() runs */
+
+  /* The header's real height is set by its 44px controls + padding + border, not by a guess.
+     Measure it and publish it as the shared geometry the padding, progress bar, scroll-margin
+     and the chapter spy all read. */
+  var hdr = document.querySelector(".mob .hdr");
+  function syncChrome() {
+    var h = Math.round(hdr.getBoundingClientRect().height);
+    if (!h) return;
+    var root = document.documentElement.style;
+    root.setProperty("--hdr", h + "px");
+    root.setProperty("--obstruct", (h + 2) + "px");
+  }
+  syncChrome();
+
+  /* ---- chapters ---- */
+  var CH = [
+    ["m-top","פתיח"],["m-trailer","הסרט"],["m-stanford","מחקר סטנפורד"],["m-offer","מתנת חיים"],
+    ["m-eligibility","מי זכאי"],["m-form","השארת פרטים"],["m-symptoms","במה זה מסייע"],
+    ["m-consult","התייעצות"],["m-minutes","60 Minutes"],["m-root","מהו אייבוגן"],
+    ["m-how","איך זה עובד"],["m-safety","מעטפת רפואית"],["m-faq","שאלות ותשובות"],["m-close","סיום"]
+  ];
+  var nav = document.getElementById("m-chapters"), links = [];
+  CH.forEach(function (c, i) {
+    var a = document.createElement("a");
+    a.href = "#" + c[0];
+    a.innerHTML = '<b></b><bdi></bdi>';
+    a.firstChild.textContent = i + 1;
+    a.lastChild.textContent = c[1];
+    if (/^[\x20-\x7e]+$/.test(c[1])) a.lastChild.setAttribute("dir", "ltr");
+    nav.appendChild(a); links.push(a);
+  });
+
+  /* ---- sheet ---- */
+  var sheet = document.getElementById("m-sheet"), opener = null;
+  function openSheet(from) {
+    opener = from || document.getElementById("m-open-sheet");
+    if (typeof sheet.showModal === "function") sheet.showModal(); else sheet.setAttribute("open", "");
+    var cur = nav.querySelector("[aria-current]") || links[0];
+    if (cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
+    cur.focus({ preventScroll: true });
+  }
+  function closeSheet() { if (sheet.open) { if (sheet.close) sheet.close(); else sheet.removeAttribute("open"); } }
+  document.getElementById("m-open-sheet").addEventListener("click", function () { openSheet(this); });
+  Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll("[data-sheet]"), function (b) {
+    b.addEventListener("click", function () { openSheet(this); });
+  });
+  document.getElementById("m-close-sheet").addEventListener("click", function () { closeSheet(); });
+  sheet.addEventListener("close", function () { if (opener && document.contains(opener)) opener.focus({ preventScroll: true }); });
+  sheet.addEventListener("click", function (e) { if (e.target === sheet) closeSheet(); });
+  nav.addEventListener("click", function (e) {
+    var a = e.target.closest("a"); if (!a) return;
+    e.preventDefault();
+    var id = a.getAttribute("href").slice(1), target = document.getElementById(id);
+    opener = null;                       /* selection: focus destination, not the opener */
+    closeSheet();
+    if (!target) return;
+    if (history.pushState) history.pushState(null, "", "#" + id);
+    target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+    var h = target.querySelector("h1,h2,h3,.kicker") || target;
+    h.setAttribute("tabindex", "-1");
+    h.focus({ preventScroll: true });
+  });
+
+  /* ---- progress + current chapter: geometry, not intersection ---- */
+  var prog = document.getElementById("m-prog");
+  var secs = CH.map(function (c) { return document.getElementById(c[0]); });
+  var ticking = false, current = -1;
+  function measure() {
+    ticking = false;
+    var y = window.pageYOffset || document.documentElement.scrollTop;
+    var doc = document.documentElement.scrollHeight - window.innerHeight;
+    prog.style.width = (doc > 0 ? Math.min(100, Math.max(0, (y / doc) * 100)) : 0) + "%";
+
+    releaseStaged();
+
+    var line = y + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--obstruct")) || 58) + 24;
+    var idx = 0;
+    for (var i = 0; i < secs.length; i++) {
+      if (!secs[i]) continue;
+      if (secs[i].offsetTop <= line) idx = i; else break;
+    }
+    if (doc > 0 && y >= doc - 2) idx = secs.length - 1;   /* end of page */
+    if (idx === current) return;
+    current = idx;
+    links.forEach(function (a, i) {
+      if (i === idx) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
+    });
+  }
+  function schedule() { if (!ticking) { ticking = true; requestAnimationFrame(measure); } }
+  addEventListener("scroll", schedule, { passive: true });
+  addEventListener("resize", function () { syncChrome(); schedule(); });
+  addEventListener("pageshow", schedule);
+  addEventListener("hashchange", schedule);
+  document.addEventListener("toggle", schedule, true);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { syncChrome(); schedule(); });
+
+  /* ---- reveal ----
+     Content is visible by default. Only items still below the fold are staged, and they are
+     released by the same rAF geometry pass that drives the spy — an IntersectionObserver never
+     fires for an element the page JUMPED past (direct #hash load), which would strand it at
+     opacity 0. A timer armed before staging clears anything left behind. */
+  function releaseStaged() {
+    if (!staged || !staged.length) return;
+    var vh = window.innerHeight, keep = [];
+    for (var i = 0; i < staged.length; i++) {
+      if (staged[i].getBoundingClientRect().top < vh - 40) { staged[i].classList.remove("staged"); staged[i].classList.add("in"); }
+      else keep.push(staged[i]);
+    }
+    staged = keep;
+  }
+  function revealAll() {
+    Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll(".rise"), function (el) { el.classList.remove("staged"); });
+    staged = [];
+  }
+  if (reduce) {
+    revealAll();
+  } else {
+    setTimeout(revealAll, 5000);   /* armed BEFORE staging, so a throw mid-loop still self-clears */
+    var vh0 = window.innerHeight;
+    Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll(".rise"), function (el) {
+      if (el.getBoundingClientRect().top > vh0) { el.classList.add("staged"); staged.push(el); }
+    });
+  }
+
+  /* ---- video facades ---- */
+  Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll(".media"), function (box) {
+    var btn = box.querySelector(".play"); if (!btn) return;
+    btn.addEventListener("click", function () {
+      var id = box.dataset.yt;
+      var f = document.createElement("iframe");
+      f.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1&hl=he";
+      f.title = box.dataset.title || "וידאו";
+      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+      f.referrerPolicy = "strict-origin-when-cross-origin";
+      f.setAttribute("allowfullscreen", "");
+      box.textContent = "";
+      box.appendChild(f);
+      var p = document.createElement("span");
+      p.className = "alt";
+      p.innerHTML = 'לא נטען? ';
+      var a = document.createElement("a");
+      a.href = "https://www.youtube.com/watch?v=" + id;
+      a.target = "_blank"; a.rel = "noopener noreferrer";
+      a.textContent = "פתיחה ביוטיוב";
+      p.appendChild(a);
+      box.parentNode.insertBefore(p, box.nextSibling);
+      schedule();
+    });
+  });
+
+  /* ---- preview form: cannot submit, does not claim delivery ---- */
+  var done = document.getElementById("m-done"), form = document.getElementById("m-lead");
+  document.getElementById("m-send").addEventListener("click", function () {
+    form.hidden = true; done.hidden = false;
+    var h = done.querySelector("h3");
+    h.setAttribute("tabindex", "-1");
+    h.focus({ preventScroll: true });
+    schedule();
+  });
+  document.getElementById("m-cal").addEventListener("click", function () {
+    var b = this;
+    b.textContent = "בגרסה החיה ייפתח כאן יומן לתיאום שיחה";
+    b.disabled = true;
+    b.style.opacity = ".7";
+  });
+  document.getElementById("m-back").addEventListener("click", function () {
+    done.hidden = true; form.hidden = false;
+    document.getElementById("m-nm").focus({ preventScroll: true });
+    schedule();
+  });
+
+  measure();   /* first geometry pass, once every handler above is installed */
+})();
+
+}
+
+  </script>
+</body>
+</html>
