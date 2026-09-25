@@ -47,30 +47,34 @@
       font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
     }
     .block { margin: 0 0 var(--gap); scroll-margin-top: 76px; }
-    .rail {
-      position: fixed; z-index: 6;
-      top: 80px; bottom: 12px;
-      left: max(6px, calc(50vw - 215px + 6px));
-      width: 22px;
-      display: flex; flex-direction: column; justify-content: center; gap: 5px;
+    .jump {
+      position: fixed; z-index: 6; bottom: 16px;
+      left: max(16px, calc(50vw - 215px + 16px));
+      height: 40px; padding: 0 14px; border: 0; border-radius: 999px;
+      background: #1a3344; color: #f7f4ec; cursor: pointer;
+      font: 500 14px/1 "Google Sans", "Segoe UI", system-ui, sans-serif;
+      box-shadow: 0 4px 16px rgb(16 24 32 / 0.25);
     }
-    .rail button {
-      position: relative; width: 22px; height: 16px;
-      border: 0; padding: 0; background: transparent; cursor: pointer;
+    .menu {
+      position: fixed; z-index: 7; inset: 0;
+      display: none; align-items: flex-end; justify-content: center;
+      background: rgb(16 24 32 / 0.35);
     }
-    .rail button i {
-      display: block; width: 7px; height: 7px; margin: 0 auto; border-radius: 99px;
-      background: rgb(26 51 68 / 0.35);
+    .menu.open { display: flex; }
+    .menu div {
+      width: min(430px, 100%);
+      max-height: 70dvh; overflow: auto;
+      background: #f7f4ec; border-radius: 18px 18px 0 0;
+      padding: 8px 8px 18px;
     }
-    .rail button.current i { height: 16px; background: #1a3344; }
-    .rail button span {
-      position: absolute; left: 20px; top: 50%; transform: translateY(-50%);
-      white-space: nowrap; opacity: 1; pointer-events: auto;
-      background: #f7f4ec; color: #1a3344; border-radius: 999px;
-      padding: 3px 8px; font: 500 12px/1.2 "Google Sans", "Segoe UI", system-ui, sans-serif;
-      box-shadow: 0 1px 6px rgb(16 24 32 / 0.16);
+    .menu button {
+      display: block; width: 100%; text-align: start;
+      background: none; border: 0; border-bottom: 1px solid rgb(26 51 68 / 0.1);
+      padding: 13px 12px; cursor: pointer;
+      font: 500 16px/1.3 "Google Sans", "Segoe UI", system-ui, sans-serif;
+      color: #1a3344;
     }
-    .rail button.current span { background: #1a3344; color: #f7f4ec; }
+    .menu button.current { color: #8a6a00; }
     .photo, .video {
       display: block; width: 100%; height: var(--photo);
       object-fit: cover; background: #101820; border: 0;
@@ -329,30 +333,34 @@
     });
     var labels = ["פתיח", "סטנפורד", "מתנת חיים", "זכאות", "פרטים", "אייבוגן", "התייעצות", "60 Minutes", "השורש", "איך זה עובד", "מעטפת", "שאלות", "סיום"];
     var sections = Array.prototype.slice.call(document.querySelectorAll(".block"));
-    var rail = document.createElement("nav");
-    rail.className = "rail";
-    rail.setAttribute("aria-label", "ניווט");
+    var opener = document.createElement("button");
+    opener.className = "jump";
+    opener.type = "button";
+    opener.textContent = "ניווט";
+    var menu = document.createElement("div");
+    menu.className = "menu";
+    var sheet = document.createElement("div");
     var buttons = sections.map(function (section, i) {
       var button = document.createElement("button");
       button.type = "button";
-      button.setAttribute("aria-label", labels[i] || ("חלק " + (i + 1)));
-      var dot = document.createElement("i");
-      var name = document.createElement("span");
-      name.textContent = labels[i] || "";
-      button.appendChild(dot);
-      button.appendChild(name);
-      button.addEventListener("click", function () {
+      button.textContent = labels[i] || ("חלק " + (i + 1));
+      button.addEventListener("click", function (e) {
+        e.stopPropagation();
+        menu.classList.remove("open");
         var top = section.getBoundingClientRect().top + window.pageYOffset - 72;
         window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
       });
-      rail.appendChild(button);
+      sheet.appendChild(button);
       return button;
     });
-    document.body.appendChild(rail);
+    menu.appendChild(sheet);
+    menu.addEventListener("click", function () { menu.classList.remove("open"); });
+    opener.addEventListener("click", function () { menu.classList.add("open"); });
+    document.body.appendChild(opener);
+    document.body.appendChild(menu);
     function setCurrent(index) {
-      buttons.forEach(function (button, i) {
-        button.classList.toggle("current", i === index);
-      });
+      buttons.forEach(function (button, i) { button.classList.toggle("current", i === index); });
+      opener.textContent = "ניווט";
     }
     var spy = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
