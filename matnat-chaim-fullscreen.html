@@ -359,15 +359,12 @@
       .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl, .price { font-size: clamp(2.1rem, 9vw, 2.8rem); }
       .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line) { font-size: 1.02rem; }
       .stat-line, .close-lines .title-xl { font-size: 1.5rem; }
+      header.nav { padding: 0.7rem 4vw; gap: 0.45rem; }
+      header.nav .btn { min-height: 2rem; padding: 0 0.65rem; font-size: 0.75rem; }
       .brand { gap: 0.4rem; font-size: 0.82rem; }
       .brand img { width: 2rem; height: 2rem; border-radius: 0.4rem; }
       .hero .player, .hero .player-frame, .hero .player-frame iframe { border-radius: 0.4rem; }
-      .screen.split { grid-template-rows: 30svh 1fr; }
-      @media (max-height: 760px) {
-        .screen.split { grid-template-rows: 20svh 1fr; }
-        .screen.split .prose { gap: 0.35rem; line-height: 1.32; }
-      }
-      .screen.split .copy { padding: 0.85rem 5vw; }
+      .screen.split .copy { padding: 1.15rem 5vw 0.9rem; }
       .screen.split .prose { font-size: 1.02rem; line-height: 1.4; gap: 0.5rem; }
       .aid { --aid-icon: 2.15rem; justify-content: flex-start; padding-top: 4.6rem; padding-bottom: 1rem; }
 
@@ -418,8 +415,58 @@
       .screen.minutes.is-playing .media { top: 0; bottom: 0; inset-inline-start: 0; inset-inline-end: 0; }
     }
     @media (max-width: 899px) {
+      .screen {
+        height: 100dvh;
+        min-height: 100dvh;
+        max-height: 100dvh;
+      }
+      .screen.split {
+        grid-template-columns: 1fr;
+        grid-template-rows: 33.333dvh minmax(0, 1fr);
+        padding: 0;
+      }
+      .screen.split .copy {
+        justify-content: flex-start;
+        position: relative;
+        padding: 1.15rem 5vw 0.9rem;
+        overflow: auto;
+      }
+      .screen.split .copy > .kicker:first-child,
+      .hero .copy > .kicker:first-child {
+        position: absolute;
+        top: 0.15rem;
+        margin: 0;
+      }
+      .screen.split.close .copy > .kicker:first-child { position: static; }
+      .screen.split .copy h2,
+      .screen.split .copy h3,
+      .screen.split .copy .title-xl,
+      .screen.split .copy .stat-line,
+      .screen.split .copy .stat-figure,
+      .hero .copy h1 { margin-top: 0; }
+      .hero { justify-content: stretch; padding: 0; }
+      .hero-grid {
+        flex: 1;
+        height: 100%;
+        min-height: 0;
+        grid-template-rows: 33.333dvh minmax(0, 1fr);
+        align-items: stretch;
+        align-content: stretch;
+        gap: 0;
+        padding: 0;
+      }
+      .hero-film { order: -1; position: relative; height: 33.333dvh; min-height: 0; }
+      .hero .player,
+      .hero .player-frame,
+      .hero .player-frame iframe { height: 100%; border-radius: 0; }
+      .hero .player-frame { aspect-ratio: auto; }
+      .hero .copy { position: relative; padding: 1.15rem 5vw 0.9rem; }
+      .hero-film .player-meta {
+        position: absolute; bottom: 0.45rem; inset-inline: 0.8rem; margin: 0;
+        color: var(--cream); text-shadow: 0 1px 8px rgb(0 0 0 / 0.45);
+      }
       .screen.minutes .copy { grid-row: 2; }
-      .screen.minutes .media { top: 0; height: 30svh; bottom: auto; inset-inline: 0; }
+      .screen.minutes .media { top: 0; height: 33.333dvh; bottom: auto; inset-inline: 0; }
       .screen.minutes.is-playing .media { top: 0; bottom: 0; height: auto; inset-inline: 0; }
     }
   </style>
@@ -851,8 +898,16 @@
       if (!frameLock) frameIndex = frameAt(window.scrollY);
       return frameIndex;
     }
+    function scrollablePanel(node) {
+      if (!node || !node.closest) return null;
+      var list = node.closest(".faq-list");
+      if (list && list.scrollHeight > list.clientHeight + 1) return list;
+      var copy = node.closest(".copy");
+      if (copy && copy.scrollHeight > copy.clientHeight + 1) return copy;
+      return null;
+    }
     window.addEventListener("wheel", function (e) {
-      var list = e.target.closest ? e.target.closest(".faq-list") : null;
+      var list = scrollablePanel(e.target);
       if (list) {
         var atTop = list.scrollTop <= 0;
         var atBottom = list.scrollTop + list.clientHeight >= list.scrollHeight - 1;
@@ -870,7 +925,7 @@
     var touchFaq = null;
     window.addEventListener("touchstart", function (e) {
       touchStartY = e.touches[0].clientY;
-      touchFaq = e.target.closest ? e.target.closest(".faq-list") : null;
+      touchFaq = scrollablePanel(e.target);
     }, { passive: true });
     window.addEventListener("touchend", function (e) {
       if (touchFaq && touchFaq.scrollHeight > touchFaq.clientHeight + 1) return;
