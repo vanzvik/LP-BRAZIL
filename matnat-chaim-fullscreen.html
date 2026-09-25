@@ -428,8 +428,31 @@
       .screen.split .copy {
         justify-content: flex-start;
         position: relative;
-        padding: 1.15rem 5vw 0.9rem;
-        overflow: auto;
+        padding: 0.8rem 5vw 0.6rem;
+        gap: 0.4rem;
+        overflow: hidden;
+      }
+      .copy h2, .copy h3, .aid > h2 { font-size: clamp(1.28rem, 5.2vw, 1.58rem); line-height: 1.12; }
+      .screen.split .num { font-size: 3.15rem; }
+      .stat-line, .close-lines .title-xl { font-size: 1.12rem; line-height: 1.2; }
+      .screen.split .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+      .faq-a p { font-size: 0.9rem; line-height: 1.3; }
+      .screen.split .prose { gap: 0.35rem; margin-top: 0.15rem; }
+      .faq-q { padding: 0.42rem 0; font-size: 0.95rem; }
+      .faq-a p { padding-bottom: 0.4rem; }
+      .faq-list { overflow: hidden; max-height: none; }
+      .close .btn { margin-top: 0.8rem; }
+      @media (max-height: 760px) {
+        .screen.split .num { font-size: 2.55rem; }
+        .stat-line, .close-lines .title-xl { font-size: 1.02rem; }
+        .screen.split .prose p,
+        .screen.split .copy > p,
+        .faq-a p { font-size: 0.8rem; line-height: 1.24; }
+        .copy h2, .copy h3, .aid > h2 { font-size: 1.22rem; }
+        .aid { padding-top: 3.5rem; --aid-icon: 1.65rem; }
+        .aid .points { gap: 0.45rem 0.55rem; margin-top: 0.45rem; }
+        .aid h3 { font-size: 0.88rem; }
+        .aid article p { font-size: 0.78rem; line-height: 1.28; margin-top: 0.2rem; }
       }
       .screen.split .copy > .kicker:first-child,
       .hero .copy > .kicker:first-child {
@@ -468,6 +491,12 @@
       .screen.minutes .copy { grid-row: 2; }
       .screen.minutes .media { top: 0; height: 33.333dvh; bottom: auto; inset-inline: 0; }
       .screen.minutes.is-playing .media { top: 0; bottom: 0; height: auto; inset-inline: 0; }
+    }
+    @media (max-width: 899px) and (max-height: 780px) {
+      .screen.split .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+      .faq-a p { font-size: 0.78rem; line-height: 1.22; }
+      .screen.split .num { font-size: 2.3rem; }
+      .screen.split .copy { gap: 0.25rem; padding-top: 0.55rem; padding-bottom: 0.4rem; }
     }
   </style>
 </head>
@@ -902,8 +931,6 @@
       if (!node || !node.closest) return null;
       var list = node.closest(".faq-list");
       if (list && list.scrollHeight > list.clientHeight + 1) return list;
-      var copy = node.closest(".copy");
-      if (copy && copy.scrollHeight > copy.clientHeight + 1) return copy;
       return null;
     }
     window.addEventListener("wheel", function (e) {
