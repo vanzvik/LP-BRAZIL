@@ -88,11 +88,12 @@
     .rail button[aria-current="true"] { height: 1.35rem; background: var(--fg); }
     .rail.on-dark button[aria-current="true"] { background: var(--cream); }
     .rail button span {
-      position: absolute; top: 50%; inset-inline-start: calc(100% + 0.55rem);
+      position: absolute; top: 50%; inset-inline-end: calc(100% + 0.7rem);
       transform: translateY(-50%);
       white-space: nowrap; pointer-events: none; opacity: 0;
-      font-size: 0.75rem; font-weight: 500; color: var(--fg);
-      background: var(--cream); border-radius: 999px; padding: 0.2rem 0.55rem;
+      font-size: 0.78rem; font-weight: 500; color: var(--fg);
+      background: var(--cream); border-radius: 999px; padding: 0.28rem 0.65rem;
+      box-shadow: 0 1px 8px rgb(16 24 32 / 0.16);
     }
     .rail button:hover span, .rail button:focus-visible span { opacity: 1; }
     .screen {
