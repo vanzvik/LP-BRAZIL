@@ -276,6 +276,8 @@
     .faq-item.is-open .faq-a { grid-template-rows: 1fr; }
     .faq-a > div { overflow: hidden; }
     .faq-a p { color: var(--muted); margin: 0; padding-bottom: 1rem; max-width: 40rem; }
+    .screen.faq-screen .copy.faq { overflow: hidden; }
+    .faq-list { min-height: 0; max-height: 100%; overflow: auto; }
     @media (min-width: 900px) {
       .screen.faq-screen .media { order: 0; }
       .screen.faq-screen .copy { order: 1; }
@@ -581,7 +583,7 @@
       <div class="media"><img src="images/faq-bed.jpg" alt="" /></div>
       <div class="copy faq">
       <h2>שאלות ותשובות</h2>
-      <div>
+      <div class="faq-list">
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">איך נראה הטיפול?</button>
           <div class="faq-a"><div><p>שורש האייבוגה הוא הלוצינוגן שנמצא בשימוש של תרבויות ילידיות באפריקה כבר מאות שנים. מחקרים מהשנים האחרונות מראים כי שימוש חד-פעמי בו מוביל לתיקון של פגיעות מוחיות ולריפוי טראומות, וישנם סימנים מעודדים המראים אף על סיוע בטיפול בפרקינסון, אלצהיימר ומחלות נוירולוגיות נוספות.</p></div></div>
@@ -598,32 +600,19 @@
           <button type="button" class="faq-q" aria-expanded="false">האם יש תועלות ושימושים נוספים לאייבוגה?</button>
           <div class="faq-a"><div><p>הטיפול בשורש האייבוגה נחשב כבר עשרות שנים לטיפול פורץ דרך בהתמכרויות - מסיגריות, מריחואנה ואלכוהול ועד לסמים הקשים ביותר. בניגוד לטיפולי גמילה אחרים, מטופלים רבים מדווחים על סימני גמילה מופחתים משמעותית לאחר הטיפול.</p></div></div>
         </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">מה כוללת מתנת חיים?</button>
+          <div class="faq-a"><div><p>מעטפת לוגיסטית מלאה בשבוע של הטיפול הכולת: לינה, אוכל כשר, הסעות, ליווי, שיחה מקדימה עם איש טיפול ושיחת אינטגרציה לאחריו.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">מה לא כוללת מתנת חיים?</button>
+          <div class="faq-a"><div><p>טיסה מישראל לסאו פאולו ובחזרה.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <button type="button" class="faq-q" aria-expanded="false">למה ברזיל?</button>
+          <div class="faq-a"><div><p>בזמן שרוב העולם עדיין מנסה להבין איך לגשת לטיפול הזה, לברזיל יש כבר כמה עשורים של ניסיון קליני, חוקי ומפוקח עם אייבוגאין. ברחבי ברזיל פועלות קליניקות שלמות המנוהלות על ידי רופאים ופסיכיאטרים שמתמחים ספציפית בעבודה עם השורש הזה. הם למדו לשלב את העוצמה של החומר עם פרוטוקולים מחמירים של רפואה מערבית, כדי להעניק ללוחמים סביבה בטוחה, מקצועית ומבוקרת לחלוטין.</p></div></div>
+        </div>
       </div>
-      </div>
-    </section>
-
-    <section class="screen split flip" data-label="מה כולל">
-      <div class="media"><img src="images/includes.jpg" alt="" /></div>
-      <div class="copy">
-      <div class="two">
-        <article>
-          <h2>מה כוללת מתנת חיים?</h2>
-          <p>מעטפת לוגיסטית מלאה בשבוע של הטיפול הכולת: לינה, אוכל כשר, הסעות, ליווי, שיחה מקדימה עם איש טיפול ושיחת אינטגרציה לאחריו.</p>
-        </article>
-        <article>
-          <p class="kicker">לא כלול</p>
-          <h2 style="margin-top:0.6rem">מה לא כוללת מתנת חיים?</h2>
-          <p>טיסה מישראל לסאו פאולו ובחזרה.</p>
-        </article>
-      </div>
-      </div>
-    </section>
-
-    <section class="screen split" data-label="למה ברזיל">
-      <div class="media"><img src="images/sao-paulo.jpg" alt="" /></div>
-      <div class="copy">
-        <h2>למה ברזיל?</h2>
-        <p>בזמן שרוב העולם עדיין מנסה להבין איך לגשת לטיפול הזה, לברזיל יש כבר כמה עשורים של ניסיון קליני, חוקי ומפוקח עם אייבוגאין. ברחבי ברזיל פועלות קליניקות שלמות המנוהלות על ידי רופאים ופסיכיאטרים שמתמחים ספציפית בעבודה עם השורש הזה. הם למדו לשלב את העוצמה של החומר עם פרוטוקולים מחמירים של רפואה מערבית, כדי להעניק ללוחמים סביבה בטוחה, מקצועית ומבוקרת לחלוטין.</p>
       </div>
     </section>
 
@@ -831,15 +820,28 @@
       window.setTimeout(function () { frameLock = false; paintNav(); markRail(); }, 700);
     }
     window.addEventListener("wheel", function (e) {
+      var list = e.target.closest ? e.target.closest(".faq-list") : null;
+      if (list) {
+        var atTop = list.scrollTop <= 0;
+        var atBottom = list.scrollTop + list.clientHeight >= list.scrollHeight - 1;
+        if ((e.deltaY < 0 && !atTop) || (e.deltaY > 0 && !atBottom)) {
+          e.preventDefault();
+          list.scrollTop += e.deltaY;
+          return;
+        }
+      }
       e.preventDefault();
       if (frameLock || Math.abs(e.deltaY) < 8) return;
       goFrame(frameIndex + (e.deltaY > 0 ? 1 : -1));
     }, { passive: false });
     var touchStartY = 0;
+    var touchFaq = null;
     window.addEventListener("touchstart", function (e) {
       touchStartY = e.touches[0].clientY;
+      touchFaq = e.target.closest ? e.target.closest(".faq-list") : null;
     }, { passive: true });
     window.addEventListener("touchend", function (e) {
+      if (touchFaq && touchFaq.scrollHeight > touchFaq.clientHeight + 1) return;
       var dy = touchStartY - e.changedTouches[0].clientY;
       if (frameLock || Math.abs(dy) < 48) return;
       goFrame(frameIndex + (dy > 0 ? 1 : -1));
