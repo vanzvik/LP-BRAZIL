@@ -45,6 +45,9 @@
     h3 { font-size: clamp(1.45rem, 2.4vw, 2rem); }
     .kicker { font-size: 0.95rem; font-weight: 500; letter-spacing: 0.01em; opacity: 0.72; }
     .measure { max-width: 38rem; }
+    .close-lines { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.35rem; }
+    .close-lines .title-xl { margin-top: 0; }
+    .heart { color: #e10600; }
     .wide { max-width: 46rem; }
     header.nav {
       position: fixed; inset-inline: 0; top: 0; z-index: 40;
@@ -637,8 +640,10 @@
         <span class="dim">←</span>
         <span>בחינם עבורכם</span>
       </p>
-      <p class="measure" style="margin-top:1.5rem;opacity:.85">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
-      <p class="title-xl">אנחנו אוהבים אתכם. מגיע לכם.</p>
+      <div class="close-lines">
+        <p class="title-xl">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
+        <p class="title-xl">אנחנו אוהבים אתכם. מגיע לכם. <span class="heart" aria-hidden="true">♥</span></p>
+      </div>
       <a class="btn" href="https://arsenlf.github.io/ibogaine/#contact" target="_blank" rel="noopener noreferrer">לפרטים והרשמה</a>
       </div>
     </section>
