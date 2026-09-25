@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>מתנת חיים — הצעת מובייל</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f0e8;
+      --fg: #1a3344;
+      --muted: #4e5960;
+      --photo: 220px;
+      --pad: 20px;
+      --after-photo: 18px;
+      --gap: 28px;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; overflow-x: hidden; }
+    body {
+      background: #e4dfd4;
+      color: var(--fg);
+      font-family: "Google Sans", "Segoe UI", system-ui, sans-serif;
+      font-size: 16px;
+      line-height: 1.45;
+    }
+    .page { max-width: 430px; margin: 0 auto; background: var(--bg); min-height: 100dvh; overflow-x: hidden; }
+    header {
+      position: sticky; top: 0; z-index: 5;
+      height: 64px; padding: 0 16px;
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      background: rgb(243 240 232 / 0.96);
+      border-bottom: 1px solid rgb(26 51 68 / 0.08);
+    }
+    .brand { display: flex; align-items: center; gap: 8px; min-width: 0; color: inherit; text-decoration: none; font-weight: 500; font-size: 14px; }
+    .brand img { width: 40px; height: 40px; border-radius: 8px; object-fit: cover; flex: none; }
+    .brand span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .btn {
+      flex: none; display: inline-flex; align-items: center; justify-content: center;
+      height: 36px; padding: 0 12px; border: 0; border-radius: 999px;
+      background: var(--fg); color: var(--bg); text-decoration: none;
+      font: inherit; font-size: 13px; font-weight: 500; cursor: pointer;
+    }
+    .block { margin: 0 0 var(--gap); }
+    .photo, .video {
+      display: block; width: 100%; height: var(--photo);
+      object-fit: cover; background: #101820; border: 0;
+    }
+    .video { position: relative; overflow: hidden; }
+    .video iframe, .video img { width: 100%; height: 100%; border: 0; object-fit: cover; display: block; }
+    .play {
+      position: absolute; inset: 0; border: 0; padding: 0; background: transparent; cursor: pointer;
+    }
+    .play span {
+      position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+      width: 64px; height: 64px; border-radius: 50%; background: #f7f4ec; color: var(--fg);
+      display: grid; place-items: center;
+    }
+    .play svg { width: 22px; height: 22px; fill: currentColor; margin-inline-start: 3px; }
+    .x {
+      position: absolute; top: 8px; inset-inline-start: 8px; z-index: 2;
+      width: 36px; height: 36px; border: 0; border-radius: 50%;
+      background: #f7f4ec; color: var(--fg); font-size: 22px; line-height: 1; cursor: pointer;
+    }
+    .text { padding: var(--after-photo) var(--pad) 0; }
+    h1, h2, h3 { margin: 0; font-weight: 500; letter-spacing: -0.03em; line-height: 1.2; }
+    h1 { font-size: 32px; }
+    h2, .title { font-size: 28px; }
+    h1 .mark { color: #f1e51d; }
+    .kicker { margin: 0 0 8px; font-size: 13px; font-weight: 500; letter-spacing: 0.04em; color: var(--muted); }
+    p { margin: 10px 0 0; }
+    .muted { color: var(--muted); }
+    .stat { display: flex; align-items: center; gap: 10px; margin-top: 4px; }
+    .num { margin: 0; font-size: 64px; line-height: 0.9; font-weight: 500; letter-spacing: -0.04em; }
+    .arrow { width: 26px; height: 44px; flex: none; color: var(--fg); }
+    .arrow svg { width: 100%; height: 100%; fill: none; stroke: currentColor; stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round; }
+    .bold { margin-top: 8px; font-size: 22px; font-weight: 700; line-height: 1.25; }
+    .or {
+      width: fit-content; margin: 14px 0 0; padding: 7px 16px;
+      border-radius: 999px; background: #101820; color: #fff; font-weight: 500;
+    }
+    .points { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 14px; padding: 8px var(--pad) 0; }
+    .points h3 { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; font-size: 16px; }
+    .points svg { width: 28px; height: 28px; stroke: currentColor; fill: none; stroke-width: 1.4; stroke-linecap: round; stroke-linejoin: round; }
+    .points p { margin-top: 6px; font-size: 14px; line-height: 1.35; color: var(--muted); }
+    form, fieldset { margin: 0; padding: 0; border: 0; }
+    label, legend { display: block; margin-top: 14px; font-size: 14px; font-weight: 500; }
+    input[type="text"], input[type="tel"] {
+      width: 100%; height: 48px; margin-top: 6px; padding: 0 12px;
+      border: 1px solid rgb(26 51 68 / 0.2); border-radius: 10px;
+      background: #fff; font: inherit;
+    }
+    .choice { display: flex; align-items: center; gap: 8px; font-weight: 400; }
+    form .btn { margin-top: 16px; }
+    .faq { border-top: 1px solid rgb(26 51 68 / 0.15); margin-top: 8px; }
+    .faq button {
+      width: 100%; text-align: start; background: none; border: 0; border-bottom: 1px solid rgb(26 51 68 / 0.15);
+      padding: 14px 0; font: inherit; font-size: 17px; font-weight: 500; cursor: pointer;
+    }
+    .faq p { display: none; margin: 0 0 12px; color: var(--muted); font-size: 15px; }
+    .faq .open p { display: block; }
+    .price { margin-top: 14px; font-size: 28px; font-weight: 500; line-height: 1.25; }
+    .strike { text-decoration: line-through; color: var(--muted); font-weight: 400; }
+    .heart { color: #e10600; }
+    .end { padding-bottom: 36px; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <a class="brand" href="#top"><img src="images/logo.jpeg" alt="" /><span>חב"ד למטייל סאו פאולו</span></a>
+      <a class="btn" href="#form">השארת פרטים</a>
+    </header>
+
+    <section class="block" id="top">
+      <div class="video">
+        <iframe src="https://www.youtube.com/embed/ao8tiqnuS3Y?rel=0&playsinline=1" title="In Waves and War" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <div class="text">
+        <h1>הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, <span class="mark">עכשיו ללוחמים שלנו!</span></h1>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/stanford.jpg" alt="" />
+      <div class="text">
+        <p class="kicker">אוניברסיטת סטנפורד</p>
+        <div class="stat">
+          <p class="num">90%</p>
+          <span class="arrow" aria-hidden="true"><svg viewBox="0 0 40 64"><path d="M20 4v48"/><path d="M2 34l18 20 18-20"/></svg></span>
+        </div>
+        <p class="bold">ירידה בסימפטומים בקרב<br>30 לוחמי קומנדו</p>
+        <p>ב-18 באפריל 2026, באירוע חגיגי בבית הלבן, חתם הנשיא טראמפ על צו המזרז את המחקר והשימוש באייבוגן, חומר המופק משורש של שיח אפריקאי, שהוכיח את עצמו בשנים האחרונות כפתרון קסם ללוחמי יחידות עילית הסובלים פוסט טראומה, דכאון, חרדה ופגיעות מוחיות.</p>
+        <p class="muted">מה ששכנע את טראמפ לנקוט בצעד כה דרמטי ויוצא הדופן, הן תוצאותיו הדרמטיות ויוצאות הדופן של מחקר שערכה אוניברסיטת סטנפורד בקרב 30 לוחמי קומנדו אמריקאים. המחקר הראה כי לוחמים שעברו טיפול באייבוגן חוו ירידה של כ-90% בסימפטומים הקשים מהם הם סבלו בעקבות חשיפה למוות, אובדן, אלימות ופעמים רבות גם פגיעות פיזיות במהלך שירותם הצבאי.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/hero-garden.jpg" alt="" />
+      <div class="text">
+        <h2>חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
+        <p>כהוקרה על התרומה האדירה שלך למדינת ישראל ולעם היהודי, חב"ד סאו פאולו השיג תרומה יעודית המאפשרת לנו לסדר לכם טיפול פה, בברזיל, עם מעטפת מקצועית ורפואית.</p>
+        <p class="muted">מדוע דווקא בברזיל? בעוד ארה"ב מגלה את האייבוגן רק בשנים האחרונות, במדינת סאו פאולו השימוש בו מוסדר וחוקי כבר עשרות שנים. הניסיון הרב שנאסף בקרב הרופאים והמוסדות העוסקים בכך, מבטיח טיפול מקצועי ובטוח. אז אם אתם מגיעים לדרום אמריקה בכדי לנקות את הראש או מעוניינים להגיע עד לפה בכדי לזכות בהתחלה חדשה, אתם מוזמנים להשאיר פרטים.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/eligibility.jpg" alt="" />
+      <div class="text">
+        <h2>מי זכאי למתנת חיים?</h2>
+        <p>חיילים המוכרים על ידי משרד הביטחון כסובלים מפוסט טראומה.</p>
+        <p class="or">או</p>
+        <p>אנחנו יודעים שקבלת הכרה על ידי משרד הביטחון לוקחת זמן והתעסקות. אם אתם חיילי מילואים או סדיר, ששרתו למעלה מ-200 ימים במלחמה גם אתם מוזמנים להשאיר פרטים ונחזור אליכם לשיחת סינון.</p>
+      </div>
+    </section>
+
+    <section class="block" id="form">
+      <img class="photo" src="images/form-desk.jpg" alt="" />
+      <div class="text">
+        <form id="lead-form">
+          <h2>תשאירו פרטים ונחזור אליכם:</h2>
+          <label for="full-name">שם מלא</label>
+          <input id="full-name" name="name" type="text" autocomplete="name" required />
+          <label for="phone">טלפון</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+          <fieldset>
+            <legend>האם אני</legend>
+            <label class="choice"><input type="radio" name="eligibility" value="מוכר משרד הביטחון" required /> מוכר משרד הביטחון</label>
+            <label class="choice"><input type="radio" name="eligibility" value="שרתתי למעלה מ-200 יום" /> שרתתי למעלה מ-200 יום</label>
+          </fieldset>
+          <button class="btn" type="submit">שליחת פרטים</button>
+        </form>
+        <div id="lead-ok" hidden>
+          <h2>קיבלנו. נחזור אליכם.</h2>
+          <p class="muted">תודה. הפרטים נקלטו ונחזור אליכם לשיחת סינון.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/iboga.jpg" alt="" />
+      <div class="text">
+        <h2>במה אייבוגן יכול לסייע</h2>
+      </div>
+      <div class="points">
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18.2C7.2 14.8 5 12.4 5 9.7 5 7.7 6.6 6.2 8.6 6.2c1.2 0 2.3.6 3.4 1.8 1.1-1.2 2.2-1.8 3.4-1.8 2 0 3.6 1.5 3.6 3.5 0 2.7-2.2 5.1-7 8.5z"/></svg>שחרור רגשי</h3>
+          <p>עבודה על הזיכרונות והדפוסים שעוצרים אתכם - פוסט-טראומה, דיכאון, חרדה ותגובות לחץ.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.5h9.2a2.8 2.8 0 0 0 .5-5.5 3.7 3.7 0 0 0-7.1-1.1A2.9 2.9 0 0 0 7 16.5z"/><path d="M8 19.2h7"/></svg>מפוגג ערפל מוחי</h3>
+          <p>מחקרים שכללו צילומי MRI לפני ואחרי הראו שינויים במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית האחראית על פונקציות ניהוליות כמו תכנון, מיקוד וקשב.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 4.8a6.4 6.4 0 1 0 4.2 10.8A5.3 5.3 0 0 1 15.2 4.8z"/></svg>שינה והתאוששות</h3>
+          <p>ויסות מערכת העצבים, חזרה לשינה תקינה ובניית תשתית לרווחה לטווח ארוך.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"/><circle cx="12" cy="12" r="7.2"/></svg>קהות רגשית והמנעות</h3>
+          <p>ניתוק רגשי ממשפחה ובנות זוג, אובדן יכולת להרגיש שמחה (אנהדוניה), והימנעות אקטיבית ממקומות, אנשים או טריגרים המזכירים את הטראומה.</p>
+        </article>
+        <article>
+          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12h3.5l2-6 4 12 2-6h7.5"/></svg>דריכות יתר ועוררות</h3>
+          <p>שהייה רציפה במצב הישרדותי (Fight or Flight), תגובות בהלה מוגזמות לרעשים או תנועות, קושי להרפות ולהירגע, התפרצויות זעם ועצבנות קיצונית.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/consult.jpg" alt="" />
+      <div class="text">
+        <h2>אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</h2>
+        <p><a class="btn" href="#form">לפרטים והרשמה</a></p>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="video" id="minutes">
+        <img src="images/60minutes.jpg" alt="60 Minutes" />
+        <button class="play" type="button" aria-label="נגן את התחקיר"><span><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></span></button>
+      </div>
+      <div class="text">
+        <p class="kicker">60 Minutes</p>
+        <p class="bold">צפו בתחקיר 60Minutes - תוכנית התחקירים המובילה באמריקה:</p>
+        <h2>הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/iboga.jpg" alt="" />
+      <div class="text">
+        <h2>אייבוגן- התרופה שמסתתרת בשורש</h2>
+        <p>אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה (PTSD) ובהתמכרויות.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/iboga-fruit.jpg" alt="" />
+      <div class="text">
+        <h2>איך זה עובד בפועל?</h2>
+        <p class="muted">אייבוגאין פועל במקביל על המון נקודות במוח כדי לעזור לו לבנות קשרים עצביים חדשים מחוץ למעגל הטראומה. בניגוד לחומרים פסיכדליים רגילים שעלולים לנתק אותך מהמציאות, אייבוגאין מכניס את המטופל למצב שדומה לחלום בהקיץ - מסע פנימי אינטנסיבי מאוד שנמשך 12 עד 36 שעות רצופות.</p>
+        <p class="muted">במהלך השעות האלה, המטופל לרוב רואה את אירועי החיים שלו רצים מולו כמו סרט, מתמודד ראש בראש עם שורש הטראומה שיושבת לו בראש, ומשחרר את המטען הרגשי והפיזי שתקוע שם. חשוב מאוד לציין, ברוב המוחלט של המקרים לא מדובר בחוויה נעימה או קלה. זו לא "סטלה" של בריחה, אלא עבודת עומק שנועדה לפרק את הכאב מהיסוד.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/clinic.jpg" alt="" />
+      <div class="text">
+        <p class="kicker">מעטפת רפואית</p>
+        <h2>טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
+        <p class="muted">המסע הזה הוא לא משחק, והוא חייב להיעשות באחריות מקסימלית. אייבוגאין משפיע ישירות על מערכת העצבים – הוא יכול להוריד את קצב הדופק ולשנות את הפעילות החשמלית של הלב. לכן, הטיפול חייב להתבצע אך ורק בקליניקה רפואית, תחת השגחת רופא וחיבור למוניטור. לפני שבכלל מתחילים, כל מטופל עובר סינון שכולל א.ק.ג ובדיקות דם כדי לוודא שאין לו בעיות לב רקע שיכולות לסכן אותו.</p>
+      </div>
+    </section>
+
+    <section class="block">
+      <img class="photo" src="images/faq.jpg" alt="" />
+      <div class="text">
+        <h2>שאלות ותשובות</h2>
+        <div class="faq">
+          <div><button type="button">איך נראה הטיפול?</button><p>שורש האייבוגה הוא הלוצינוגן שנמצא בשימוש של תרבויות ילידיות באפריקה כבר מאות שנים. מחקרים מהשנים האחרונות מראים כי שימוש חד-פעמי בו מוביל לתיקון של פגיעות מוחיות ולריפוי טראומות, וישנם סימנים מעודדים המראים אף על סיוע בטיפול בפרקינסון, אלצהיימר ומחלות נוירולוגיות נוספות.</p></div>
+          <div><button type="button">אז למה לא לקחת אותו בבית?</button><p>בניגוד לחומרים אחרים, השימוש באייבוגה שלא במסגרת רפואית מסוכן. לקיחתו מובילה לאטקסיה (אובדן שיווי משקל וקואורדינציה) למשך 12–24 שעות, ומצריכה מעקב רפואי צמוד אחר פעילות הלב. הטיפול ניתן במסגרת קלינית בניטור מלא, אך ורק לאחר בדיקות סינון שנעשות במקום.</p></div>
+          <div><button type="button">מה קורה במהלך הטיפול?</button><p>המטופל שוכב על מיטה במשך כ-12 שעות, עם עיניים מכוסות, בשעה שהחומר עובד. רוב המשתמשים מדווחים על חזיונות המעלים אירועים טראומטיים ומשמעותיים. צילומי MRI שנעשו לחיילים לפני ואחרי הטיפול הראו שינויים לטובה במבנה המוח.</p></div>
+          <div><button type="button">האם יש תועלות ושימושים נוספים לאייבוגה?</button><p>הטיפול בשורש האייבוגה נחשב כבר עשרות שנים לטיפול פורץ דרך בהתמכרויות - מסיגריות, מריחואנה ואלכוהול ועד לסמים הקשים ביותר. מטופלים רבים מדווחים על סימני גמילה מופחתים משמעותית לאחר הטיפול.</p></div>
+          <div><button type="button">מה כוללת מתנת חיים?</button><p>מעטפת לוגיסטית מלאה בשבוע של הטיפול הכולת: לינה, אוכל כשר, הסעות, ליווי, שיחה מקדימה עם איש טיפול ושיחת אינטגרציה לאחריו.</p></div>
+          <div><button type="button">מה לא כוללת מתנת חיים?</button><p>טיסה מישראל לסאו פאולו ובחזרה.</p></div>
+          <div><button type="button">למה ברזיל?</button><p>בזמן שרוב העולם עדיין מנסה להבין איך לגשת לטיפול הזה, לברזיל יש כבר כמה עשורים של ניסיון קליני, חוקי ומפוקח עם אייבוגאין. ברחבי ברזיל פועלות קליניקות שלמות המנוהלות על ידי רופאים ופסיכיאטרים שמתמחים ספציפית בעבודה עם השורש הזה.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block end">
+      <img class="photo" src="images/close-house.jpg" alt="" />
+      <div class="text">
+        <p class="kicker">חב"ד למטייל סאו פאולו - ברזיל</p>
+        <p class="price"><span class="strike">$8,500 במקסיקו</span> ← בחינם עבורכם</p>
+        <p class="bold">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
+        <p class="bold">אנחנו אוהבים אתכם. מגיע לכם. <span class="heart">♥</span></p>
+        <p><a class="btn" href="https://arsenlf.github.io/ibogaine/#contact" target="_blank" rel="noopener noreferrer">לפרטים והרשמה</a></p>
+      </div>
+    </section>
+  </div>
+  <script>
+    document.querySelectorAll(".faq button").forEach(function (button) {
+      button.addEventListener("click", function () {
+        var item = button.parentElement;
+        var open = item.classList.contains("open");
+        document.querySelectorAll(".faq > div").forEach(function (node) { node.classList.remove("open"); });
+        if (!open) item.classList.add("open");
+      });
+    });
+    var minutes = document.getElementById("minutes");
+    minutes.querySelector(".play").addEventListener("click", function () {
+      minutes.innerHTML = '<iframe src="https://www.youtube.com/embed/_zpe_G8_k1s?autoplay=1&rel=0&playsinline=1" title="60 Minutes" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe><button class="x" type="button" aria-label="סגור">×</button>';
+      minutes.querySelector(".x").addEventListener("click", function () { location.reload(); });
+    });
+    document.getElementById("lead-form").addEventListener("submit", function (e) {
+      e.preventDefault();
+      e.target.hidden = true;
+      document.getElementById("lead-ok").hidden = false;
+    });
+  </script>
+</body>
+</html>
