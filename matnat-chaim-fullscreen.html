@@ -554,6 +554,30 @@
       .screen.split.minutes h2.on-photo { color: var(--fg); text-shadow: none; }
       .screen.minutes .media { height: 38dvh; }
     }
+    @media (max-width: 899px) {
+      main { display: flex; flex-direction: column; gap: 1.35rem; }
+      .screen.split { grid-template-rows: 240px auto; }
+      .screen.split .media,
+      .hero-film,
+      .screen.minutes .media {
+        height: 240px;
+        min-height: 240px;
+        max-height: 240px;
+      }
+      .screen.minutes.is-playing .media { height: auto; min-height: 0; max-height: none; }
+      .screen.split .copy > .kicker:first-child {
+        position: static;
+        top: auto;
+        margin: 0 0 0.4rem;
+      }
+      .screen.split .num,
+      .screen.split .num-arrow { font-size: 3.15rem; }
+      .screen.split .num-arrow { height: 0.68em; width: 0.4em; }
+    }
+    @media (max-width: 899px) and (max-height: 780px) {
+      .screen.split .num,
+      .screen.split .num-arrow { font-size: 2.3rem; }
+    }
   </style>
 </head>
 <body>
