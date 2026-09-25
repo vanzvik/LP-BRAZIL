@@ -46,7 +46,7 @@
     .kicker { font-size: 0.95rem; font-weight: 500; letter-spacing: 0.01em; opacity: 0.72; }
     .measure { max-width: 38rem; }
     .close-lines { display: flex; flex-direction: column; gap: 0.45rem; margin-top: 0.35rem; }
-    .close-lines .title-xl { margin-top: 0; }
+    .close-lines .title-xl { margin-top: 0; font-size: clamp(1.7rem, 2.7vw, 2.2rem); }
     .heart { color: #e10600; }
     .wide { max-width: 46rem; }
     header.nav {
@@ -347,7 +347,7 @@
       .hero { justify-content: flex-end; }
       .hero h1, .copy h2, .copy h3, .aid > h2, .title-xl, .price { font-size: clamp(2.1rem, 9vw, 2.8rem); }
       .prose, .faq-a p, .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line) { font-size: 1.02rem; }
-      .stat-line { font-size: 1.5rem; }
+      .stat-line, .close-lines .title-xl { font-size: 1.5rem; }
       .brand { gap: 0.4rem; font-size: 0.82rem; }
       .brand img { width: 2rem; height: 2rem; border-radius: 0.4rem; }
       .hero .player, .hero .player-frame, .hero .player-frame iframe { border-radius: 0.4rem; }
