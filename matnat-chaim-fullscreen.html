@@ -529,6 +529,27 @@
       .hero .on-photo .mark { color: #f1e51d; }
       .aid > h2 { font-size: clamp(1.85rem, 7.2vw, 2.35rem); }
       .screen.minutes .copy { z-index: 4; }
+      html { scroll-snap-type: none; }
+      .screen {
+        height: auto;
+        min-height: 0;
+        max-height: none;
+        overflow: visible;
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
+      }
+      .screen.split { grid-template-rows: 38dvh auto; }
+      .hero-grid { height: auto; grid-template-rows: auto auto; }
+      .hero-film { height: 38dvh; }
+      .hero .copy h1.on-photo,
+      .screen.split.minutes h2.on-photo {
+        position: static;
+        inset: auto;
+        bottom: auto;
+        margin: 0.35rem 0 0;
+      }
+      .screen.split.minutes h2.on-photo { color: var(--fg); text-shadow: none; }
+      .screen.minutes .media { height: 38dvh; }
     }
   </style>
 </head>
@@ -952,6 +973,9 @@
       if (!frameLock) frameIndex = frameAt(window.scrollY);
       return frameIndex;
     }
+    function isMobile() {
+      return window.matchMedia("(max-width: 899px)").matches;
+    }
     function scrollablePanel(node) {
       if (!node || !node.closest) return null;
       var list = node.closest(".faq-list");
@@ -959,6 +983,7 @@
       return null;
     }
     window.addEventListener("wheel", function (e) {
+      if (isMobile()) return;
       var list = scrollablePanel(e.target);
       if (list) {
         var atTop = list.scrollTop <= 0;
@@ -980,12 +1005,14 @@
       touchFaq = scrollablePanel(e.target);
     }, { passive: true });
     window.addEventListener("touchend", function (e) {
+      if (isMobile()) return;
       if (touchFaq && touchFaq.scrollHeight > touchFaq.clientHeight + 1) return;
       var dy = touchStartY - e.changedTouches[0].clientY;
       if (frameLock || Math.abs(dy) < 48) return;
       goFrame(frameNow() + (dy > 0 ? 1 : -1));
     }, { passive: true });
     window.addEventListener("keydown", function (e) {
+      if (isMobile()) return;
       var tag = e.target && e.target.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
       if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); goFrame(frameNow() + 1); }
