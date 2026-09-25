@@ -530,20 +530,20 @@
       .hero .on-photo .mark { color: #f1e51d; }
       .aid > h2 { font-size: clamp(1.85rem, 7.2vw, 2.35rem); }
       .screen.minutes .copy { z-index: 4; }
-      html { scroll-snap-type: none; overflow-x: hidden; }
+      html { scroll-snap-type: y mandatory; overflow-x: hidden; }
       body { overflow-x: hidden; max-width: 100%; }
       .wash { inset: 0; transform: none; }
       .screen {
-        height: auto;
-        min-height: 0;
-        max-height: none;
+        height: 100dvh;
+        min-height: 100dvh;
+        max-height: 100dvh;
         overflow: hidden;
-        scroll-snap-align: none;
-        scroll-snap-stop: normal;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
       }
-      .screen.split { grid-template-rows: 38dvh auto; }
-      .hero-grid { height: auto; grid-template-rows: auto auto; }
-      .hero-film { height: 38dvh; }
+      .screen.split { grid-template-rows: 33.333dvh minmax(0, 1fr); }
+      .hero-grid { height: 100%; grid-template-rows: 33.333dvh minmax(0, 1fr); }
+      .hero-film { height: 100%; }
       .hero .copy h1.on-photo,
       .screen.split.minutes h2.on-photo {
         position: static;
@@ -553,19 +553,9 @@
       }
       .screen.split.minutes h2.on-photo { color: var(--fg); text-shadow: none; }
       .screen.faq-screen .copy.faq { overflow: visible; }
-      .screen.minutes .media { height: 38dvh; }
+      .screen.minutes .media { height: 33.333dvh; }
     }
     @media (max-width: 899px) {
-      main { display: flex; flex-direction: column; gap: 1.35rem; }
-      .screen.split { grid-template-rows: 240px auto; }
-      .screen.split .media,
-      .hero-film,
-      .screen.minutes .media {
-        height: 240px;
-        min-height: 240px;
-        max-height: 240px;
-      }
-      .screen.minutes.is-playing .media { height: auto; min-height: 0; max-height: none; }
       .screen.split .copy > .kicker:first-child {
         position: static;
         top: auto;
@@ -989,13 +979,31 @@
       }
       rail.classList.toggle("on-dark", nav.classList.contains("on-dark"));
     }
+    var frameAnim = 0;
     function goFrame(next) {
       next = Math.max(0, Math.min(frames.length - 1, next));
       frameIndex = next;
       frameLock = true;
       markRail();
-      window.scrollTo({ top: frames[next].offsetTop, behavior: "smooth" });
-      window.setTimeout(function () { frameLock = false; paintNav(); markRail(); }, 700);
+      var target = frames[next].offsetTop;
+      var mobile = isMobile();
+      var duration = mobile ? 280 : 700;
+      if (frameAnim) cancelAnimationFrame(frameAnim);
+      if (!mobile) {
+        window.scrollTo({ top: target, behavior: "smooth" });
+        window.setTimeout(function () { frameLock = false; paintNav(); markRail(); }, duration);
+        return;
+      }
+      var startY = window.scrollY;
+      var t0 = performance.now();
+      function step(now) {
+        var p = Math.min(1, (now - t0) / duration);
+        var eased = 1 - Math.pow(1 - p, 3);
+        window.scrollTo(0, startY + (target - startY) * eased);
+        if (p < 1) frameAnim = requestAnimationFrame(step);
+        else { frameAnim = 0; frameLock = false; paintNav(); markRail(); }
+      }
+      frameAnim = requestAnimationFrame(step);
     }
     function frameNow() {
       if (!frameLock) frameIndex = frameAt(window.scrollY);
@@ -1011,7 +1019,6 @@
       return null;
     }
     window.addEventListener("wheel", function (e) {
-      if (isMobile()) return;
       var list = scrollablePanel(e.target);
       if (list) {
         var atTop = list.scrollTop <= 0;
@@ -1033,14 +1040,12 @@
       touchFaq = scrollablePanel(e.target);
     }, { passive: true });
     window.addEventListener("touchend", function (e) {
-      if (isMobile()) return;
       if (touchFaq && touchFaq.scrollHeight > touchFaq.clientHeight + 1) return;
       var dy = touchStartY - e.changedTouches[0].clientY;
       if (frameLock || Math.abs(dy) < 48) return;
       goFrame(frameNow() + (dy > 0 ? 1 : -1));
     }, { passive: true });
     window.addEventListener("keydown", function (e) {
-      if (isMobile()) return;
       var tag = e.target && e.target.tagName;
       if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
       if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); goFrame(frameNow() + 1); }
