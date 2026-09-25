@@ -367,37 +367,45 @@
     .screen.minutes { position: relative; }
     .screen.minutes .copy { min-width: 0; }
     .screen.minutes .media {
-      position: absolute; z-index: 3; height: auto; overflow: hidden;
+      position: absolute; z-index: 3; height: auto; overflow: hidden; background: #000;
       transition: top 0.42s ease-in, bottom 0.42s ease-in, inset-inline-start 0.42s ease-in, inset-inline-end 0.42s ease-in;
     }
     .minutes .play-open {
       position: relative; display: block; width: 100%; height: 100%;
-      padding: 0; border: 0; background: #101820; cursor: pointer;
+      padding: 0; border: 0; background: #000; cursor: pointer;
     }
-    .minutes .play-open img { width: 100%; height: 100%; object-fit: cover; }
+    .minutes .play-open img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.28s ease-in; }
+    .minutes.is-playing .play-open img { opacity: 0; transition-delay: 0.42s; }
+    .minutes-stage {
+      position: absolute; z-index: 4; left: 50%; top: 50%;
+      width: min(60vw, calc(60svh * 16 / 9));
+      aspect-ratio: 16 / 9;
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+    }
     .minutes-frame {
       position: absolute; inset: 0; width: 100%; height: 100%; border: 0;
-      opacity: 0; pointer-events: none; transition: opacity 0.25s ease-in;
+      opacity: 0; pointer-events: none; transition: opacity 0.28s ease-in;
     }
     .minutes-frame.is-ready { opacity: 1; pointer-events: auto; }
     .minutes.is-playing .play-btn { opacity: 0; transition: opacity 0.3s ease-in; }
     .minutes-close {
-      position: absolute; z-index: 4; top: 4.5rem; inset-inline-start: 0.85rem;
+      position: absolute; z-index: 5; top: -0.85rem; inset-inline-start: -0.85rem;
       width: 2.75rem; height: 2.75rem; border: 0; border-radius: 50%;
       background: var(--cream); color: var(--ink); cursor: pointer;
       font-size: 1.6rem; line-height: 1;
-      opacity: 0; pointer-events: none; transition: opacity 0.3s ease-in;
+      opacity: 0; pointer-events: none; transition: opacity 0.28s ease-in 0.42s;
     }
     .minutes.is-playing .minutes-close { opacity: 1; pointer-events: auto; }
     @media (min-width: 900px) {
       .screen.minutes .copy { grid-column: 2; }
       .screen.minutes .media { top: 0; bottom: 0; inset-inline-start: 0; inset-inline-end: 50%; }
-      .screen.minutes.is-playing .media { top: 1.75rem; bottom: 1.75rem; inset-inline-start: 1.75rem; inset-inline-end: 1.75rem; }
+      .screen.minutes.is-playing .media { top: 0; bottom: 0; inset-inline-start: 0; inset-inline-end: 0; }
     }
     @media (max-width: 899px) {
       .screen.minutes .copy { grid-row: 2; }
       .screen.minutes .media { top: 0; height: 30svh; bottom: auto; inset-inline: 0; }
-      .screen.minutes.is-playing .media { top: 1rem; bottom: 1rem; height: auto; inset-inline: 1rem; }
+      .screen.minutes.is-playing .media { top: 0; bottom: 0; height: auto; inset-inline: 0; }
     }
   </style>
 </head>
@@ -544,13 +552,14 @@
           <img src="images/60minutes.jpg" alt="60 Minutes" />
           <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></span>
         </button>
-        <iframe class="minutes-frame" title="60 Minutes" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        <button type="button" class="minutes-close" aria-label="סגור את הסרטון">×</button>
+        <div class="minutes-stage">
+          <iframe class="minutes-frame" title="60 Minutes" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <button type="button" class="minutes-close" aria-label="סגור את הסרטון">×</button>
+        </div>
       </div>
       <div class="copy">
         <p class="kicker">60 Minutes</p>
         <h2>צפו בתחקיר 60Minutes - תוכנית התחקירים המובילה באמריקה: הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
-        <p style="color:var(--muted)">צפו בתחקיר של 60 Minutes תוכנית התחקירים המובילה בארה"ב על הפוטנציאל הרפואי ומדוע חשוב שהטיפול יעשה במסגרת קלינית</p>
       </div>
     </section>
 
