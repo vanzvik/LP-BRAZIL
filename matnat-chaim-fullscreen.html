@@ -430,7 +430,7 @@
         position: relative;
         padding: 0.8rem 5vw 0.6rem;
         gap: 0.4rem;
-        overflow: hidden;
+        overflow: visible;
       }
       .copy h2, .copy h3, .aid > h2 { font-size: clamp(1.28rem, 5.2vw, 1.58rem); line-height: 1.12; }
       .screen.split .num { font-size: 3.15rem; }
@@ -498,6 +498,38 @@
       .screen.split .num { font-size: 2.3rem; }
       .screen.split .copy { gap: 0.25rem; padding-top: 0.55rem; padding-bottom: 0.4rem; }
     }
+    @media (max-width: 899px) {
+      .screen.split .media::after,
+      .hero-film::after {
+        content: "";
+        position: absolute;
+        inset-inline: 0;
+        bottom: 0;
+        height: 58%;
+        pointer-events: none;
+        z-index: 1;
+      }
+      .photo-dark .media::after,
+      .hero-film::after { background: linear-gradient(to top, rgb(10 16 22 / 0.72), transparent); }
+      .photo-light .media::after { background: linear-gradient(to top, rgb(246 243 234 / 0.78), transparent); }
+      .screen.split .on-photo,
+      .hero .copy h1.on-photo {
+        position: absolute;
+        z-index: 5;
+        inset-inline: 5vw;
+        bottom: calc(100% + 0.7rem);
+        margin: 0;
+        font-size: clamp(1.85rem, 7.4vw, 2.45rem);
+        line-height: 1.12;
+        font-weight: 500;
+      }
+      .photo-dark .on-photo,
+      .hero .on-photo { color: #f7f4ec; text-shadow: 0 1px 14px rgb(0 0 0 / 0.45); }
+      .photo-light .on-photo { color: #14202b; text-shadow: 0 1px 12px rgb(246 243 234 / 0.7); }
+      .hero .on-photo .mark { color: #f1e51d; }
+      .aid > h2 { font-size: clamp(1.85rem, 7.2vw, 2.35rem); }
+      .screen.minutes .copy { z-index: 4; }
+    }
   </style>
 </head>
 <body>
@@ -512,7 +544,7 @@
       <div class="hero-grid">
         <div class="copy">
           <p class="kicker">חב"ד סאו פאולו · סאו פאולו, ברזיל</p>
-          <h1>הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, <span class="mark">עכשיו ללוחמים שלנו!</span></h1>
+          <h1 class="on-photo">הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, <span class="mark">עכשיו ללוחמים שלנו!</span></h1>
           <ul class="sources">
             <li>בית הלבן · אפריל 2026</li>
             <li>אוניברסיטת סטנפורד</li>
@@ -550,10 +582,10 @@
       </div>
     </section>
 
-    <section class="screen split" data-label="מתנת חיים">
+    <section class="screen split photo-dark" data-label="מתנת חיים">
       <div class="media"><img src="images/hero-garden.jpg" alt="" /></div>
       <div class="copy">
-        <h2>חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
+        <h2 class="on-photo">חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
         <div class="prose">
           <p>כהוקרה על התרומה האדירה שלך למדינת ישראל ולעם היהודי, חב"ד סאו פאולו השיג תרומה יעודית המאפשרת לנו לסדר לכם טיפול פה, בברזיל, עם מעטפת מקצועית ורפואית.</p>
           <p style="color:var(--muted)">מדוע דווקא בברזיל? בעוד ארה"ב מגלה את האייבוגן רק בשנים האחרונות, במדינת סאו פאולו השימוש בו מוסדר וחוקי כבר עשרות שנים. הניסיון הרב שנאסף בקרב הרופאים והמוסדות העוסקים בכך, מבטיח טיפול מקצועי ובטוח. אז אם אתם מגיעים לדרום אמריקה בכדי לנקות את הראש או מעוניינים להגיע עד לפה בכדי לזכות בהתחלה חדשה, אתם מוזמנים להשאיר פרטים.</p>
@@ -561,11 +593,11 @@
       </div>
     </section>
 
-    <section class="screen split flip" data-label="זכאות">
+    <section class="screen split flip photo-dark" data-label="זכאות">
       <div class="media"><img src="images/eligibility.jpg" alt="" /></div>
       <div class="copy">
         <div>
-          <h2>מי זכאי למתנת חיים?</h2>
+          <h2 class="on-photo">מי זכאי למתנת חיים?</h2>
           <div class="prose">
             <p>חיילים המוכרים על ידי משרד הביטחון כסובלים מפוסט טראומה.</p>
             <p class="or">או</p>
@@ -575,11 +607,11 @@
       </div>
     </section>
 
-    <section class="screen split" id="form" data-label="פרטים">
+    <section class="screen split photo-dark" id="form" data-label="פרטים">
       <div class="media"><img src="images/form-desk.jpg" alt="" /></div>
       <div class="copy">
         <form id="lead-form" novalidate>
-          <h3>תשאירו פרטים ונחזור אליכם:</h3>
+          <h3 class="on-photo">תשאירו פרטים ונחזור אליכם:</h3>
           <div>
             <label for="full-name">שם מלא</label>
             <input id="full-name" name="name" type="text" autocomplete="name" required />
@@ -629,15 +661,15 @@
       </div>
     </section>
 
-    <section class="screen split flip" data-label="התייעצות">
+    <section class="screen split flip photo-dark" data-label="התייעצות">
       <div class="media"><img src="images/consult.jpg" alt="" /></div>
       <div class="copy">
-        <p class="title-xl">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</p>
+        <p class="title-xl on-photo">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</p>
         <a class="btn" href="#form">לפרטים והרשמה</a>
       </div>
     </section>
 
-    <section class="screen split minutes" data-label="60 Minutes">
+    <section class="screen split minutes photo-dark" data-label="60 Minutes">
       <div class="media">
         <button type="button" class="play-open" aria-label="נגן את התחקיר של 60 Minutes">
           <img src="images/60minutes.jpg" alt="60 Minutes" />
@@ -651,40 +683,40 @@
       <div class="copy">
         <p class="kicker">60 Minutes</p>
         <p class="stat-line">צפו בתחקיר 60Minutes - תוכנית התחקירים המובילה באמריקה:</p>
-        <h2>הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
+        <h2 class="on-photo">הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
       </div>
     </section>
 
-    <section class="screen split flip" data-label="השורש">
+    <section class="screen split flip photo-light" data-label="השורש">
       <div class="media"><img src="images/iboga.jpg" alt="שיח איבוגה" /></div>
       <div class="copy">
-        <h2>אייבוגן- התרופה שמסתתרת בשורש</h2>
+        <h2 class="on-photo">אייבוגן- התרופה שמסתתרת בשורש</h2>
         <p>אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה (PTSD) ובהתמכרויות.</p>
       </div>
     </section>
 
-    <section class="screen split" data-label="איך זה עובד">
+    <section class="screen split photo-dark" data-label="איך זה עובד">
       <div class="media"><img src="images/iboga-fruit.jpg" alt="" /></div>
       <div class="copy">
-        <h3>איך זה עובד בפועל?</h3>
+        <h3 class="on-photo">איך זה עובד בפועל?</h3>
         <p style="color:var(--muted)">אייבוגאין פועל במקביל על המון נקודות במוח כדי לעזור לו לבנות קשרים עצביים חדשים מחוץ למעגל הטראומה. בניגוד לחומרים פסיכדליים רגילים שעלולים לנתק אותך מהמציאות, אייבוגאין מכניס את המטופל למצב שדומה לחלום בהקיץ - מסע פנימי אינטנסיבי מאוד שנמשך 12 עד 36 שעות רצופות.</p>
         <p style="color:var(--muted)">במהלך השעות האלה, המטופל לרוב רואה את אירועי החיים שלו רצים מולו כמו סרט, מתמודד ראש בראש עם שורש הטראומה שיושבת לו בראש, ומשחרר את המטען הרגשי והפיזי שתקוע שם. חשוב מאוד לציין, ברוב המוחלט של המקרים לא מדובר בחוויה נעימה או קלה. זו לא "סטלה" של בריחה, אלא עבודת עומק שנועדה לפרק את הכאב מהיסוד.</p>
       </div>
     </section>
 
-    <section class="screen split flip" data-label="מעטפת">
+    <section class="screen split flip photo-dark" data-label="מעטפת">
       <div class="media"><img src="images/clinic.jpg" alt="חדר טיפול קליני" /></div>
       <div class="copy">
         <p class="kicker" style="color:var(--green)">מעטפת רפואית</p>
-        <h2>טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
+        <h2 class="on-photo">טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
         <p style="color:var(--muted)">המסע הזה הוא לא משחק, והוא חייב להיעשות באחריות מקסימלית. אייבוגאין משפיע ישירות על מערכת העצבים – הוא יכול להוריד את קצב הדופק ולשנות את הפעילות החשמלית של הלב. לכן, הטיפול חייב להתבצע אך ורק בקליניקה רפואית, תחת השגחת רופא וחיבור למוניטור. לפני שבכלל מתחילים, כל מטופל עובר סינון שכולל א.ק.ג ובדיקות דם כדי לוודא שאין לו בעיות לב רקע שיכולות לסכן אותו.</p>
       </div>
     </section>
 
-    <section class="screen split faq-screen" data-label="שאלות">
+    <section class="screen split faq-screen photo-dark" data-label="שאלות">
       <div class="media"><img src="images/faq.jpg" alt="" /></div>
       <div class="copy faq">
-      <h2>שאלות ותשובות</h2>
+      <h2 class="on-photo">שאלות ותשובות</h2>
       <div class="faq-list">
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">איך נראה הטיפול?</button>
