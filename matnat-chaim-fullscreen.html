@@ -530,19 +530,19 @@
       .hero .on-photo .mark { color: #f1e51d; }
       .aid > h2 { font-size: clamp(1.85rem, 7.2vw, 2.35rem); }
       .screen.minutes .copy { z-index: 4; }
-      html { scroll-snap-type: y mandatory; overflow-x: hidden; }
+      html { scroll-snap-type: none; overflow-x: hidden; touch-action: none; }
       body { overflow-x: hidden; max-width: 100%; }
       .wash { inset: 0; transform: none; }
       .screen {
-        height: 100dvh;
-        min-height: 100dvh;
-        max-height: 100dvh;
+        height: var(--frame, 100dvh);
+        min-height: var(--frame, 100dvh);
+        max-height: var(--frame, 100dvh);
         overflow: hidden;
-        scroll-snap-align: start;
-        scroll-snap-stop: always;
+        scroll-snap-align: none;
+        scroll-snap-stop: normal;
       }
-      .screen.split { grid-template-rows: 33.333dvh minmax(0, 1fr); }
-      .hero-grid { height: 100%; grid-template-rows: 33.333dvh minmax(0, 1fr); }
+      .screen.split { grid-template-rows: var(--photo, 33.333dvh) minmax(0, 1fr); }
+      .hero-grid { height: 100%; grid-template-rows: var(--photo, 33.333dvh) minmax(0, 1fr); }
       .hero-film { height: 100%; }
       .hero .copy h1.on-photo,
       .screen.split.minutes h2.on-photo {
@@ -553,7 +553,7 @@
       }
       .screen.split.minutes h2.on-photo { color: var(--fg); text-shadow: none; }
       .screen.faq-screen .copy.faq { overflow: visible; }
-      .screen.minutes .media { height: 33.333dvh; }
+      .screen.minutes .media { height: var(--photo, 33.333dvh); }
     }
     @media (max-width: 899px) {
       .screen.split .copy > .kicker:first-child {
@@ -980,6 +980,17 @@
       rail.classList.toggle("on-dark", nav.classList.contains("on-dark"));
     }
     var frameAnim = 0;
+    var frameGen = 0;
+    function layoutMobileFrames() {
+      if (!isMobile()) {
+        document.documentElement.style.removeProperty("--frame");
+        document.documentElement.style.removeProperty("--photo");
+        return;
+      }
+      var h = window.innerHeight;
+      document.documentElement.style.setProperty("--frame", h + "px");
+      document.documentElement.style.setProperty("--photo", Math.round(h / 3) + "px");
+    }
     function goFrame(next) {
       next = Math.max(0, Math.min(frames.length - 1, next));
       frameIndex = next;
@@ -988,20 +999,33 @@
       var target = frames[next].offsetTop;
       var mobile = isMobile();
       var duration = mobile ? 280 : 700;
+      var gen = ++frameGen;
       if (frameAnim) cancelAnimationFrame(frameAnim);
       if (!mobile) {
         window.scrollTo({ top: target, behavior: "smooth" });
-        window.setTimeout(function () { frameLock = false; paintNav(); markRail(); }, duration);
+        window.setTimeout(function () {
+          if (gen !== frameGen) return;
+          frameLock = false;
+          paintNav();
+          markRail();
+        }, duration);
         return;
       }
       var startY = window.scrollY;
       var t0 = performance.now();
       function step(now) {
+        if (gen !== frameGen) return;
         var p = Math.min(1, (now - t0) / duration);
         var eased = 1 - Math.pow(1 - p, 3);
         window.scrollTo(0, startY + (target - startY) * eased);
         if (p < 1) frameAnim = requestAnimationFrame(step);
-        else { frameAnim = 0; frameLock = false; paintNav(); markRail(); }
+        else {
+          frameAnim = 0;
+          window.scrollTo(0, frames[next].offsetTop);
+          frameLock = false;
+          paintNav();
+          markRail();
+        }
       }
       frameAnim = requestAnimationFrame(step);
     }
@@ -1039,6 +1063,13 @@
       touchStartY = e.touches[0].clientY;
       touchFaq = scrollablePanel(e.target);
     }, { passive: true });
+    window.addEventListener("touchmove", function (e) {
+      if (!isMobile()) return;
+      var tag = e.target && e.target.tagName;
+      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (scrollablePanel(e.target)) return;
+      e.preventDefault();
+    }, { passive: false });
     window.addEventListener("touchend", function (e) {
       if (touchFaq && touchFaq.scrollHeight > touchFaq.clientHeight + 1) return;
       var dy = touchStartY - e.changedTouches[0].clientY;
@@ -1072,8 +1103,14 @@
       frameIndex = next;
       markRail();
     }
+    layoutMobileFrames();
     frameIndex = frameAt(window.scrollY);
     markRail();
+    window.addEventListener("resize", function () {
+      var index = frameNow();
+      layoutMobileFrames();
+      if (isMobile() && !frameLock) window.scrollTo(0, frames[index].offsetTop);
+    });
     window.addEventListener("scroll", settleFrame, { passive: true });
     window.addEventListener("pageshow", settleFrame);
     window.addEventListener("load", settleFrame);
