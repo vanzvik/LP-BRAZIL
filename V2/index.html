@@ -57,6 +57,7 @@
       pointer-events: none;
     }
     header.nav.on-dark { color: var(--cream); }
+    header.nav.brand-light .brand { color: var(--cream); }
     header.nav a { pointer-events: auto; text-decoration: none; font-weight: 500; }
     header.nav a:not(.btn) { text-shadow: 0 0 14px rgb(243 240 232 / 0.95), 0 1px 2px rgb(243 240 232 / 0.8); }
     .brand { display: inline-flex; align-items: center; gap: 0.6rem; min-width: 0; white-space: nowrap; }
@@ -1265,23 +1266,14 @@
       });
     }
     var nav = document.querySelector("header.nav");
-    var darkScreens = ["hero"];
     function paintNav() {
-      if (isMobile()) return;                 /* mobile header state is measured, not sampled */
-      nav.style.visibility = "hidden";
-      void document.body.offsetHeight;
-      var under = document.elementFromPoint(Math.floor(window.innerWidth / 2), 36);
-      nav.style.visibility = "";
-      var dark = false;
-      for (var node = under; node; node = node.parentElement) {
-        if (!node.classList) continue;
-        for (var i = 0; i < darkScreens.length; i++) {
-          if (node.classList.contains(darkScreens[i])) dark = true;
-        }
-      }
-      nav.classList.toggle("on-dark", dark);
+      if (isMobile()) return;
+      var idx = frameAt(window.scrollY || window.pageYOffset || 0);
+      nav.classList.toggle("on-dark", idx === 0);
+      nav.classList.toggle("brand-light", idx === 2 || idx === 4 || idx === 7 || idx === 9);
+      var railEl = document.querySelector(".rail");
+      if (railEl) railEl.classList.toggle("on-dark", idx === 0 || idx === 6 || idx === 10 || idx === 12);
     }
-    paintNav();
     window.addEventListener("scroll", paintNav, { passive: true });
 
     var frames = Array.prototype.slice.call(document.querySelectorAll("main > .screen"));
@@ -1312,7 +1304,6 @@
       for (var i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("aria-current", i === frameIndex ? "true" : "false");
       }
-      if (!isMobile()) rail.classList.toggle("on-dark", nav.classList.contains("on-dark"));
     }
     var frameAnim = 0;
     var frameGen = 0;
@@ -1699,6 +1690,7 @@
 
       if (mobile) {
         nav.classList.remove("on-dark");
+        nav.classList.remove("brand-light");
         syncChrome();
         buildFacade();
         document.querySelectorAll(".screen.split .media, .prose, .aid article, .faq-list").forEach(function (el) {
