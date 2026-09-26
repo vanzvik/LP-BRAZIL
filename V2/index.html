@@ -1085,7 +1085,7 @@
         <p class="title-xl">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
         <p class="title-xl">אנחנו אוהבים אתכם. מגיע לכם. <span class="heart" aria-hidden="true">♥</span></p>
       </div>
-      <a class="btn" href="https://arsenlf.github.io/ibogaine/#contact" target="_blank" rel="noopener noreferrer">לפרטים והרשמה</a>
+      <a class="btn" href="#form">השאירו פרטים ונחזור אליכם</a>
       </div>
     </section>
   </main>
@@ -1625,7 +1625,13 @@
         var fr = formSec.getBoundingClientRect();
         overForm = fr.top < window.innerHeight * 0.9 && fr.bottom > 0;
       }
-      ctaFixed.classList.toggle("is-away", overForm || formFocused);
+      var endBtn = document.querySelector(".screen.close .btn");
+      var overEnd = false;
+      if (endBtn) {
+        var er = endBtn.getBoundingClientRect();
+        overEnd = er.top < window.innerHeight * 0.92 && er.bottom > 0;
+      }
+      ctaFixed.classList.toggle("is-away", overForm || formFocused || overEnd);
       rail.classList.toggle("is-away", overForm);
 
       var line = y + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--obstruct")) || 58) + 24;
