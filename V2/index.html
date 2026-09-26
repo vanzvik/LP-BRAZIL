@@ -62,6 +62,7 @@
     header.nav a:not(.btn) { text-shadow: 0 0 14px rgb(243 240 232 / 0.95), 0 1px 2px rgb(243 240 232 / 0.8); }
     .brand { display: inline-flex; align-items: center; gap: 0.6rem; min-width: 0; white-space: nowrap; }
     header.nav .btn { flex: none; white-space: nowrap; }
+    header.nav.cta-away .btn { visibility: hidden; pointer-events: none; }
     .brand img {
       width: 2.65rem; height: 2.65rem; flex: none; object-fit: cover;
       border-radius: 0.55rem;
@@ -1271,6 +1272,11 @@
       var idx = frameAt(window.scrollY || window.pageYOffset || 0);
       nav.classList.toggle("on-dark", idx === 0);
       nav.classList.toggle("brand-light", idx === 2 || idx === 4 || idx === 7 || idx === 9);
+      var onForm = false;
+      for (var fi = 0; fi < frames.length; fi++) {
+        if (frames[fi].id === "form") onForm = fi === idx;
+      }
+      nav.classList.toggle("cta-away", onForm);
       var railEl = document.querySelector(".rail");
       if (railEl) railEl.classList.toggle("on-dark", idx === 0 || idx === 6 || idx === 10 || idx === 12);
     }
@@ -1691,6 +1697,7 @@
       if (mobile) {
         nav.classList.remove("on-dark");
         nav.classList.remove("brand-light");
+        nav.classList.remove("cta-away");
         syncChrome();
         buildFacade();
         document.querySelectorAll(".screen.split .media, .prose, .aid article, .faq-list").forEach(function (el) {
