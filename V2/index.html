@@ -8,242 +8,14 @@
   <meta name="description" content="הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, עכשיו ללוחמים שלנו. מתנת חיים מבית חב״ד סאו פאולו." />
   <meta property="og:title" content="מתנת חיים | חב״ד סאו פאולו" />
   <meta property="og:description" content="הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, עכשיו ללוחמים שלנו. מתנת חיים מבית חב״ד סאו פאולו." />
-  <meta property="og:image" content="../og.jpg" />
+  <meta property="og:image" content="og.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="he_IL" />
-  <link rel="icon" href="../favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:GRAD,opsz,wght@200,18,700&display=swap" rel="stylesheet" />
   <style>
-    @media (max-width: 899px) {
-      .desk { display: none !important; }
-
-:root{
-  --ink:#1a3344; --ink-deep:#101820; --cream:#f6f3ea; --cream-soft:#f3f0e8;
-  --muted:#5c656c; --yellow:#f1e51d; --red:#e10600;
-  --rule:rgb(26 51 68 / .14); --rule-soft:rgb(26 51 68 / .08);
-  --gut:20px; --hdr:56px; --obstruct:58px;
-  --font:"Google Sans","Segoe UI",system-ui,-apple-system,sans-serif;
-}
-*,*::before,*::after{box-sizing:border-box}
-html{-webkit-text-size-adjust:100%}
-body{
-  margin:0; background:#e7e2d7; color:var(--ink);
-  font-family:var(--font); font-size:17px; line-height:1.62; font-weight:400;
-  -webkit-font-smoothing:antialiased;
-}
-.page{max-width:480px; margin-inline:auto; background:var(--cream); padding-top:var(--obstruct); padding-bottom:calc(72px + env(safe-area-inset-bottom)); overflow:clip}
-img{max-width:100%}
-
-/* ---------- header ---------- */
-.hdr{
-  position:fixed; inset-block-start:0; z-index:40;
-  width:min(480px,100%); left:50%; transform:translateX(-50%);
-  min-height:56px; padding-inline:16px; padding-block:8px;
-  display:flex; align-items:center; justify-content:space-between; gap:8px;
-  background:var(--cream-soft); border-block-end:1px solid var(--rule-soft);
-}
-.brand{display:flex; align-items:center; gap:8px; min-width:0; flex:1 1 auto; min-height:44px;
-  color:inherit; text-decoration:none; font-size:14px; font-weight:500; line-height:1.25}
-.brand img{width:32px; height:32px; flex:none; border-radius:7px; object-fit:cover}
-.brand span{overflow:hidden; text-overflow:ellipsis; white-space:nowrap}
-.hdr .pill{display:none}
-.menu-btn{
-  flex:none; width:44px; height:44px; display:grid; place-items:center;
-  border:0; border-radius:12px; background:transparent; color:var(--ink); cursor:pointer;
-}
-.menu-btn:active{background:var(--rule-soft)}
-.menu-btn svg{width:22px; height:22px; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round}
-.bar{position:fixed; inset-block-start:var(--hdr); left:50%; transform:translateX(-50%);
-  width:min(480px,100%); height:2px; z-index:41; background:var(--rule-soft)}
-.bar i{display:block; height:100%; width:0; background:var(--ink); margin-inline-start:auto}
-
-/* ---------- buttons ---------- */
-.pill{
-  display:inline-flex; align-items:center; justify-content:center;
-  min-height:44px; padding-inline:18px; border:0; border-radius:999px;
-  background:var(--ink); color:var(--cream); text-decoration:none; cursor:pointer;
-  font:500 16px/1.2 var(--font); letter-spacing:-.01em;
-}
-.hdr .pill{min-height:44px; font-size:14px; padding-inline:14px}
-.pill:active{background:#16293a}
-.pill.ghost{background:transparent; color:var(--ink); box-shadow:inset 0 0 0 1.5px var(--rule)}
-.pill.wide{width:100%}
-.dock{
-  position:fixed; z-index:45; left:50%; bottom:calc(12px + env(safe-area-inset-bottom));
-  transform:translateX(-50%);
-  display:flex; align-items:center; justify-content:center;
-  width:min(448px, calc(100% - 32px)); min-height:52px;
-  padding:14px 20px;
-  border-radius:999px;
-  background:#1a3344; color:var(--cream); text-decoration:none;
-  font:500 16px/1.2 var(--font);
-  box-shadow:0 10px 28px rgb(16 24 32 / .22);
-}
-.dock:active{background:#16293a}
-
-/* ---------- section rhythm ---------- */
-section{scroll-margin-top:calc(var(--obstruct) + 16px)}
-.sec{padding-block:48px}
-.sec > * + *{margin-block-start:20px}
-.inner{padding-inline:var(--gut)}
-.decision{padding-block-start:72px; border-block-start:1px solid var(--rule)}
-figure{margin:0}
-figure img{display:block; width:100%; aspect-ratio:16/10; max-height:270px; object-fit:cover; background:#d9d3c6}
-
-/* ---------- type ---------- */
-h1,h2,h3{margin:0; font-weight:500; letter-spacing:-.02em; line-height:1.14; text-wrap:balance}
-h1{font-size:clamp(28px,8.6vw,34px)}
-h2{font-size:clamp(23px,6.7vw,26px); line-height:1.22}
-h3{font-size:18px; line-height:1.34; letter-spacing:-.01em}
-p{margin:0}
-.sec p + p{margin-block-start:16px}
-.kicker{font-size:14px; font-weight:500; color:var(--muted); line-height:1.4}
-.muted{color:var(--muted)}
-.lede{font-size:18px; line-height:1.58}
-.mark{color:var(--yellow)}
-.bridge{margin-block-start:26px !important; padding-block-start:22px; border-block-start:1px solid var(--rule);
-  font-size:21px; font-weight:500; line-height:1.3; letter-spacing:-.015em}
-
-/* ---------- opening ---------- */
-.open{position:relative; padding:0; background:var(--ink-deep);
-  display:grid; min-height:clamp(360px,62svh,480px)}
-.open > img,.open > .over{grid-area:1 / 1}
-.open img{display:block; width:100%; height:100%; object-fit:cover; opacity:.62}
-.open .over{align-self:end; padding:110px var(--gut) 30px;
-  background:linear-gradient(to top,rgb(16 24 32 / .92) 42%,rgb(16 24 32 / 0))}
-.open h1{color:#fff}
-.open .who{margin-block-start:14px; color:rgb(255 255 255 / .74); font-size:14px}
-.open .pill{margin-block-start:20px; background:var(--cream); color:var(--ink)}
-.flag{position:absolute; inset-block-start:14px; inset-inline-start:var(--gut); z-index:2;
-  padding:6px 12px; border-radius:999px; background:rgb(16 24 32 / .62); color:#fff;
-  font-size:13px; font-weight:500; letter-spacing:0; backdrop-filter:blur(6px)}
-
-/* ---------- stat ---------- */
-.stat{margin-inline:var(--gut); padding:20px; border:1px solid var(--rule); border-radius:16px; background:rgb(255 255 255 / .5)}
-.stat .kicker{margin-block-end:6px}
-.stat .row{display:flex; align-items:center; gap:12px}
-.stat .num{font-size:clamp(48px,14vw,58px); line-height:.92; font-weight:500; letter-spacing:-.045em}
-.stat svg{width:24px; height:40px; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
-.stat .desc{margin-block-start:10px; font-size:19px; font-weight:700; line-height:1.3; letter-spacing:-.01em}
-
-/* ---------- media facade ---------- */
-.media{position:relative; background:var(--ink-deep)}
-.media img{display:block; width:100%; aspect-ratio:16/9; object-fit:cover}
-.media iframe{display:block; width:100%; aspect-ratio:16/9; border:0}
-.media .play{position:absolute; inset:0; width:100%; border:0; padding:0; background:transparent; cursor:pointer}
-.media .play i{position:absolute; top:50%; left:50%; transform:translate(-50%,-50%);
-  width:62px; height:62px; border-radius:50%; background:var(--cream); color:var(--ink);
-  display:grid; place-items:center; box-shadow:0 6px 22px rgb(16 24 32 / .4)}
-.media .play svg{width:22px; height:22px; fill:currentColor}
-.media .play:active i{background:#fff}
-.alt{display:block; padding:10px var(--gut); color:var(--muted); font-size:13px; text-align:center}
-.alt a{color:inherit}
-
-/* ---------- dark section ---------- */
-.dark{background:var(--ink-deep); color:var(--cream)}
-.dark h2{color:#fff}
-.dark .muted,.dark p{color:rgb(246 243 234 / .76)}
-.dark .kicker{color:rgb(246 243 234 / .6)}
-.list{display:grid; gap:2px; margin-block-start:24px}
-.list article{padding:20px var(--gut); background:rgb(246 243 234 / .05)}
-.list h3{display:flex; align-items:center; gap:10px; color:#fff}
-.list svg{width:24px; height:24px; flex:none; fill:none; stroke:var(--yellow); stroke-width:1.5; stroke-linecap:round; stroke-linejoin:round}
-.list p{margin-block-start:8px; font-size:16px; line-height:1.55}
-
-/* ---------- form ---------- */
-form{margin-block-start:24px}
-label,legend{display:block; font-size:14px; font-weight:500; color:var(--muted)}
-input[type=text],input[type=tel]{
-  width:100%; height:50px; margin-block-start:7px; padding-inline:14px;
-  border:1px solid var(--rule); border-radius:12px; background:#fff;
-  font:400 17px/1 var(--font); color:var(--ink);
-}
-input:focus-visible,button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--ink); outline-offset:2px}
-.field + .field{margin-block-start:18px}
-fieldset{margin:22px 0 0; padding:0; border:0}
-.choice{display:flex; align-items:center; gap:12px; min-height:48px; padding-inline:14px;
-  margin-block-start:8px; border:1px solid var(--rule); border-radius:12px; background:#fff;
-  font-size:16px; font-weight:400; color:var(--ink); cursor:pointer}
-.choice input{width:20px; height:20px; accent-color:var(--ink); flex:none}
-.choice:has(input:checked){border-color:var(--ink); box-shadow:inset 0 0 0 1px var(--ink)}
-.note{margin-block-start:14px; font-size:13px; color:var(--muted)}
-#done{padding:22px; border:1px dashed var(--rule); border-radius:16px; background:rgb(255 255 255 / .5)}
-
-/* ---------- faq ---------- */
-.faq{margin-block-start:22px; border-block-start:1px solid var(--rule)}
-.faq details{border-block-end:1px solid var(--rule)}
-.faq summary{
-  display:flex; align-items:center; justify-content:space-between; gap:14px;
-  min-height:56px; padding-block:12px; cursor:pointer; list-style:none;
-  font-size:17px; font-weight:500; line-height:1.35;
-}
-.faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:""; flex:none; width:11px; height:11px; margin-inline-start:2px;
-  border-inline-end:1.8px solid var(--muted); border-block-end:1.8px solid var(--muted);
-  transform:rotate(45deg); transition:transform .25s ease}
-.faq details[open] summary::after{transform:rotate(-135deg)}
-.faq .a{overflow:hidden; color:var(--muted); font-size:16px; line-height:1.6}
-.faq .a p{padding-block-end:18px}
-.faq details[open] .a{animation:open .3s ease}
-@keyframes open{from{opacity:0; transform:translateY(-4px)}to{opacity:1; transform:none}}
-
-/* ---------- close ---------- */
-.price{font-size:26px; font-weight:500; line-height:1.3; letter-spacing:-.02em}
-.price .was{color:var(--muted); font-weight:400; text-decoration:line-through}
-.price .arrow{color:var(--muted)}
-.heart{color:var(--red)}
-.emph{font-size:19px; font-weight:700; line-height:1.35; letter-spacing:-.01em}
-footer{padding:36px var(--gut) 48px; border-block-start:1px solid var(--rule); color:var(--muted); font-size:13px; text-align:center}
-
-/* ---------- chapter sheet ---------- */
-dialog.sheet:not([open]){display:none}
-dialog.sheet[open]{
-  width:min(480px,100%); max-width:100%; max-height:76svh; margin:0 auto 0;
-  margin-block-start:auto; padding:0; border:0; border-radius:20px 20px 0 0;
-  background:var(--cream-soft); color:var(--ink);
-  display:flex; flex-direction:column; overflow:hidden;
-}
-@media (prefers-reduced-motion:no-preference){
-  dialog.sheet[open]{animation:sheet-up .26s cubic-bezier(.2,.7,.2,1)}
-}
-@keyframes sheet-up{from{transform:translateY(14px)}to{transform:none}}
-dialog.sheet::backdrop{background:rgb(16 24 32 / .45)}
-.sheet-top{display:flex; align-items:center; justify-content:space-between; gap:12px;
-  padding:14px 12px 12px 16px; border-block-end:1px solid var(--rule-soft); flex:none}
-.sheet-top h2{font-size:17px; font-weight:500; letter-spacing:0}
-.sheet-x{width:44px; height:44px; flex:none; display:grid; place-items:center; border:0;
-  border-radius:12px; background:transparent; color:var(--ink); font-size:26px; line-height:1; cursor:pointer}
-.sheet-x:active{background:var(--rule-soft)}
-.sheet nav{overflow-y:auto; -webkit-overflow-scrolling:touch; padding:6px 6px calc(14px + env(safe-area-inset-bottom))}
-.sheet a{display:flex; align-items:center; gap:12px; min-height:48px; padding-inline:12px;
-  border-radius:12px; color:var(--ink); text-decoration:none; font-size:16px; font-weight:500}
-.sheet a b{width:20px; flex:none; color:var(--muted); font-weight:500; font-size:13px; font-variant-numeric:tabular-nums}
-.sheet a[aria-current]{background:var(--ink); color:var(--cream)}
-.sheet a[aria-current] b{color:rgb(246 243 234 / .6)}
-.sheet a:active{background:var(--rule-soft)}
-.jump-inline{display:flex; align-items:center; justify-content:center; gap:8px; width:100%;
-  min-height:48px; border:1px solid var(--rule); border-radius:14px; background:transparent;
-  color:var(--muted); font:500 15px/1 var(--font); cursor:pointer}
-
-/* ---------- motion ---------- */
-.rise.staged{opacity:0}
-.rise.in{animation:rise .46s cubic-bezier(.2,.7,.2,1) both}
-@keyframes rise{from{opacity:0; transform:translateY(10px)}to{opacity:1; transform:none}}
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  .rise,.rise.staged,.rise.in{opacity:1; animation:none !important}
-  .faq details[open] .a{animation:none}
-  .faq summary::after{transition:none}
-  *{transition-duration:.01ms !important}
-}
-
-    }
-    @media (min-width: 900px) {
-      .mob { display: none !important; }
-
     :root {
       --bg: #f3f0e8;
       --fg: #1a3344;
@@ -797,17 +569,298 @@ html{scroll-behavior:smooth}
       .screen.split .num,
       .screen.split .num-arrow { font-size: 2.3rem; }
     }
-  
+    /* ==========================================================================
+       MOBILE (< 900px) — interpretation of the desktop deck for one column.
+       Appended LAST and scoped to (width < 900px), which is the exact complement
+       of the desktop (min-width: 900px) queries above, so nothing in here can
+       reach the desktop layout. It deliberately overrides every legacy mobile
+       rule earlier in this stylesheet.
+       Kept from desktop: full-bleed photo edges, the heading laid over the photo,
+       the blurred wash grounds, both tones, display type, bare-underline inputs,
+       hairline FAQ, the .or chip, the rail silhouette.
+       Not kept: viewport-locked screens and JS paging — at 390px those are what
+       clipped the copy and left the dead gaps.
+       ========================================================================== */
+    dialog.sheet { display: none; }
+    /* the mobile overlay clones and their scrims do not exist at desktop */
+    .on-photo-m, .screen.split .media > .scrim, .kicker-m, .cta-fixed { display: none; }
+    /* `hidden` must win over author display rules (form{display:grid}, .cue{display:flex}) */
+    [hidden] { display: none !important; }
+    @media (width < 900px) {
+      :root { --gut: 5vw; --hdr: 56px; --obstruct: 58px; --rule: rgb(26 51 68 / .18); }
+
+      /* ---- undo the legacy pager ---- */
+      html { scroll-snap-type: none; touch-action: auto; overscroll-behavior: auto; scroll-behavior: smooth; overflow-x: hidden; }
+      body { overflow-x: hidden; max-width: 100%; font-size: 17px; line-height: 1.55; }
+      main { padding-block-start: var(--obstruct); display: block; }
+      .screen, .screen.split, .screen.hero, .screen.aid {
+        height: auto; min-height: 0; max-height: none; overflow: visible;
+        display: block; padding: 0;
+        scroll-snap-align: none; scroll-snap-stop: normal;
+        scroll-margin-top: calc(var(--obstruct) + 12px);
+      }
+      .screen.split { grid-template-rows: none; grid-template-columns: none; }
+      .hero-grid { display: flex; flex-direction: column; width: 100%; height: auto; min-height: 0;
+                    grid-template-rows: none; gap: 1rem; padding: 0; align-items: stretch; }
+      .hero-film { order: -1; }
+      .hero .copy { order: 0; }
+
+      /* ---- header: opaque by default, clear only over the hero's reserved band ---- */
+      header.nav {
+        pointer-events: auto;                /* desktop sets none and re-enables anchors only */
+        inset-inline: auto; left: 50%; transform: translateX(-50%);
+        width: min(480px, 100%); min-height: var(--hdr);
+        padding: 8px var(--gut); gap: 10px;
+        background: var(--bg); border-block-end: 1px solid rgb(26 51 68 / .08);
+        color: var(--fg);
+        transition: background .2s linear, border-color .2s linear, color .2s linear;
+      }
+      header.nav a:not(.btn) { text-shadow: none; }
+      header.nav .btn { display: none; }        /* it lives at the bottom of the screen now */
+      .cta-fixed {
+        display: flex; align-items: center; justify-content: center;
+        position: fixed; z-index: 45;
+        inset-inline: 0; margin-inline: auto;
+        inset-block-end: calc(14px + env(safe-area-inset-bottom));
+        width: min(480px, 100%);
+        max-width: calc(100% - 2 * var(--gut));
+        min-height: 52px; padding: 0 1.35rem; border-radius: 999px;
+        background: var(--fg); color: var(--cream); text-decoration: none;
+        font-family: inherit; font-weight: 500; font-size: 1rem; line-height: 1;
+        letter-spacing: -.01em;
+        transition: opacity .18s ease, transform .18s ease;
+        box-shadow: 0 6px 22px rgb(16 24 32 / .28), 0 1px 3px rgb(16 24 32 / .2);
+      }
+      .cta-fixed:active { background: #16293a; }
+      /* 52 button + 14 offset + 24 breathing room, plus whatever the device reserves */
+      main { padding-block-end: calc(90px + env(safe-area-inset-bottom)); }
+      /* it must not sit over a field the visitor is filling, or over the form section at all */
+      .cta-fixed.is-away { opacity: 0; transform: translateY(12px); pointer-events: none; visibility: hidden; }
+      .cta-fixed { transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s; }
+      .cta-fixed:not(.is-away) { transition-delay: 0s, 0s, 0s; }
+      .rail.is-away { opacity: 0; }
+      .rail { transition: opacity .18s ease; }
+      .brand { flex: 1 1 auto; min-width: 0; min-height: 44px; gap: .55rem; font-size: .875rem; }
+      .brand span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+      .brand img, .brand picture { width: 34px; height: 34px; flex: none; }
+      .chapters-btn {
+        display: grid; place-items: center; pointer-events: auto;
+        width: 44px; height: 44px; flex: none; border: 0; border-radius: 12px;
+        background: transparent; color: currentColor; cursor: pointer;
+      }
+      .chapters-btn svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+
+      /* ---- rail: the desktop silhouette, indicator only, never a tap target ---- */
+      .rail {
+        pointer-events: none; gap: .55rem;
+        inset-inline-end: max(11px, calc(50vw - 240px + 11px));
+      }
+      .rail button { pointer-events: none; }
+      .rail button span { display: none; }
+
+      /* ---- the photo band and its in-flow heading overlay ---- */
+      .screen.split .media {
+        position: relative; display: grid; isolation: isolate;
+        height: auto; inset: auto; background: var(--ink);
+        min-height: min(46svh, 72vw);          /* one shape for every band, whatever the source ratio */
+      }
+      .screen.split .media > picture,
+      .screen.split .media > img,
+      .screen.split .media > .scrim,
+      .screen.split .media > .on-photo-m { grid-area: 1 / 1; }
+      .screen.split .media > picture {
+        display: block; position: absolute; inset: 0; width: 100%; height: 100%; min-width: 0;
+      }
+      .screen.split .media img { width: 100%; height: 100%; object-fit: cover; }
+      .screen.split .media::after { content: none; }   /* the legacy 58% gradient; .scrim replaces it */
+      .screen.split .media > .scrim {
+        display: block; position: absolute; inset-inline: 0; inset-block-end: 0;
+        z-index: 1; pointer-events: none; height: 50%;
+      }
+      .screen.split .media > .on-photo-m {
+        display: block; position: relative; align-self: end; z-index: 2; margin: 0;
+        padding: 1.4rem var(--gut) 1.1rem;
+        font-size: clamp(1.6rem, 7.4vw, 1.9rem); line-height: 1.12; font-weight: 500; letter-spacing: -.02em;
+      }
+      .photo-dark .scrim { background: linear-gradient(to top, rgb(10 16 22 / .86), rgb(10 16 22 / .5) 52%, transparent); }
+      .photo-dark .on-photo-m {
+        color: #f7f4ec; text-shadow: 0 1px 14px rgb(0 0 0 / .45);
+        background: linear-gradient(to top, rgb(10 16 22 / .9) 0%, rgb(10 16 22 / .86) calc(100% - 1.4rem), rgb(10 16 22 / 0) 100%);
+      }
+      .photo-light .scrim { background: linear-gradient(to top, rgb(246 243 234 / .92), rgb(246 243 234 / .6) 52%, transparent); }
+      .photo-light .on-photo-m {
+        color: #14202b; text-shadow: 0 1px 12px rgb(246 243 234 / .7);
+        background: linear-gradient(to top, rgb(246 243 234 / .94) 0%, rgb(246 243 234 / .9) calc(100% - 1.4rem), rgb(246 243 234 / 0) 100%);
+      }
+      /* the desktop heading is hidden ONLY where a clone exists */
+      .has-overlay .copy .on-photo { display: none; }
+
+      /* ---- copy ---- */
+      .screen.split .copy {
+        position: static; display: flex; flex-direction: column; justify-content: flex-start;
+        gap: .75rem; padding: 1.6rem var(--gut) 2.6rem; overflow: visible;
+      }
+      .screen.split .copy > .kicker:first-child,
+      .hero .copy > .kicker:first-child { position: static; top: auto; margin: 0; }
+      .screen.split .prose, .prose { display: grid; gap: .75rem; margin-top: .1rem; }
+      .copy h2, .copy h3, .aid > h2 { font-size: clamp(1.6rem, 7vw, 1.9rem); line-height: 1.15; }
+      .screen.split .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+      .screen.split .prose p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+      .screen.split .copy > p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
+      .aid article p, .faq-a p, .two p { font-size: 1.05rem; line-height: 1.55; }
+      .kicker,
+      .screen.split .copy .kicker,
+      .screen.split .copy > p.kicker { font-size: .875rem; opacity: 1; color: var(--muted); }
+      .screen.split .num, .screen.split .num-arrow { font-size: clamp(3.4rem, 15vw, 4rem); }
+      .screen.split .num-arrow { width: .57em; height: .78em; }
+      .screen.split .copy .stat-line,
+      .screen.split .copy .close-lines .title-xl { font-size: 1.3rem; line-height: 1.25; }
+      .or,
+      .screen.split .copy .or,
+      .screen.split .copy > p.or { font-size: 1rem; }
+      .btn { min-height: 48px; }
+      .consult .btn, .close .btn, .screen.split .copy > .btn { width: 100%; }
+
+      /* ---- wash screens: the pre-blurred asset replaces the runtime blur ---- */
+      .screen[data-bg] { position: relative; isolation: isolate; overflow: clip; }
+      .wash { inset: 0; transform: none; filter: none; background-image: none !important; }
+      .wash img { width: 100%; height: 100%; object-fit: cover; display: block; }
+      .tone-light { background: var(--ink); }
+      .tone-ink { background: var(--bg); }
+      .tone-ink .mist { background: linear-gradient(180deg, rgb(243 240 232 / .82) 0%, rgb(243 240 232 / .74) 48%, rgb(243 240 232 / .86) 100%); }
+      /* measured: --muted body copy over this wash fell to 3.95:1; needs 4.5 */
+      .aid.tone-ink .muted, .aid.tone-ink article p, .tone-ink .muted { color: #454f57; }
+      .tone-light .kicker, .tone-light .muted, .tone-light .player-meta { color: rgb(246 243 234 / .86); }
+
+      /* ---- hero ---- */
+      .screen.hero { min-height: 0; display: flex; flex-direction: column; justify-content: flex-start;
+                     padding: calc(var(--obstruct) + 20px) var(--gut) 2rem; gap: .9rem; }
+      .hero-film { order: -1; position: relative; height: auto; min-height: 0; }
+      .hero .player { width: 100%; height: auto; border-radius: .55rem; overflow: hidden;
+                      background: var(--ink) none; }   /* kills the i.ytimg.com background request */
+      .hero .player-frame { position: relative; aspect-ratio: 16/9; height: auto; }
+      .hero .player-frame iframe { height: 100%; border-radius: .55rem; }
+      .hero .copy { position: static; padding: 0; max-width: none; }
+      .hero .copy h1, .hero .copy h1.on-photo {
+        position: static; inset: auto; margin-top: .35rem; padding: 0;
+        font-size: clamp(1.85rem, 8.4vw, 2.15rem); color: var(--cream);
+        text-shadow: 0 1px 16px rgb(16 24 32 / .55);
+      }
+      .hero-film .player-meta {
+        position: static; inset: auto; width: auto; max-width: none;
+        margin-top: .3rem; font-size: .82rem;
+      }
+      .hero .cue { bottom: 12%; }
+      .hero .cue p { font-size: 1rem; }
+      .facade { position: absolute; inset: 0; width: 100%; border: 0; padding: 0; background: transparent; cursor: pointer; z-index: 3; }
+      .facade img { width: 100%; height: 100%; object-fit: cover; }
+
+      /* ---- aid: one column ---- */
+      .screen.aid { padding: 2.2rem var(--gut) 2.6rem; --aid-icon: 2.6rem; }
+      .aid .points { grid-template-columns: 1fr; gap: 1.6rem; margin-top: 1.9rem; }
+      .aid h3 { font-size: 1.15rem; gap: .6rem; }
+      .aid article p { margin-top: .5rem; }
+
+      /* ---- 60 Minutes ---- */
+      .screen.minutes .media {
+        position: relative; height: auto; top: auto; bottom: auto; inset-inline: auto;
+        min-height: 0; aspect-ratio: 16 / 9;      /* a video still keeps its own shape */
+      }
+      .screen.minutes.is-playing .media { aspect-ratio: 16 / 9; }
+      .screen.minutes.is-playing .media { height: auto; }
+      .screen.minutes .copy { grid-row: auto; z-index: 4; }
+      .minutes-stage { position: absolute; inset: 0; left: auto; top: auto; width: 100%;
+                       transform: none; aspect-ratio: auto; }
+      .minutes .play-btn { width: 4.4rem; height: 4.4rem; }
+      .minutes-close { top: .5rem; inset-inline-start: .5rem; width: 44px; height: 44px; }
+
+      /* ---- form: the desktop's bare underline, at a touch size ---- */
+      form { gap: 1.4rem; }
+      input[type="text"], input[type="tel"] {
+        min-height: 52px; font-size: 1.15rem; padding: .7rem .9rem;
+        border: 1px solid var(--rule); border-radius: 12px; background: #fff;
+      }
+      input[type="text"]:focus, input[type="tel"]:focus { border-color: var(--fg); }
+      input[type="text"]:focus-visible, input[type="tel"]:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+      button:focus-visible, a:focus-visible, .faq-q:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
+      .choice {
+        min-height: 52px; font-size: 1.05rem; padding-inline: .9rem;
+        border: 1px solid transparent; border-radius: 12px;
+      }
+      .choice:has(input:checked) { border-color: var(--fg); background: rgb(255 255 255 / .55); }
+      .choice input { width: 1.2rem; height: 1.2rem; }
+
+      /* ---- FAQ: expands in the page, never in an inner scroller ---- */
+      .screen.faq-screen .copy.faq { overflow: visible; }
+      .faq-list { overflow: visible; max-height: none; min-height: 0; }
+      .faq-q { min-height: 56px; padding: .85rem 0; font-size: 1.1rem; }
+      .faq-a p { padding-bottom: 1rem; font-size: 1rem; line-height: 1.55; }
+
+      /* ---- close ---- */
+      .screen.split.close .copy .kicker { display: none; }
+      .screen.split.close .copy .kicker-m { display: block; text-align: center; }
+      .screen.split.close .copy > *:not(.kicker-m) { text-align: center; }
+      .screen.split.close .copy .close-lines { align-items: center; }
+      .price,
+      .screen.split .copy .price,
+      .screen.split .copy > p.price { font-size: 1.55rem; }
+      .screen.split .copy .title-xl { font-size: 1.25rem; line-height: 1.3; }
+      .close-lines { gap: .45rem; }
+
+      /* ---- chapter sheet ---- */
+      dialog.sheet:not([open]) { display: none; }
+      dialog.sheet[open] {
+        width: min(480px, 100%); max-width: 100%; max-height: 76svh; margin: auto auto 0;
+        padding: 0; border: 0; border-radius: .9rem .9rem 0 0;
+        background: var(--cream); color: var(--fg);
+        display: flex; flex-direction: column; overflow: hidden;
+      }
+      dialog.sheet::backdrop { background: rgb(16 24 32 / .45); }
+      .sheet-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex: none;
+                   padding: .9rem .6rem .8rem 1.1rem; border-block-end: 1px solid rgb(26 51 68 / .1); }
+      .sheet-top h2 { font-size: 1.05rem; font-weight: 500; letter-spacing: 0; margin: 0; }
+      .sheet-x { width: 44px; height: 44px; flex: none; display: grid; place-items: center; border: 0;
+                 border-radius: 12px; background: transparent; color: var(--fg); font-size: 1.6rem; line-height: 1; cursor: pointer; }
+      .sheet nav { overflow-y: auto; padding: .4rem .4rem calc(1rem + env(safe-area-inset-bottom)); }
+      .sheet a { display: flex; align-items: center; gap: .8rem; min-height: 48px; padding-inline: .8rem;
+                 border-radius: .6rem; color: var(--fg); text-decoration: none; font-size: 1rem; font-weight: 500; }
+      .sheet a b { width: 1.3rem; flex: none; color: var(--muted); font-weight: 500; font-size: .8rem; font-variant-numeric: tabular-nums; }
+      .sheet a[aria-current] { background: var(--fg); color: var(--cream); }
+      .sheet a[aria-current] b { color: rgb(246 243 234 / .6); }
+
+      /* ---- reveal: staged by JS only, so nothing hides when JS is off ---- */
+      .rise.staged { opacity: 0; }
+      .rise.in { animation: rise .5s cubic-bezier(.2,.7,.2,1) both; }
+      @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
     }
+    @media (width < 900px) and (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .rise, .rise.staged, .rise.in { opacity: 1; animation: none !important; }
+      .cta-fixed, .rail { transition: none !important; }
+      .cta-fixed.is-away { transform: none; }
+    }
+    /* a collapsed FAQ answer must leave the focus order and the a11y tree, on BOTH breakpoints */
+    .faq-a > div { visibility: hidden; }
+    .faq-item.is-open .faq-a > div { visibility: visible; }
+
   </style>
 </head>
 <body>
-  <div class="desk">
-
   <header class="nav">
-    <a class="brand" href="#top"><img src="../images/logo.jpeg" alt="" /><span>חב"ד למטייל סאו פאולו</span></a>
+    <a class="brand" href="#top"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/logo.webp" /><img src="../images/logo.jpeg" alt="" /></picture><span>חב"ד למטייל סאו פאולו</span></a>
     <a class="btn" href="#form">השארת פרטים</a>
+    <button class="chapters-btn" type="button" id="open-sheet" aria-label="פרקי הדף" aria-haspopup="dialog" hidden>
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
   </header>
+  <a class="cta-fixed" href="#form">השארת פרטים</a>
+  <dialog class="sheet" id="sheet" aria-label="פרקי הדף">
+    <div class="sheet-top">
+      <h2>פרקי הדף</h2>
+      <button class="sheet-x" type="button" id="close-sheet" aria-label="סגירה">&times;</button>
+    </div>
+    <nav id="chapters"></nav>
+  </dialog>
   <nav class="rail" aria-label="מיקום בעמוד"></nav>
 
   <main>
@@ -824,14 +877,14 @@ html{scroll-behavior:smooth}
             </div>
           </div>
           <div class="player-meta">
-            <p>In Waves and War</p>
+            <p><bdi dir="ltr">In Waves and War</bdi></p>
           </div>
         </div>
       </div>
     </section>
 
     <section class="screen split flip" data-label="סטנפורד">
-      <div class="media"><img src="../images/stanford.jpg" alt="" /></div>
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/stanford-430.webp 430w, ../img/stanford-860.webp 860w" sizes="100vw" /><img src="../images/stanford.jpg" alt="" /></picture></div>
       <div class="copy">
         <p class="kicker">אוניברסיטת סטנפורד</p>
         <div class="stat-figure">
@@ -846,8 +899,8 @@ html{scroll-behavior:smooth}
       </div>
     </section>
 
-    <section class="screen split photo-dark" data-label="מתנת חיים">
-      <div class="media"><img src="../images/offer.jpg" alt="" /></div>
+    <section class="has-overlay screen split photo-dark" data-label="מתנת חיים">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/offer-430.webp 430w, ../img/offer-860.webp 860w" sizes="100vw" /><img src="../images/offer.jpg" alt="" /></picture><span class="scrim" aria-hidden="true"></span><h2 class="on-photo-m">חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2></div>
       <div class="copy">
         <h2 class="on-photo">חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
         <div class="prose">
@@ -857,8 +910,8 @@ html{scroll-behavior:smooth}
       </div>
     </section>
 
-    <section class="screen split flip photo-dark" data-label="זכאות">
-      <div class="media"><img src="../images/eligibility.jpg" alt="" /></div>
+    <section class="has-overlay screen split flip photo-dark" data-label="זכאות">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/eligibility-430.webp 430w, ../img/eligibility-860.webp 860w" sizes="100vw" /><img src="../images/eligibility.jpg" alt="" /></picture><span class="scrim" aria-hidden="true"></span><h2 class="on-photo-m">מי זכאי למתנת חיים?</h2></div>
       <div class="copy">
         <div>
           <h2 class="on-photo">מי זכאי למתנת חיים?</h2>
@@ -871,18 +924,18 @@ html{scroll-behavior:smooth}
       </div>
     </section>
 
-    <section class="screen split photo-dark" id="form" data-label="פרטים">
-      <div class="media"><img src="../images/form-desk.jpg" alt="" /></div>
+    <section class="has-overlay screen split photo-dark" id="form" data-label="פרטים">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/form-desk-430.webp 430w, ../img/form-desk-860.webp 860w" sizes="100vw" /><img src="../images/form-desk.jpg" alt="" /></picture><span class="scrim" aria-hidden="true"></span><h3 class="on-photo-m">תשאירו פרטים ונחזור אליכם:</h3></div>
       <div class="copy">
         <form id="lead-form" novalidate>
           <h3 class="on-photo">תשאירו פרטים ונחזור אליכם:</h3>
           <div>
             <label for="full-name">שם מלא</label>
-            <input id="full-name" name="name" type="text" autocomplete="name" required />
+            <input id="full-name" name="name" type="text" dir="auto" autocomplete="name" required />
           </div>
           <div>
             <label for="phone">טלפון</label>
-            <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required />
+            <input id="phone" name="phone" type="tel" dir="ltr" autocomplete="tel" inputmode="tel" required />
           </div>
           <fieldset>
             <legend>האם אני</legend>
@@ -892,9 +945,10 @@ html{scroll-behavior:smooth}
           <p class="err" id="form-err" hidden>שדה חובה</p>
           <button class="btn" type="submit">שליחת פרטים</button>
         </form>
-        <div id="lead-ok" hidden>
-          <h3>קיבלנו. נחזור אליכם.</h3>
-          <p style="color:var(--muted);margin-top:0.75rem">תודה. הפרטים נקלטו ונחזור אליכם לשיחת סינון.</p>
+        <div id="lead-ok" role="status" aria-live="polite" hidden>
+          <h3 id="lead-ok-title" tabindex="-1">נפתחה טיוטת מייל</h3>
+          <p style="color:var(--muted);margin-top:0.75rem">הפרטים הועברו לטיוטת מייל בתוכנת הדואר שלכם. יש לשלוח אותה כדי שנקבל את הפנייה, ונחזור אליכם לשיחת סינון.</p>
+          <p style="margin-top:1rem"><button class="btn" type="button" id="lead-retry">לא נפתחה טיוטה? חזרה לטופס</button></p>
         </div>
       </div>
     </section>
@@ -908,7 +962,7 @@ html{scroll-behavior:smooth}
         </article>
         <article>
           <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.5h9.2a2.8 2.8 0 0 0 .5-5.5 3.7 3.7 0 0 0-7.1-1.1A2.9 2.9 0 0 0 7 16.5z"/><path d="M8 19.2h7"/></svg>מפוגג ערפל מוחי</h3>
-          <p>מחקרים שכללו צילומי MRI לפני ואחרי הראו שינויים במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית האחראית על פונקציות ניהוליות כמו תכנון, מיקוד וקשב.</p>
+          <p>מחקרים שכללו צילומי <bdi dir="ltr">MRI</bdi> לפני ואחרי הראו שינויים במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית האחראית על פונקציות ניהוליות כמו תכנון, מיקוד וקשב.</p>
         </article>
         <article>
           <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 4.8a6.4 6.4 0 1 0 4.2 10.8A5.3 5.3 0 0 1 15.2 4.8z"/></svg>שינה והתאוששות</h3>
@@ -920,13 +974,13 @@ html{scroll-behavior:smooth}
         </article>
         <article>
           <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12h3.5l2-6 4 12 2-6h7.5"/></svg>דריכות יתר  ועוררות</h3>
-          <p>שהייה רציפה במצב הישרדותי (Fight or Flight), תגובות בהלה מוגזמות לרעשים או תנועות, קושי להרפות ולהירגע, התפרצויות זעם ועצבנות קיצונית.</p>
+          <p>שהייה רציפה במצב הישרדותי <bdi dir="ltr">(Fight or Flight)</bdi>, תגובות בהלה מוגזמות לרעשים או תנועות, קושי להרפות ולהירגע, התפרצויות זעם ועצבנות קיצונית.</p>
         </article>
       </div>
     </section>
 
-    <section class="screen split flip photo-dark" data-label="התייעצות">
-      <div class="media"><img src="../images/consult.jpg" alt="" /></div>
+    <section class="has-overlay screen split flip photo-dark" data-label="התייעצות">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/consult-430.webp 430w, ../img/consult-860.webp 860w" sizes="100vw" /><img src="../images/consult.jpg" alt="" /></picture><span class="scrim" aria-hidden="true"></span><p class="on-photo-m">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</p></div>
       <div class="copy">
         <p class="title-xl on-photo">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</p>
         <a class="btn" href="#form">לפרטים והרשמה</a>
@@ -936,7 +990,7 @@ html{scroll-behavior:smooth}
     <section class="screen split minutes photo-dark" data-label="60 Minutes">
       <div class="media">
         <button type="button" class="play-open" aria-label="נגן את התחקיר של 60 Minutes">
-          <img src="../images/60minutes.jpg" alt="60 Minutes" />
+          <picture><source media="(width < 900px)" type="image/webp" srcset="../img/60minutes-430.webp 430w, ../img/60minutes-860.webp 860w" sizes="100vw" /><img src="../images/60minutes.jpg" alt="60 Minutes" /></picture>
           <span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></span>
         </button>
         <div class="minutes-stage">
@@ -945,22 +999,22 @@ html{scroll-behavior:smooth}
         </div>
       </div>
       <div class="copy">
-        <p class="kicker">60 Minutes</p>
-        <p class="stat-line">צפו בתחקיר 60Minutes - תוכנית התחקירים המובילה באמריקה:</p>
+        <p class="kicker"><bdi dir="ltr">60 Minutes</bdi></p>
+        <p class="stat-line">צפו בתחקיר <bdi dir="ltr">60Minutes</bdi> - תוכנית התחקירים המובילה באמריקה:</p>
         <h2 class="on-photo">הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
       </div>
     </section>
 
-    <section class="screen split flip photo-light" data-label="השורש">
-      <div class="media"><img src="../images/iboga.jpg" alt="שיח איבוגה" /></div>
+    <section class="has-overlay screen split flip photo-light" data-label="השורש">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/iboga-430.webp 430w, ../img/iboga-860.webp 860w" sizes="100vw" /><img src="../images/iboga.jpg" alt="שיח איבוגה" /></picture><span class="scrim" aria-hidden="true"></span><h2 class="on-photo-m">אייבוגן- התרופה שמסתתרת בשורש</h2></div>
       <div class="copy">
         <h2 class="on-photo">אייבוגן- התרופה שמסתתרת בשורש</h2>
-        <p>אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה (PTSD) ובהתמכרויות.</p>
+        <p>אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה <bdi dir="ltr">(PTSD)</bdi> ובהתמכרויות.</p>
       </div>
     </section>
 
-    <section class="screen split photo-dark" data-label="איך זה עובד">
-      <div class="media"><img src="../images/iboga-fruit.jpg" alt="" /></div>
+    <section class="has-overlay screen split photo-dark" data-label="איך זה עובד">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/iboga-fruit-430.webp 430w, ../img/iboga-fruit-860.webp 860w" sizes="100vw" /><img src="../images/iboga-fruit.jpg" alt="" /></picture><span class="scrim" aria-hidden="true"></span><h3 class="on-photo-m">איך זה עובד בפועל?</h3></div>
       <div class="copy">
         <h3 class="on-photo">איך זה עובד בפועל?</h3>
         <p style="color:var(--muted)">אייבוגאין פועל במקביל על המון נקודות במוח כדי לעזור לו לבנות קשרים עצביים חדשים מחוץ למעגל הטראומה. בניגוד לחומרים פסיכדליים רגילים שעלולים לנתק אותך מהמציאות, אייבוגאין מכניס את המטופל למצב שדומה לחלום בהקיץ - מסע פנימי אינטנסיבי מאוד שנמשך 12 עד 36 שעות רצופות.</p>
@@ -968,8 +1022,8 @@ html{scroll-behavior:smooth}
       </div>
     </section>
 
-    <section class="screen split flip photo-dark" data-label="מעטפת">
-      <div class="media"><img src="../images/clinic.jpg" alt="חדר טיפול קליני" /></div>
+    <section class="has-overlay screen split flip photo-dark" data-label="מעטפת">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/clinic-430.webp 430w, ../img/clinic-860.webp 860w" sizes="100vw" /><img src="../images/clinic.jpg" alt="חדר טיפול קליני" /></picture><span class="scrim" aria-hidden="true"></span><h2 class="on-photo-m">טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2></div>
       <div class="copy">
         <p class="kicker" style="color:var(--green)">מעטפת רפואית</p>
         <h2 class="on-photo">טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
@@ -977,8 +1031,8 @@ html{scroll-behavior:smooth}
       </div>
     </section>
 
-    <section class="screen split faq-screen photo-dark" data-label="שאלות">
-      <div class="media"><img src="../images/faq.jpg" alt="" /></div>
+    <section class="has-overlay screen split faq-screen photo-dark" data-label="שאלות">
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/faq-430.webp 430w, ../img/faq-860.webp 860w" sizes="100vw" /><img src="../images/faq.jpg" alt="" /></picture><span class="scrim" aria-hidden="true"></span><h2 class="on-photo-m">שאלות ותשובות</h2></div>
       <div class="copy faq">
       <h2 class="on-photo">שאלות ותשובות</h2>
       <div class="faq-list">
@@ -992,7 +1046,7 @@ html{scroll-behavior:smooth}
         </div>
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">מה קורה במהלך הטיפול?</button>
-          <div class="faq-a"><div><p>המטופל שוכב על מיטה במשך כ-12 שעות, עם עיניים מכוסות, בשעה שהחומר עובד. רוב המשתמשים מדווחים על חזיונות המעלים אירועים טראומטיים ומשמעותיים. צילומי MRI שנעשו לחיילים לפני ואחרי הטיפול הראו שינויים לטובה במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית.</p></div></div>
+          <div class="faq-a"><div><p>המטופל שוכב על מיטה במשך כ-12 שעות, עם עיניים מכוסות, בשעה שהחומר עובד. רוב המשתמשים מדווחים על חזיונות המעלים אירועים טראומטיים ומשמעותיים. צילומי <bdi dir="ltr">MRI</bdi> שנעשו לחיילים לפני ואחרי הטיפול הראו שינויים לטובה במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית.</p></div></div>
         </div>
         <div class="faq-item">
           <button type="button" class="faq-q" aria-expanded="false">האם יש תועלות ושימושים נוספים לאייבוגה?</button>
@@ -1015,13 +1069,14 @@ html{scroll-behavior:smooth}
     </section>
 
     <section class="screen split flip close" data-label="סיום">
-      <div class="media"><img src="../images/close-house.jpg" alt="" /></div>
+      <div class="media"><picture><source media="(width < 900px)" type="image/webp" srcset="../img/close-house-430.webp 430w, ../img/close-house-860.webp 860w" sizes="100vw" /><img src="../images/close-house.jpg" alt="" /></picture></div>
       <div class="copy">
       <p class="kicker">חב"ד למטייל סאו פאולו - ברזיל</p>
       <p class="kicker">בשיתוף בית חב"ד למטייל</p>
       <p class="kicker">סאו פאולו, ברזיל</p>
+      <p class="kicker kicker-m">בשיתוף בית חב"ד למטייל סאו פאולו, ברזיל</p>
       <p class="price">
-        <span class="strike">$8,500 במקסיקו</span>
+        <span class="strike"><bdi dir="ltr">$8,500</bdi> במקסיקו</span>
         <span class="dim">←</span>
         <span>בחינם עבורכם</span>
       </p>
@@ -1036,240 +1091,11 @@ html{scroll-behavior:smooth}
 
 
 
-  
-  </div>
-  <div class="mob">
-<div class="page" dir="rtl" lang="he">
-  <header class="hdr">
-    <a class="brand" href="#m-top"><img src="../images/logo.jpeg" width="32" height="32" alt="" /><span>חב"ד למטייל סאו פאולו</span></a>
-    <button class="menu-btn" type="button" id="m-open-sheet" aria-label="פרקי הדף" aria-haspopup="dialog">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
-    </button>
-  </header>
-  <div class="bar" aria-hidden="true"><i id="m-prog"></i></div>
-
-  <main>
-    <!-- 1 -->
-    <section class="open" id="m-top" aria-labelledby="m-h-top">
-      <span class="flag">תצוגה מקדימה</span>
-      <img src="../images/hero-garden.jpg" width="430" height="347" alt="" fetchpriority="high" decoding="async" />
-      <div class="over">
-        <h1 id="m-h-top">הטיפול שטראמפ מקדם ללוחמי השייטת האמריקאית, <span class="mark">עכשיו ללוחמים שלנו!</span></h1>
-        <p class="who">חב"ד למטייל סאו פאולו — ברזיל</p>
-        <a class="pill" href="#m-form">השארת פרטים</a>
-      </div>
-    </section>
-
-    <!-- 2 -->
-    <section class="sec" id="m-trailer" aria-labelledby="m-h-trailer">
-      <div class="inner"><p class="kicker" id="m-h-trailer"><bdi dir="ltr">In Waves and War</bdi></p></div>
-      <div class="media rise" data-yt="ao8tiqnuS3Y" data-title="In Waves and War — Official Trailer">
-        <img src="https://i.ytimg.com/vi/ao8tiqnuS3Y/hqdefault.jpg" width="430" height="242" alt="תמונת פתיחה מתוך הסרט התיעודי In Waves and War" loading="lazy" decoding="async" />
-        <button class="play" type="button" aria-label="נגן את הטריילר של In Waves and War"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></i></button>
-      </div>
-    </section>
-
-    <!-- 3 -->
-    <section class="sec" id="m-stanford" aria-labelledby="m-h-stanford">
-      <figure class="rise"><img src="../images/stanford.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="stat rise">
-        <p class="kicker" id="m-h-stanford">אוניברסיטת סטנפורד</p>
-        <div class="row">
-          <span class="num"><bdi dir="ltr">90%</bdi></span>
-          <svg viewBox="0 0 40 64" aria-hidden="true"><path d="M20 4v48"/><path d="M2 34l18 20 18-20"/></svg>
-        </div>
-        <p class="desc">ירידה בסימפטומים בקרב<br /><bdi dir="ltr">30</bdi> לוחמי קומנדו</p>
-      </div>
-      <div class="inner rise">
-        <p>ב-18 באפריל 2026, באירוע חגיגי בבית הלבן, חתם הנשיא טראמפ על צו המזרז את המחקר והשימוש באייבוגן, חומר המופק משורש של שיח אפריקאי, שהוכיח את עצמו בשנים האחרונות כפתרון קסם ללוחמי יחידות עילית הסובלים פוסט טראומה, דכאון, חרדה ופגיעות מוחיות.</p>
-        <p class="muted">מה ששכנע את טראמפ לנקוט בצעד כה דרמטי ויוצא הדופן, הן תוצאותיו הדרמטיות ויוצאות הדופן של מחקר שערכה אוניברסיטת סטנפורד בקרב 30 לוחמי קומנדו אמריקאים. המחקר הראה כי לוחמים שעברו טיפול באייבוגן חוו ירידה של כ-90% בסימפטומים הקשים מהם הם סבלו בעקבות חשיפה למוות, אובדן, אלימות ופעמים רבות גם פגיעות פיזיות במהלך שירותם הצבאי.</p>
-        <p class="bridge rise">אבל מה עם החיילים שלנו?</p>
-      </div>
-    </section>
-
-    <!-- 4 -->
-    <section class="sec" id="m-offer" aria-labelledby="m-h-offer">
-      <figure class="rise"><img src="../images/offer.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <h2 id="m-h-offer">חייל, אם שירתת במלחמת חרבות ברזל אנחנו רוצים להעניק לך מתנת חיים</h2>
-        <p class="lede rise">כהוקרה על התרומה האדירה שלך למדינת ישראל ולעם היהודי, חב"ד סאו פאולו השיג תרומה יעודית המאפשרת לנו לסדר לכם טיפול פה, בברזיל, עם מעטפת מקצועית ורפואית.</p>
-        <p class="muted rise">מדוע דווקא בברזיל? בעוד ארה"ב מגלה את האייבוגן רק בשנים האחרונות, במדינת סאו פאולו השימוש בו מוסדר וחוקי כבר עשרות שנים. הניסיון הרב שנאסף בקרב הרופאים והמוסדות העוסקים בכך, מבטיח טיפול מקצועי ובטוח. אז אם אתם מגיעים לדרום אמריקה בכדי לנקות את הראש או מעוניינים להגיע עד לפה בכדי לזכות בהתחלה חדשה, אתם מוזמנים להשאיר פרטים.</p>
-        <button class="jump-inline" type="button" data-sheet>דילוג לפרק אחר בדף</button>
-      </div>
-    </section>
-
-    <!-- 5 -->
-    <section class="sec decision" id="m-eligibility" aria-labelledby="m-h-elig">
-      <div class="inner"><h2 id="m-h-elig">מי זכאי למתנת חיים?</h2></div>
-      <figure class="rise"><img src="../images/eligibility.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <p class="lede">חיילים המוכרים על ידי משרד הביטחון כסובלים מפוסט טראומה.</p>
-        <p class="kicker" style="margin-block-start:16px">או</p>
-        <p class="lede">אנחנו יודעים שקבלת הכרה על ידי משרד הביטחון לוקחת זמן והתעסקות. אם אתם חיילי מילואים או סדיר, ששרתו למעלה מ-200 ימים במלחמה גם אתם מוזמנים להשאיר פרטים ונחזור אליכם לשיחת סינון.</p>
-        <a class="pill wide" href="#m-form">השארת פרטים</a>
-      </div>
-    </section>
-
-    <!-- 6 -->
-    <section class="sec decision" id="m-form" aria-labelledby="m-h-form">
-      <div class="inner"><h2 id="m-h-form" tabindex="-1">תשאירו פרטים ונחזור אליכם:</h2></div>
-      <figure class="rise"><img src="../images/form-desk.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <form id="m-lead" novalidate style="margin-block-start:0">
-          <div class="field">
-            <label for="m-nm">שם מלא</label>
-            <input id="m-nm" name="name" type="text" dir="auto" autocomplete="name" />
-          </div>
-          <div class="field">
-            <label for="m-ph">טלפון</label>
-            <input id="m-ph" name="phone" type="tel" dir="ltr" inputmode="tel" autocomplete="tel" />
-          </div>
-          <fieldset>
-            <legend>האם אני</legend>
-            <label class="choice"><input type="radio" name="elig" value="מוכר משרד הביטחון" /> מוכר משרד הביטחון</label>
-            <label class="choice"><input type="radio" name="elig" value="שרתתי למעלה מ-200 יום" /> שרתתי למעלה מ-200 יום</label>
-          </fieldset>
-          <p style="margin-block-start:22px"><button class="pill wide" type="button" id="m-send">שליחת פרטים</button></p>
-          <p style="margin-block-start:12px"><button class="pill wide ghost" type="button" id="m-cal">תיאום שיחה ביומן</button></p>
-          <p class="note">זוהי תצוגה מקדימה של העיצוב בלבד. הטופס אינו מחובר לשום מערכת ושום פרט שתקלידו כאן לא נשלח ולא נשמר.</p>
-        </form>
-        <div id="m-done" hidden>
-          <h3>כך תיראה הודעת התודה</h3>
-          <p class="muted" style="margin-block-start:10px">בגרסה החיה יופיע כאן אישור קליטת הפרטים. בתצוגה המקדימה הזו לא נשלח דבר.</p>
-          <p style="margin-block-start:16px"><button class="jump-inline" type="button" id="m-back">חזרה לטופס</button></p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 7 -->
-    <section class="sec dark" id="m-symptoms" aria-labelledby="m-h-symp">
-      <div class="inner"><h2 id="m-h-symp">במה אייבוגן יכול לסייע</h2></div>
-      <div class="list">
-        <article class="rise">
-          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 18.2C7.2 14.8 5 12.4 5 9.7 5 7.7 6.6 6.2 8.6 6.2c1.2 0 2.3.6 3.4 1.8 1.1-1.2 2.2-1.8 3.4-1.8 2 0 3.6 1.5 3.6 3.5 0 2.7-2.2 5.1-7 8.5z"/></svg>שחרור רגשי</h3>
-          <p>עבודה על הזיכרונות והדפוסים שעוצרים אתכם - פוסט-טראומה, דיכאון, חרדה ותגובות לחץ.</p>
-        </article>
-        <article class="rise">
-          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 16.5h9.2a2.8 2.8 0 0 0 .5-5.5 3.7 3.7 0 0 0-7.1-1.1A2.9 2.9 0 0 0 7 16.5z"/><path d="M8 19.2h7"/></svg>מפוגג ערפל מוחי</h3>
-          <p>מחקרים שכללו צילומי <bdi dir="ltr">MRI</bdi> לפני ואחרי הראו שינויים במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית האחראית על פונקציות ניהוליות כמו תכנון, מיקוד וקשב.</p>
-        </article>
-        <article class="rise">
-          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.2 4.8a6.4 6.4 0 1 0 4.2 10.8A5.3 5.3 0 0 1 15.2 4.8z"/></svg>שינה והתאוששות</h3>
-          <p>ויסות מערכת העצבים, חזרה לשינה תקינה ובניית תשתית לרווחה לטווח ארוך.</p>
-        </article>
-        <article class="rise">
-          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16"/><circle cx="12" cy="12" r="7.2"/></svg>קהות רגשית והמנעות</h3>
-          <p>ניתוק רגשי ממשפחה ובנות זוג, אובדן יכולת להרגיש שמחה (אנהדוניה), והימנעות אקטיבית ממקומות, אנשים או טריגרים המזכירים את הטראומה.</p>
-        </article>
-        <article class="rise">
-          <h3><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12h3.5l2-6 4 12 2-6h7.5"/></svg>דריכות יתר ועוררות</h3>
-          <p>שהייה רציפה במצב הישרדותי <bdi dir="ltr">(Fight or Flight)</bdi>, תגובות בהלה מוגזמות לרעשים או תנועות, קושי להרפות ולהירגע, התפרצויות זעם ועצבנות קיצונית.</p>
-        </article>
-      </div>
-    </section>
-
-    <!-- 8 -->
-    <section class="sec" id="m-consult" aria-labelledby="m-h-cons">
-      <figure class="rise"><img src="../images/consult.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <h2 id="m-h-cons">אתם מוזמנים להתייעץ איתנו ולקבל פרטים נוספים</h2>
-        <a class="pill wide" href="#m-form">לפרטים והרשמה</a>
-      </div>
-    </section>
-
-    <!-- 9 -->
-    <section class="sec" id="m-minutes" aria-labelledby="m-h-min">
-      <div class="inner"><p class="kicker" id="m-h-min"><bdi dir="ltr">60 Minutes</bdi></p></div>
-      <div class="media rise" data-yt="_zpe_G8_k1s" data-title="60 Minutes">
-        <img src="../images/60minutes.jpg" width="430" height="242" alt="תמונת פתיחה מתוך התחקיר של 60 Minutes" loading="lazy" decoding="async" />
-        <button class="play" type="button" aria-label="נגן את התחקיר של 60 Minutes"><i><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7.2v9.6l8.2-4.8z"/></svg></i></button>
-      </div>
-      <div class="inner rise">
-        <p class="emph">צפו בתחקיר <bdi dir="ltr">60Minutes</bdi> - תוכנית התחקירים המובילה באמריקה:</p>
-        <h2 style="margin-block-start:14px">הפוטנציאל הרפואי, ומדוע חשוב לעשות זאת במסגרת קלינית</h2>
-      </div>
-    </section>
-
-    <!-- 10 -->
-    <section class="sec" id="m-root" aria-labelledby="m-h-root">
-      <figure class="rise"><img src="../images/iboga.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <h2 id="m-h-root">אייבוגן- התרופה שמסתתרת בשורש</h2>
-        <p class="rise">אייבוגאין הוא חומר פעיל ועוצמתי שמופק מהשורש של שיח בשם איבוגה, הגדל ביערות אפריקה. אחרי מאות שנים שבהן שבטים מקומיים השתמשו בו לטקסי ריפוי, הרפואה המודרנית מגלה אותו מחדש כאחד הכלים היעילים ביותר שיש היום לטיפול בפוסט-טראומה <bdi dir="ltr">(PTSD)</bdi> ובהתמכרויות.</p>
-      </div>
-    </section>
-
-    <!-- 11 -->
-    <section class="sec" id="m-how" aria-labelledby="m-h-how">
-      <figure class="rise"><img src="../images/iboga-fruit.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <h2 id="m-h-how">איך זה עובד בפועל?</h2>
-        <p class="muted rise">אייבוגאין פועל במקביל על המון נקודות במוח כדי לעזור לו לבנות קשרים עצביים חדשים מחוץ למעגל הטראומה. בניגוד לחומרים פסיכדליים רגילים שעלולים לנתק אותך מהמציאות, אייבוגאין מכניס את המטופל למצב שדומה לחלום בהקיץ - מסע פנימי אינטנסיבי מאוד שנמשך 12 עד 36 שעות רצופות.</p>
-        <p class="muted rise">במהלך השעות האלה, המטופל לרוב רואה את אירועי החיים שלו רצים מולו כמו סרט, מתמודד ראש בראש עם שורש הטראומה שיושבת לו בראש, ומשחרר את המטען הרגשי והפיזי שתקוע שם. חשוב מאוד לציין, ברוב המוחלט של המקרים לא מדובר בחוויה נעימה או קלה. זו לא "סטלה" של בריחה, אלא עבודת עומק שנועדה לפרק את הכאב מהיסוד.</p>
-      </div>
-    </section>
-
-    <!-- 12 -->
-    <section class="sec decision" id="m-safety" aria-labelledby="m-h-safe">
-      <div class="inner">
-        <p class="kicker">מעטפת רפואית</p>
-        <h2 id="m-h-safe" style="margin-block-start:8px">טיפול אינטנסיבי שדורש מעטפת רפואית מלאה</h2>
-      </div>
-      <figure class="rise"><img src="../images/clinic.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <p class="lede">המסע הזה הוא לא משחק, והוא חייב להיעשות באחריות מקסימלית. אייבוגאין משפיע ישירות על מערכת העצבים – הוא יכול להוריד את קצב הדופק ולשנות את הפעילות החשמלית של הלב. לכן, הטיפול חייב להתבצע אך ורק בקליניקה רפואית, תחת השגחת רופא וחיבור למוניטור. לפני שבכלל מתחילים, כל מטופל עובר סינון שכולל א.ק.ג ובדיקות דם כדי לוודא שאין לו בעיות לב רקע שיכולות לסכן אותו.</p>
-      </div>
-    </section>
-
-    <!-- 13 -->
-    <section class="sec" id="m-faq" aria-labelledby="m-h-faq">
-      <figure class="rise"><img src="../images/faq.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <h2 id="m-h-faq">שאלות ותשובות</h2>
-        <div class="faq">
-          <details name="faq"><summary>איך נראה הטיפול?</summary><div class="a"><p>שורש האייבוגה הוא הלוצינוגן שנמצא בשימוש של תרבויות ילידיות באפריקה כבר מאות שנים. מחקרים מהשנים האחרונות מראים כי שימוש חד-פעמי בו מוביל לתיקון של פגיעות מוחיות ולריפוי טראומות, וישנם סימנים מעודדים המראים אף על סיוע בטיפול בפרקינסון, אלצהיימר ומחלות נוירולוגיות נוספות.</p></div></details>
-          <details name="faq"><summary>אז למה לא לקחת אותו בבית?</summary><div class="a"><p>בניגוד לחומרים אחרים, השימוש באייבוגה שלא במסגרת רפואית מסוכן. לקיחתו מובילה לאטקסיה (אובדן שיווי משקל וקואורדינציה) למשך 12–24 שעות, ומצריכה מעקב רפואי צמוד אחר פעילות הלב. חשוב לדעת: הטיפול ניתן במסגרת קלינית בניטור מלא, אך ורק לאחר בדיקות סינון שנעשות במקום.</p></div></details>
-          <details name="faq"><summary>מה קורה במהלך הטיפול?</summary><div class="a"><p>המטופל שוכב על מיטה במשך כ-12 שעות, עם עיניים מכוסות, בשעה שהחומר עובד. רוב המשתמשים מדווחים על חזיונות המעלים אירועים טראומטיים ומשמעותיים. צילומי <bdi dir="ltr">MRI</bdi> שנעשו לחיילים לפני ואחרי הטיפול הראו שינויים לטובה במבנה המוח, כולל גידול בכמות הסינפסות באונה המצחית.</p></div></details>
-          <details name="faq"><summary>האם יש תועלות ושימושים נוספים לאייבוגה?</summary><div class="a"><p>הטיפול בשורש האייבוגה נחשב כבר עשרות שנים לטיפול פורץ דרך בהתמכרויות - מסיגריות, מריחואנה ואלכוהול ועד לסמים הקשים ביותר. בניגוד לטיפולי גמילה אחרים, מטופלים רבים מדווחים על סימני גמילה מופחתים משמעותית לאחר הטיפול.</p></div></details>
-          <details name="faq"><summary>מה כוללת מתנת חיים?</summary><div class="a"><p>מעטפת לוגיסטית מלאה בשבוע של הטיפול הכולת: לינה, אוכל כשר, הסעות, ליווי, שיחה מקדימה עם איש טיפול ושיחת אינטגרציה לאחריו.</p></div></details>
-          <details name="faq"><summary>מה לא כוללת מתנת חיים?</summary><div class="a"><p>טיסה מישראל לסאו פאולו ובחזרה.</p></div></details>
-          <details name="faq"><summary>למה ברזיל?</summary><div class="a"><p>בזמן שרוב העולם עדיין מנסה להבין איך לגשת לטיפול הזה, לברזיל יש כבר כמה עשורים של ניסיון קליני, חוקי ומפוקח עם אייבוגאין. ברחבי ברזיל פועלות קליניקות שלמות המנוהלות על ידי רופאים ופסיכיאטרים שמתמחים ספציפית בעבודה עם השורש הזה. הם למדו לשלב את העוצמה של החומר עם פרוטוקולים מחמירים של רפואה מערבית, כדי להעניק ללוחמים סביבה בטוחה, מקצועית ומבוקרת לחלוטין.</p></div></details>
-        </div>
-      </div>
-    </section>
-
-    <!-- 14 -->
-    <section class="sec decision" id="m-close" aria-labelledby="m-h-close">
-      <figure class="rise"><img src="../images/close-house.jpg" width="430" height="269" alt="" loading="lazy" decoding="async" /></figure>
-      <div class="inner">
-        <p class="kicker">בשיתוף בית חב"ד למטייל<br />סאו פאולו, ברזיל</p>
-        <p class="price" id="m-h-close"><span class="was"><bdi dir="ltr">$8,500</bdi> במקסיקו</span> <span class="arrow">←</span> בחינם עבורכם</p>
-        <p class="emph">כמתנת חיים על השירות והתרומה שלכם לישראל ולעם היהודי.</p>
-        <p class="emph">אנחנו אוהבים אתכם. מגיע לכם. <span class="heart">♥</span></p>
-        <a class="pill wide" href="https://arsenlf.github.io/ibogaine/#contact" target="_blank" rel="noopener noreferrer">לפרטים והרשמה</a>
-        <p class="note">הקישור הזה יוצא מהתצוגה המקדימה אל האתר החיצוני הקיים.</p>
-        <button class="jump-inline" type="button" data-sheet style="margin-block-start:14px">דילוג לפרק אחר בדף</button>
-      </div>
-    </section>
-  </main>
-
-  <footer>תצוגה מקדימה של עיצוב מובייל. הטקסט לקוח ממסמך המקור; ההבדלים מפורטים בהודעה המלווה. הטופס אינו פעיל.</footer>
-</div>
-
-<dialog class="sheet" id="m-sheet" dir="rtl" lang="he" aria-label="פרקי הדף">
-  <div class="sheet-top">
-    <h2>פרקי הדף</h2>
-    <button class="sheet-x" type="button" id="m-close-sheet" aria-label="סגירה">&times;</button>
-  </div>
-  <nav id="m-chapters"></nav>
-</dialog>
-
-<a class="dock" href="#m-form">השארת פרטים</a>
-
-  </div>
   <script>
-if (window.matchMedia('(min-width: 900px)').matches) {
-
+    /* ONE breakpoint definition, declared first because paintNav() runs during setup.
+       The CSS desktop rules are (min-width: 900px) and the mobile block is (width < 900px),
+       so CSS, <source media> and JS agree at every fractional width. */
+    var desktopQ = window.matchMedia("(min-width: 900px)");
     var minutes = document.querySelector(".minutes");
     var minutesButton = minutes.querySelector(".play-open");
     var minutesClose = minutes.querySelector(".minutes-close");
@@ -1306,18 +1132,44 @@ if (window.matchMedia('(min-width: 900px)').matches) {
         });
       });
     });
+    var BLUR_FOR = { "../images/hero-garden.jpg": "../img/wash-hero.webp", "../images/iboga.jpg": "../img/wash-aid.webp" };
+    var washes = [];
     document.querySelectorAll(".screen[data-bg]").forEach(function (section) {
       var wash = document.createElement("div");
       wash.className = "wash";
       wash.setAttribute("aria-hidden", "true");
-      wash.style.backgroundImage = "url('" + section.getAttribute("data-bg") + "')";
       var mist = document.createElement("div");
       mist.className = "mist";
       mist.setAttribute("aria-hidden", "true");
       section.insertBefore(mist, section.firstChild);
       section.insertBefore(wash, section.firstChild);
+      washes.push({ el: wash, src: section.getAttribute("data-bg"),
+                    blur: BLUR_FOR[section.getAttribute("data-bg")] || null,
+                    hero: section.classList.contains("hero") });
     });
+    /* Each treatment is created lazily the first time its mode is entered, so a FRESH mobile
+       load never fetches the full-size desktop wash JPEG. Resizing from desktop keeps what the
+       browser already has — nothing can be un-fetched. */
+    function activateWash(mobile) {
+      washes.forEach(function (w) {
+        if (mobile) {
+          if (!w.img && w.blur) {
+            w.img = document.createElement("img");
+            w.img.src = w.blur; w.img.alt = ""; w.img.decoding = "async";
+            if (w.hero) w.img.setAttribute("fetchpriority", "high"); else w.img.loading = "lazy";
+            w.el.appendChild(w.img);
+          }
+          if (w.img) w.img.style.display = "";
+        } else {
+          if (w.img) w.img.style.display = "none";
+          if (!w.el.style.backgroundImage) w.el.style.backgroundImage = "url('" + w.src + "')";
+        }
+      });
+    }
+    /* SET THIS before going live. While it is the placeholder below, the form refuses to submit
+       rather than opening a draft to a fake address and telling the visitor they were received. */
     var LEAD_EMAIL = "demo@example.com";
+    var LEAD_EMAIL_PLACEHOLDER = "demo@example.com";
     var CUES = [
       { start: 0, end: 3.7, text: "בהתחלה פשוט תהיתי מתי זה יתחיל." },
       { start: 4, end: 7.8, text: "התרופה מוציאה דברים שהיא רוצה שתראה, ואתה לא יודע למה." },
@@ -1359,18 +1211,38 @@ if (window.matchMedia('(min-width: 900px)').matches) {
       if (c) { cueEl.hidden = false; cueEl.querySelector("p").textContent = c.text; }
       else { cueEl.hidden = true; }
     }
+    function showControls() {
+      /* playback could not be started programmatically: leave an operable player, not a dead facade */
+      var f = document.querySelector(".player-frame");
+      if (f) f.classList.add("needs-tap");
+    }
     function showPoster() {
       var frame = document.querySelector(".player-frame");
       if (!frame || frame.querySelector(".yt-poster")) return;
       frame.innerHTML = '<a class="yt-poster" href="https://www.youtube.com/watch?v=' + VIDEO_ID + '" target="_blank" rel="noopener noreferrer"><img src="https://i.ytimg.com/vi/' + VIDEO_ID + '/hqdefault.jpg" alt="In Waves and War"></a>';
+      /* showPoster replaces everything inside .player-frame, including the mount node and #cue.
+         Rebuild both so a later retry has somewhere to mount and a live cue reference. */
+      var mount = document.createElement("div"); mount.id = "yt-player";
+      var cue = document.createElement("div"); cue.className = "cue"; cue.id = "cue"; cue.hidden = true;
+      cue.appendChild(document.createElement("p"));
+      frame.appendChild(mount); frame.appendChild(cue);
+      cueEl = cue;
+      ytPlayer = null;
     }
-    function mountPlayer(start) {
-      var node = document.getElementById("yt-player");
-      if (!node) return;
+    function mountPlayer(start, wantPlay) {
       if (ytPlayer && ytPlayer.destroy) {
         try { ytPlayer.destroy(); } catch (e) {}
         ytPlayer = null;
       }
+      /* destroy() removes the iframe it replaced, so the mount node must be recreated before reuse */
+      var node = document.getElementById("yt-player");
+      if (!node) {
+        var frameEl = document.querySelector(".player-frame");
+        if (!frameEl) return;
+        node = document.createElement("div"); node.id = "yt-player";
+        frameEl.insertBefore(node, frameEl.firstChild);
+      }
+      if (typeof dropFacade === "function") dropFacade();
       nativeCaptions = false;
       ytPlayer = new YT.Player("yt-player", {
         videoId: VIDEO_ID,
@@ -1385,11 +1257,12 @@ if (window.matchMedia('(min-width: 900px)').matches) {
         },
         events: {
           onReady: function (e) {
-            if (start > 0.5) {
-              e.target.seekTo(start, true);
-              e.target.playVideo();
-            }
+            if (start > 0.5) e.target.seekTo(start, true);
+            /* wantPlay is separate from the start offset: the facade tap asks for playback at 0,
+               which the old "start > 0.5" test would never have started. */
+            if (wantPlay || start > 0.5) { try { e.target.playVideo(); } catch (err) {} }
           },
+          onAutoplayBlocked: function () { showControls(); },
 
           onError: function (e) { if (e.data === 153) showPoster(); }
         }
@@ -1398,6 +1271,7 @@ if (window.matchMedia('(min-width: 900px)').matches) {
     var nav = document.querySelector("header.nav");
     var darkScreens = ["hero"];
     function paintNav() {
+      if (isMobile()) return;                 /* mobile header state is measured, not sampled */
       nav.style.visibility = "hidden";
       void document.body.offsetHeight;
       var under = document.elementFromPoint(Math.floor(window.innerWidth / 2), 36);
@@ -1434,7 +1308,7 @@ if (window.matchMedia('(min-width: 900px)').matches) {
       var name = document.createElement("span");
       name.textContent = frame.getAttribute("data-label") || "";
       button.appendChild(name);
-      button.addEventListener("click", function () { goFrame(i); });
+      button.addEventListener("click", function () { if (isMobile()) return; goFrame(i); });
       rail.appendChild(button);
     });
     function markRail() {
@@ -1442,19 +1316,14 @@ if (window.matchMedia('(min-width: 900px)').matches) {
       for (var i = 0; i < buttons.length; i++) {
         buttons[i].setAttribute("aria-current", i === frameIndex ? "true" : "false");
       }
-      rail.classList.toggle("on-dark", nav.classList.contains("on-dark"));
+      if (!isMobile()) rail.classList.toggle("on-dark", nav.classList.contains("on-dark"));
     }
     var frameAnim = 0;
     var frameGen = 0;
     function layoutMobileFrames() {
-      if (!isMobile()) {
-        document.documentElement.style.removeProperty("--frame");
-        document.documentElement.style.removeProperty("--photo");
-        return;
-      }
-      var h = window.innerHeight;
-      document.documentElement.style.setProperty("--frame", h + "px");
-      document.documentElement.style.setProperty("--photo", Math.round(h / 3) + "px");
+      /* the locked-frame pager is gone at mobile; these must never be set again */
+      document.documentElement.style.removeProperty("--frame");
+      document.documentElement.style.removeProperty("--photo");
     }
     function goFrame(next) {
       next = Math.max(0, Math.min(frames.length - 1, next));
@@ -1498,9 +1367,7 @@ if (window.matchMedia('(min-width: 900px)').matches) {
       if (!frameLock) frameIndex = frameAt(window.scrollY);
       return frameIndex;
     }
-    function isMobile() {
-      return window.matchMedia("(max-width: 899px)").matches;
-    }
+    function isMobile() { return !desktopQ.matches; }
     function scrollablePanel(node) {
       if (!node || !node.closest) return null;
       var list = node.closest(".faq-list");
@@ -1508,6 +1375,7 @@ if (window.matchMedia('(min-width: 900px)').matches) {
       return null;
     }
     window.addEventListener("wheel", function (e) {
+      if (isMobile()) return;                 /* mobile scrolls natively */
       var list = scrollablePanel(e.target);
       if (list) {
         var atTop = list.scrollTop <= 0;
@@ -1528,28 +1396,27 @@ if (window.matchMedia('(min-width: 900px)').matches) {
       touchStartY = e.touches[0].clientY;
       touchFaq = scrollablePanel(e.target);
     }, { passive: true });
-    window.addEventListener("touchmove", function (e) {
-      if (!isMobile()) return;
-      var tag = e.target && e.target.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
-      if (scrollablePanel(e.target)) return;
-      e.preventDefault();
-    }, { passive: false });
     window.addEventListener("touchend", function (e) {
+      if (isMobile()) return;
       if (touchFaq && touchFaq.scrollHeight > touchFaq.clientHeight + 1) return;
       var dy = touchStartY - e.changedTouches[0].clientY;
       if (frameLock || Math.abs(dy) < 48) return;
       goFrame(frameNow() + (dy > 0 ? 1 : -1));
     }, { passive: true });
     window.addEventListener("keydown", function (e) {
-      var tag = e.target && e.target.tagName;
-      if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
+      if (isMobile()) return;
+      if (e.defaultPrevented || e.metaKey || e.ctrlKey || e.altKey) return;
+      /* page navigation only when the PAGE owns the keystroke, never an interactive control.
+         The old check looked at tagName alone, so Space was swallowed on buttons and links. */
+      var t = e.target;
+      if (t && t.closest && t.closest("button, a[href], summary, input, textarea, select, [contenteditable], [role='button'], dialog")) return;
       if (e.key === "ArrowDown" || e.key === "PageDown" || e.key === " ") { e.preventDefault(); goFrame(frameNow() + 1); }
       else if (e.key === "ArrowUp" || e.key === "PageUp") { e.preventDefault(); goFrame(frameNow() - 1); }
       else if (e.key === "Home") { e.preventDefault(); goFrame(0); }
       else if (e.key === "End") { e.preventDefault(); goFrame(frames.length - 1); }
     });
     document.addEventListener("click", function (e) {
+      if (isMobile()) return;                 /* mobile uses native anchors + its own sheet */
       var link = e.target.closest ? e.target.closest("a[href^='#']") : null;
       if (!link) return;
       var id = link.getAttribute("href").slice(1);
@@ -1562,6 +1429,7 @@ if (window.matchMedia('(min-width: 900px)').matches) {
       goFrame(i);
     });
     function settleFrame() {
+      if (isMobile()) return;            /* mMeasure owns the chapter index at mobile */
       if (frameLock) return;
       var next = frameAt(window.scrollY);
       if (next === frameIndex) return;
@@ -1572,230 +1440,364 @@ if (window.matchMedia('(min-width: 900px)').matches) {
     frameIndex = frameAt(window.scrollY);
     markRail();
     window.addEventListener("resize", function () {
-      var index = frameNow();
+      /* The old handler re-snapped on resize. Same-mode desktop resizing keeps the browser's own
+         behaviour, and breakpoint crossings are handled by applyMode(). */
       layoutMobileFrames();
-      if (isMobile() && !frameLock) window.scrollTo(0, frames[index].offsetTop);
     });
     window.addEventListener("scroll", settleFrame, { passive: true });
     window.addEventListener("pageshow", settleFrame);
     window.addEventListener("load", settleFrame);
-    window.onYouTubeIframeAPIReady = function () {
-      if (location.protocol !== "http:" && location.protocol !== "https:") {
-        showPoster();
-        return;
-      }
-      mountPlayer(0);
+    var ytApiRequested = false, ytApiReady = false, pendingMount = null, cueLoopRunning = false;
+    function loadYTApi() {
+      if (ytApiRequested) return;
+      ytApiRequested = true;
+      var tag = document.createElement("script");
+      tag.src = "https://www.youtube.com/iframe_api";
+      tag.onerror = function () { ytApiRequested = false; pendingMount = null; showPoster(); };
+      document.head.appendChild(tag);
+    }
+    function startCueLoop() {
+      if (cueLoopRunning) return;
+      cueLoopRunning = true;
       (function watchCues() {
         if (ytPlayer && ytPlayer.getCurrentTime && !nativeCaptions) {
           try { showCue(ytPlayer.getCurrentTime()); } catch (e) {}
         }
         requestAnimationFrame(watchCues);
       })();
+    }
+    /* One loader, one readiness path, at most one player and one cue loop, shared by both modes. */
+    function requestPlayer(start, wantPlay) {
+      if (location.protocol !== "http:" && location.protocol !== "https:") { showPoster(); return; }
+      if (ytPlayer) {                       /* never destroy a live player just to start it */
+        if (wantPlay) { try { ytPlayer.playVideo(); } catch (e) { showControls(); } }
+        dropFacade();
+        return;
+      }
+      if (ytApiReady) { mountPlayer(start, wantPlay); startCueLoop(); return; }
+      /* a play intent must survive a later, weaker request arriving while the API loads */
+      pendingMount = { start: start, play: (pendingMount && pendingMount.play) || wantPlay };
+      loadYTApi();
+    }
+    window.onYouTubeIframeAPIReady = function () {
+      ytApiReady = true;
+      if (location.protocol !== "http:" && location.protocol !== "https:") { showPoster(); return; }
+      var want = pendingMount || { start: 0, play: false };
+      pendingMount = null;
+      mountPlayer(want.start, want.play);
+      startCueLoop();
+      if (typeof dropFacade === "function") dropFacade();
     };
-    var tag = document.createElement("script");
-    tag.src = "https://www.youtube.com/iframe_api";
-    document.head.appendChild(tag);
 
+
+    /* ======================================================================
+       MOBILE MODULE (< 900px) and the mode reconciler.
+       Every desktop handler above already early-returns when isMobile(); this
+       block is the other half, and applyMode() is what makes CROSSING the
+       breakpoint safe rather than only loading on one side of it.
+       ====================================================================== */
+    var sheet = document.getElementById("sheet");
+    var sheetList = document.getElementById("chapters");
+    var chaptersBtn = document.getElementById("open-sheet");
+    var sheetLinks = [];
+    var sheetOpener = null;
+    var mStaged = [];
+    var mTicking = false, mCurrent = -1, heroClear = 0;
+    var ctaFixed = document.querySelector(".cta-fixed");
+    var formFocused = false;
+    document.addEventListener("focusin", function (e) {
+      if (!e.target.closest) return;
+      formFocused = !!e.target.closest("#lead-form");
+      if (isMobile()) mSchedule();
+    });
+    document.addEventListener("focusout", function () {
+      formFocused = false;
+      if (isMobile()) setTimeout(function () { if (isMobile()) mSchedule(); }, 0);
+    });
+    var modeIsMobile = null;
+    var lastFocused = null;
+    document.addEventListener("focusin", function (e) {
+      if (e.target && e.target !== document.body) lastFocused = e.target;
+    });
+
+    frames.forEach(function (frame, i) {
+      if (!frame.id) frame.id = "screen-" + (i + 1);
+      var a = document.createElement("a");
+      a.href = "#" + frame.id;
+      a.innerHTML = "<b></b><bdi></bdi>";
+      a.firstChild.textContent = i + 1;
+      var label = frame.getAttribute("data-label") || ("חלק " + (i + 1));
+      a.lastChild.textContent = label;
+      if (/^[\x20-\x7e]+$/.test(label)) a.lastChild.setAttribute("dir", "ltr");
+      sheetList.appendChild(a);
+      sheetLinks.push(a);
+    });
+
+    /* the overlay clone must never drift from the desktop heading it mirrors */
+    document.querySelectorAll(".has-overlay").forEach(function (sec) {
+      var original = sec.querySelector(".copy .on-photo");
+      var clone = sec.querySelector(".media .on-photo-m");
+      if (original && clone && original.textContent.trim() !== clone.textContent.trim()) {
+        console.warn("on-photo clone differs from the desktop heading in", sec.getAttribute("data-label"));
+      }
+    });
+
+    function visibleHeading(sec) {
+      var list = sec.querySelectorAll("h1, h2, h3, .on-photo-m, .kicker, .price");
+      for (var i = 0; i < list.length; i++) if (list[i].offsetParent !== null) return list[i];
+      return sec;
+    }
+    function closeSheet(restoreFocus) {
+      if (!sheet.open) return;
+      if (!restoreFocus) sheetOpener = null;
+      if (sheet.close) sheet.close(); else sheet.removeAttribute("open");
+    }
+    function openSheet(from) {
+      sheetOpener = from || null;
+      if (typeof sheet.showModal === "function") sheet.showModal(); else sheet.setAttribute("open", "");
+      var cur = sheetList.querySelector("[aria-current]") || sheetLinks[0];
+      if (cur && cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
+      if (cur) cur.focus({ preventScroll: true });
+    }
+    chaptersBtn.addEventListener("click", function () { openSheet(this); });
+    document.getElementById("close-sheet").addEventListener("click", function () { closeSheet(true); });
+    sheet.addEventListener("close", function () {
+      if (sheetOpener && document.contains(sheetOpener) && sheetOpener.offsetParent !== null) {
+        sheetOpener.focus({ preventScroll: true });
+      }
+      sheetOpener = null;
+    });
+    sheet.addEventListener("click", function (e) { if (e.target === sheet) closeSheet(true); });
+    sheetList.addEventListener("click", function (e) {
+      var a = e.target.closest ? e.target.closest("a") : null;
+      if (!a) return;
+      e.preventDefault();
+      var target = document.getElementById(a.getAttribute("href").slice(1));
+      closeSheet(false);
+      if (!target) return;
+      if (history.pushState) history.pushState(null, "", "#" + target.id);
+      var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
+      var h = visibleHeading(target);
+      h.setAttribute("tabindex", "-1");
+      h.focus({ preventScroll: true });
+    });
+
+    function syncChrome() {
+      var h = Math.round(nav.getBoundingClientRect().height);
+      if (!h) return;
+      document.documentElement.style.setProperty("--hdr", h + "px");
+      document.documentElement.style.setProperty("--obstruct", (h + 2) + "px");
+    }
+    function measureHero() {
+      var heroSec = document.getElementById("top");
+      var film = heroSec && heroSec.querySelector(".player");
+      heroClear = film ? Math.max(0, film.getBoundingClientRect().top + window.pageYOffset
+                                     - Math.round(nav.getBoundingClientRect().height) - 8) : 0;
+    }
+    function releaseStaged() {
+      if (!mStaged.length) return;
+      var vh = window.innerHeight, keep = [];
+      for (var i = 0; i < mStaged.length; i++) {
+        if (mStaged[i].getBoundingClientRect().top < vh - 40) {
+          mStaged[i].classList.remove("staged"); mStaged[i].classList.add("in");
+        } else keep.push(mStaged[i]);
+      }
+      mStaged = keep;
+    }
+    function clearStaged() {
+      document.querySelectorAll(".rise").forEach(function (el) { el.classList.remove("staged"); });
+      mStaged = [];
+    }
+    function mMeasure() {
+      mTicking = false;
+      if (!isMobile()) return;
+      var y = window.pageYOffset || document.documentElement.scrollTop;
+      releaseStaged();
+      var heroSec = document.getElementById("top");
+      rail.classList.toggle("on-dark", y < (heroSec.offsetTop + heroSec.offsetHeight - 120));
+      /* the floating CTA and the decorative rail step aside over the form: the CTA would
+         duplicate the form's own submit, and the rail dots sit on the input borders */
+      var formSec = document.getElementById("form");
+      var overForm = false;
+      if (formSec) {
+        var fr = formSec.getBoundingClientRect();
+        overForm = fr.top < window.innerHeight * 0.9 && fr.bottom > 0;
+      }
+      ctaFixed.classList.toggle("is-away", overForm || formFocused);
+      rail.classList.toggle("is-away", overForm);
+
+      var line = y + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--obstruct")) || 58) + 24;
+      var idx = 0;
+      for (var i = 0; i < frames.length; i++) { if (frames[i].offsetTop <= line) idx = i; else break; }
+      var doc = document.documentElement.scrollHeight - window.innerHeight;
+      if (doc > 0 && y >= doc - 2) idx = frames.length - 1;
+      frameIndex = idx;                  /* keep the shared index correct even when nothing changed */
+      if (idx === mCurrent) return;
+      mCurrent = idx;
+      sheetLinks.forEach(function (a, i) {
+        if (i === idx) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
+      });
+      markRail();
+    }
+    function mSchedule() { if (!mTicking) { mTicking = true; requestAnimationFrame(mMeasure); } }
+    window.addEventListener("scroll", mSchedule, { passive: true });
+    window.addEventListener("hashchange", mSchedule);
+    document.addEventListener("toggle", mSchedule, true);
+
+    /* the hero facade: no third-party request until the visitor asks for the film */
+    var facade = null;
+    function buildFacade() {
+      var frameEl = document.querySelector(".player-frame");
+      if (!frameEl || facade || ytPlayer) return;
+      facade = document.createElement("button");
+      facade.type = "button";
+      facade.className = "facade";
+      facade.setAttribute("aria-label", "נגן את הטריילר של In Waves and War");
+      facade.innerHTML = '<img src="../img/trailer-430.webp" srcset="../img/trailer-430.webp 430w, ../img/trailer-860.webp 860w" sizes="90vw" alt="" decoding="async" />'
+        + '<span class="play-btn" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 7.2v9.6l8.2-4.8z"></path></svg></span>';
+      facade.addEventListener("click", function () {
+        facade.remove(); facade = null;
+        requestPlayer(0, true);
+      });
+      frameEl.appendChild(facade);
+    }
+    function dropFacade() { if (facade) { facade.remove(); facade = null; } }
+
+    /* ---- the reconciler: this is what makes crossing the breakpoint safe ---- */
+    function applyMode(mobile) {
+      if (modeIsMobile === mobile) return;
+      var wasMobile = modeIsMobile;
+      modeIsMobile = mobile;
+
+      /* remember where we were BEFORE the layout changes under us */
+      var keepIndex = (wasMobile === null) ? frameAt(window.scrollY) : frameIndex;
+      /* Two different questions, which I had collapsed into one:
+         - who ACTUALLY owns focus right now (only that may be preserved), and
+         - who WAS focused and is about to be taken away by this mode change (only that may be
+           recovered). A control the user deliberately blurred is still visible, so it qualifies
+           for neither and must not be yanked back. */
+      var realActive = document.activeElement;
+      var hasRealFocus = realActive && realActive !== document.body && realActive !== document.documentElement;
+      var keepFocus = hasRealFocus && realActive.closest && realActive.closest("form") ? realActive : null;
+      var recover = hasRealFocus ? realActive
+                  : (lastFocused && document.contains(lastFocused) ? lastFocused : null);
+
+      /* cancel any paging work in flight; a native smooth scroll cannot be cancelled, only superseded */
+      frameGen++;
+      if (frameAnim) { cancelAnimationFrame(frameAnim); frameAnim = 0; }
+      frameLock = false;
+
+      /* the 60 Minutes player gets a deterministic policy: fully close and unload */
+      window.clearTimeout(minutesTimer);
+      var mf = minutes.querySelector(".minutes-frame");
+      if (mf) { mf.classList.remove("is-ready"); mf.removeAttribute("src"); }
+      minutes.classList.remove("is-playing");
+
+      closeSheet(false);
+      clearStaged();
+      layoutMobileFrames();
+      activateWash(mobile);
+
+      chaptersBtn.hidden = !mobile;
+      rail.setAttribute("aria-hidden", mobile ? "true" : "false");
+      rail.querySelectorAll("button").forEach(function (b) {
+        if (mobile) b.setAttribute("tabindex", "-1"); else b.removeAttribute("tabindex");
+      });
+
+      if (mobile) {
+        nav.classList.remove("on-dark");
+        syncChrome();
+        buildFacade();
+        document.querySelectorAll(".screen.split .media, .prose, .aid article, .faq-list").forEach(function (el) {
+          el.classList.add("rise");
+        });
+        var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        if (!reduce) {
+          window.setTimeout(clearStaged, 5000);
+          var vh0 = window.innerHeight;
+          document.querySelectorAll(".rise").forEach(function (el) {
+            if (el.getBoundingClientRect().top > vh0) { el.classList.add("staged"); mStaged.push(el); }
+          });
+        }
+      } else {
+        document.documentElement.style.removeProperty("--hdr");
+        document.documentElement.style.removeProperty("--obstruct");
+        dropFacade();
+        /* desktop expects a mounted player even if mobile never activated one */
+        if (!ytPlayer) requestPlayer(0, false);
+        paintNav();
+      }
+
+      /* put the reader back, instantly, so it supersedes any in-flight smooth scroll */
+      var prev = document.documentElement.style.scrollBehavior;
+      document.documentElement.style.scrollBehavior = "auto";
+      window.scrollTo(0, frames[keepIndex] ? frames[keepIndex].offsetTop : window.scrollY);
+      requestAnimationFrame(function () { document.documentElement.style.scrollBehavior = prev; });
+
+      frameIndex = keepIndex;
+      mCurrent = -1;
+      markRail();
+
+      /* Focus must never be left on something this mode has removed — a desktop rail button, or an
+         overlay clone that just became display:none. Move it to the nearest equivalent instead. */
+      if (keepFocus && document.contains(keepFocus) && keepFocus.offsetParent !== null) {
+        keepFocus.focus({ preventScroll: true });
+      } else {
+        /* only on a REAL mode change, and only when the candidate has actually been made
+           unavailable by it — a still-visible element the user simply blurred does not qualify. */
+        var stranded = wasMobile !== null && recover && document.contains(recover) &&
+                       (recover.offsetParent === null || recover.closest("[aria-hidden='true']"));
+        if (stranded) {
+          var sec = recover.closest(".screen") || frames[keepIndex];
+          var dest = null;
+          if (sec) {
+            var cands = sec.querySelectorAll("h1, h2, h3, .on-photo, .on-photo-m, .kicker, .price");
+            for (var ci = 0; ci < cands.length; ci++) {
+              if (cands[ci].offsetParent !== null) { dest = cands[ci]; break; }
+            }
+          }
+          if (!dest) dest = mobile ? chaptersBtn : document.querySelector("header.nav .brand");
+          if (dest) { dest.setAttribute("tabindex", "-1"); dest.focus({ preventScroll: true }); }
+        }
+      }
+      if (mobile) { measureHero(); mMeasure(); }
+    }
+
+    if (desktopQ.addEventListener) desktopQ.addEventListener("change", function (e) { applyMode(!e.matches); });
+    else if (desktopQ.addListener) desktopQ.addListener(function (e) { applyMode(!e.matches); });
+    window.addEventListener("resize", function () { if (isMobile()) { syncChrome(); measureHero(); mSchedule(); } });
+    window.addEventListener("pageshow", function () { if (isMobile()) { syncChrome(); measureHero(); mSchedule(); } });
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(function () { if (isMobile()) { syncChrome(); measureHero(); mSchedule(); } });
+    }
+    applyMode(isMobile());
+
+    document.getElementById("lead-retry").addEventListener("click", function () {
+      document.getElementById("lead-ok").hidden = true;
+      var f = document.getElementById("lead-form");
+      f.hidden = false;
+      document.getElementById("full-name").focus({ preventScroll: true });
+    });
     document.getElementById("lead-form").addEventListener("submit", function (e) {
       e.preventDefault();
       var name = document.getElementById("full-name").value.trim();
       var phone = document.getElementById("phone").value.trim();
       var elig = document.querySelector('input[name="eligibility"]:checked');
       var err = document.getElementById("form-err");
-      if (!name || !phone || !elig) { err.hidden = false; return; }
+      if (!name || !phone || !elig) { err.textContent = "שדה חובה"; err.hidden = false; return; }
+      if (!LEAD_EMAIL || LEAD_EMAIL === LEAD_EMAIL_PLACEHOLDER) {
+        err.textContent = "כתובת היעד לפניות עדיין לא הוגדרה, ולכן הטופס אינו שולח. יש להגדיר את LEAD_EMAIL בקוד.";
+        err.hidden = false;
+        return;
+      }
       err.hidden = true;
       var body = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + elig.value;
       window.location.href = "mailto:" + LEAD_EMAIL + "?subject=" + encodeURIComponent("מתנת חיים — פנייה חדשה") + "&body=" + encodeURIComponent(body);
       document.getElementById("lead-form").hidden = true;
       document.getElementById("lead-ok").hidden = false;
+      document.getElementById("lead-ok-title").focus({ preventScroll: true });
     });
-  
-}
-
-  </script>
-  <script>
-if (window.matchMedia('(max-width: 899px)').matches) {
-
-(function () {
-  "use strict";
-  var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-  var staged = [];   /* elements still waiting to be revealed; must exist before measure() runs */
-
-  /* The header's real height is set by its 44px controls + padding + border, not by a guess.
-     Measure it and publish it as the shared geometry the padding, progress bar, scroll-margin
-     and the chapter spy all read. */
-  var hdr = document.querySelector(".mob .hdr");
-  function syncChrome() {
-    var h = Math.round(hdr.getBoundingClientRect().height);
-    if (!h) return;
-    var root = document.documentElement.style;
-    root.setProperty("--hdr", h + "px");
-    root.setProperty("--obstruct", (h + 2) + "px");
-  }
-  syncChrome();
-
-  /* ---- chapters ---- */
-  var CH = [
-    ["m-top","פתיח"],["m-trailer","הסרט"],["m-stanford","מחקר סטנפורד"],["m-offer","מתנת חיים"],
-    ["m-eligibility","מי זכאי"],["m-form","השארת פרטים"],["m-symptoms","במה זה מסייע"],
-    ["m-consult","התייעצות"],["m-minutes","60 Minutes"],["m-root","מהו אייבוגן"],
-    ["m-how","איך זה עובד"],["m-safety","מעטפת רפואית"],["m-faq","שאלות ותשובות"],["m-close","סיום"]
-  ];
-  var nav = document.getElementById("m-chapters"), links = [];
-  CH.forEach(function (c, i) {
-    var a = document.createElement("a");
-    a.href = "#" + c[0];
-    a.innerHTML = '<b></b><bdi></bdi>';
-    a.firstChild.textContent = i + 1;
-    a.lastChild.textContent = c[1];
-    if (/^[\x20-\x7e]+$/.test(c[1])) a.lastChild.setAttribute("dir", "ltr");
-    nav.appendChild(a); links.push(a);
-  });
-
-  /* ---- sheet ---- */
-  var sheet = document.getElementById("m-sheet"), opener = null;
-  function openSheet(from) {
-    opener = from || document.getElementById("m-open-sheet");
-    if (typeof sheet.showModal === "function") sheet.showModal(); else sheet.setAttribute("open", "");
-    var cur = nav.querySelector("[aria-current]") || links[0];
-    if (cur.scrollIntoView) cur.scrollIntoView({ block: "nearest" });
-    cur.focus({ preventScroll: true });
-  }
-  function closeSheet() { if (sheet.open) { if (sheet.close) sheet.close(); else sheet.removeAttribute("open"); } }
-  document.getElementById("m-open-sheet").addEventListener("click", function () { openSheet(this); });
-  Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll("[data-sheet]"), function (b) {
-    b.addEventListener("click", function () { openSheet(this); });
-  });
-  document.getElementById("m-close-sheet").addEventListener("click", function () { closeSheet(); });
-  sheet.addEventListener("close", function () { if (opener && document.contains(opener)) opener.focus({ preventScroll: true }); });
-  sheet.addEventListener("click", function (e) { if (e.target === sheet) closeSheet(); });
-  nav.addEventListener("click", function (e) {
-    var a = e.target.closest("a"); if (!a) return;
-    e.preventDefault();
-    var id = a.getAttribute("href").slice(1), target = document.getElementById(id);
-    opener = null;                       /* selection: focus destination, not the opener */
-    closeSheet();
-    if (!target) return;
-    if (history.pushState) history.pushState(null, "", "#" + id);
-    target.scrollIntoView({ behavior: reduce ? "auto" : "smooth", block: "start" });
-    var h = target.querySelector("h1,h2,h3,.kicker") || target;
-    h.setAttribute("tabindex", "-1");
-    h.focus({ preventScroll: true });
-  });
-
-  /* ---- progress + current chapter: geometry, not intersection ---- */
-  var prog = document.getElementById("m-prog");
-  var secs = CH.map(function (c) { return document.getElementById(c[0]); });
-  var ticking = false, current = -1;
-  function measure() {
-    ticking = false;
-    var y = window.pageYOffset || document.documentElement.scrollTop;
-    var doc = document.documentElement.scrollHeight - window.innerHeight;
-    prog.style.width = (doc > 0 ? Math.min(100, Math.max(0, (y / doc) * 100)) : 0) + "%";
-
-    releaseStaged();
-
-    var line = y + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--obstruct")) || 58) + 24;
-    var idx = 0;
-    for (var i = 0; i < secs.length; i++) {
-      if (!secs[i]) continue;
-      if (secs[i].offsetTop <= line) idx = i; else break;
-    }
-    if (doc > 0 && y >= doc - 2) idx = secs.length - 1;   /* end of page */
-    if (idx === current) return;
-    current = idx;
-    links.forEach(function (a, i) {
-      if (i === idx) a.setAttribute("aria-current", "location"); else a.removeAttribute("aria-current");
-    });
-  }
-  function schedule() { if (!ticking) { ticking = true; requestAnimationFrame(measure); } }
-  addEventListener("scroll", schedule, { passive: true });
-  addEventListener("resize", function () { syncChrome(); schedule(); });
-  addEventListener("pageshow", schedule);
-  addEventListener("hashchange", schedule);
-  document.addEventListener("toggle", schedule, true);
-  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { syncChrome(); schedule(); });
-
-  /* ---- reveal ----
-     Content is visible by default. Only items still below the fold are staged, and they are
-     released by the same rAF geometry pass that drives the spy — an IntersectionObserver never
-     fires for an element the page JUMPED past (direct #hash load), which would strand it at
-     opacity 0. A timer armed before staging clears anything left behind. */
-  function releaseStaged() {
-    if (!staged || !staged.length) return;
-    var vh = window.innerHeight, keep = [];
-    for (var i = 0; i < staged.length; i++) {
-      if (staged[i].getBoundingClientRect().top < vh - 40) { staged[i].classList.remove("staged"); staged[i].classList.add("in"); }
-      else keep.push(staged[i]);
-    }
-    staged = keep;
-  }
-  function revealAll() {
-    Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll(".rise"), function (el) { el.classList.remove("staged"); });
-    staged = [];
-  }
-  if (reduce) {
-    revealAll();
-  } else {
-    setTimeout(revealAll, 5000);   /* armed BEFORE staging, so a throw mid-loop still self-clears */
-    var vh0 = window.innerHeight;
-    Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll(".rise"), function (el) {
-      if (el.getBoundingClientRect().top > vh0) { el.classList.add("staged"); staged.push(el); }
-    });
-  }
-
-  /* ---- video facades ---- */
-  Array.prototype.forEach.call(document.querySelector(".mob").querySelectorAll(".media"), function (box) {
-    var btn = box.querySelector(".play"); if (!btn) return;
-    btn.addEventListener("click", function () {
-      var id = box.dataset.yt;
-      var f = document.createElement("iframe");
-      f.src = "https://www.youtube.com/embed/" + id + "?autoplay=1&rel=0&playsinline=1&hl=he";
-      f.title = box.dataset.title || "וידאו";
-      f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
-      f.referrerPolicy = "strict-origin-when-cross-origin";
-      f.setAttribute("allowfullscreen", "");
-      box.textContent = "";
-      box.appendChild(f);
-      var p = document.createElement("span");
-      p.className = "alt";
-      p.innerHTML = 'לא נטען? ';
-      var a = document.createElement("a");
-      a.href = "https://www.youtube.com/watch?v=" + id;
-      a.target = "_blank"; a.rel = "noopener noreferrer";
-      a.textContent = "פתיחה ביוטיוב";
-      p.appendChild(a);
-      box.parentNode.insertBefore(p, box.nextSibling);
-      schedule();
-    });
-  });
-
-  /* ---- preview form: cannot submit, does not claim delivery ---- */
-  var done = document.getElementById("m-done"), form = document.getElementById("m-lead");
-  document.getElementById("m-send").addEventListener("click", function () {
-    form.hidden = true; done.hidden = false;
-    var h = done.querySelector("h3");
-    h.setAttribute("tabindex", "-1");
-    h.focus({ preventScroll: true });
-    schedule();
-  });
-  document.getElementById("m-cal").addEventListener("click", function () {
-    var b = this;
-    b.textContent = "בגרסה החיה ייפתח כאן יומן לתיאום שיחה";
-    b.disabled = true;
-    b.style.opacity = ".7";
-  });
-  document.getElementById("m-back").addEventListener("click", function () {
-    done.hidden = true; form.hidden = false;
-    document.getElementById("m-nm").focus({ preventScroll: true });
-    schedule();
-  });
-
-  measure();   /* first geometry pass, once every handler above is installed */
-})();
-
-}
-
   </script>
 </body>
 </html>
