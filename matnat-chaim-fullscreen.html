@@ -319,7 +319,7 @@
       stroke-linecap: round; stroke-linejoin: round;
     }
     .stat-line { margin: 0; font-size: clamp(1.7rem, 2.7vw, 2.2rem); font-weight: 700; line-height: 1.25; color: var(--fg); -webkit-text-stroke: 0.45px currentColor; paint-order: stroke fill; }
-    .minutes .stat-line { -webkit-text-stroke: 0; paint-order: normal; }
+    .minutes .stat-line { -webkit-text-stroke: 0; paint-order: normal; font-size: 1.2rem; font-weight: 500; line-height: 1.45; }
     .copy p:not(.kicker):not(.title-xl):not(.num):not(.or):not(.price):not(.stat-line),
     .faq-a p,
     .aid article p,
@@ -715,6 +715,7 @@
       .screen.split .num-arrow { width: .57em; height: .78em; }
       .screen.split .copy .stat-line,
       .screen.split .copy .close-lines .title-xl { font-size: 1.3rem; line-height: 1.25; }
+      .screen.minutes .copy .stat-line { font-size: 1rem; font-weight: 500; line-height: 1.45; }
       .or,
       .screen.split .copy .or,
       .screen.split .copy > p.or { font-size: 1rem; }
