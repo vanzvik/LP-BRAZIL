@@ -1625,13 +1625,10 @@
         var fr = formSec.getBoundingClientRect();
         overForm = fr.top < window.innerHeight * 0.9 && fr.bottom > 0;
       }
-      var endBtn = document.querySelector(".screen.close .btn");
-      var overEnd = false;
-      if (endBtn) {
-        var er = endBtn.getBoundingClientRect();
-        overEnd = er.top < window.innerHeight * 0.92 && er.bottom > 0;
-      }
-      ctaFixed.classList.toggle("is-away", overForm || formFocused || overEnd);
+      if (formFocused && !overForm) formFocused = false;
+      var maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+      var atEnd = y >= maxScroll - 24;
+      ctaFixed.classList.toggle("is-away", overForm || atEnd);
       rail.classList.toggle("is-away", overForm);
 
       var line = y + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--obstruct")) || 58) + 24;
