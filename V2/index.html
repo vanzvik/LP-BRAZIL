@@ -387,6 +387,7 @@
       padding: 0; border: 0; background: #000; cursor: pointer;
     }
     .minutes .play-open img { width: 100%; height: 100%; object-fit: cover; transition: opacity 0.28s ease-in; }
+    .minutes.is-playing .play-open { pointer-events: none; }
     .minutes.is-playing .play-open img { opacity: 0; transition-delay: 0.42s; }
     .minutes-stage {
       position: absolute; z-index: 4; left: 50%; top: 50%;
@@ -765,15 +766,19 @@
       /* ---- 60 Minutes ---- */
       .screen.minutes .media {
         position: relative; height: auto; top: auto; bottom: auto; inset-inline: auto;
-        min-height: 0; aspect-ratio: 16 / 9;      /* a video still keeps its own shape */
+        min-height: 0; aspect-ratio: 16 / 9;
       }
-      .screen.minutes.is-playing .media { aspect-ratio: 16 / 9; }
-      .screen.minutes.is-playing .media { height: auto; }
+      .screen.minutes.is-playing .media {
+        position: relative; top: auto; bottom: auto; inset-inline: auto;
+        height: auto; aspect-ratio: 16 / 9;
+      }
       .screen.minutes .copy { grid-row: auto; z-index: 4; }
-      .minutes-stage { position: absolute; inset: 0; left: auto; top: auto; width: 100%;
-                       transform: none; aspect-ratio: auto; }
+      .minutes-stage {
+        position: absolute; inset: 0; width: 100%; height: 100%;
+        transform: none; aspect-ratio: auto;
+      }
       .minutes .play-btn { width: 4.4rem; height: 4.4rem; }
-      .minutes-close { top: .5rem; inset-inline-start: .5rem; width: 44px; height: 44px; }
+      .minutes-close { top: 8px; inset-inline-start: 8px; width: 44px; height: 44px; z-index: 6; }
 
       /* ---- form: the desktop's bare underline, at a touch size ---- */
       form { gap: 1.4rem; }
