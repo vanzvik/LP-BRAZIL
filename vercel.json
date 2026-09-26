@@ -1,5 +1,5 @@
 {
   "rewrites": [
-    { "source": "/", "destination": "/matnat-chaim-fullscreen.html" }
+    { "source": "/", "destination": "/V2/index.html" }
   ]
 }
