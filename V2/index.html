@@ -1616,19 +1616,12 @@
       releaseStaged();
       var heroSec = document.getElementById("top");
       rail.classList.toggle("on-dark", y < (heroSec.offsetTop + heroSec.offsetHeight - 120));
-      /* the floating CTA and the decorative rail step aside over the form: the CTA would
-         duplicate the form's own submit, and the rail dots sit on the input borders */
-      var formSec = document.getElementById("form");
-      var overForm = false;
-      if (formSec) {
-        var fr = formSec.getBoundingClientRect();
-        overForm = fr.top < window.innerHeight * 0.9 && fr.bottom > 0;
-      }
-      if (formFocused && !overForm) formFocused = false;
-      var maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-      var atEnd = y >= maxScroll - 24;
-      ctaFixed.classList.toggle("is-away", overForm || atEnd);
-      rail.classList.toggle("is-away", overForm);
+      /* hide the floating CTA only at the bottom of the document, and bring it
+         back the moment that range is left. Do not tie it to other sections. */
+      var docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+      var atEnd = (y + window.innerHeight) >= docHeight - 12;
+      ctaFixed.classList.toggle("is-away", atEnd);
+      rail.classList.remove("is-away");
 
       var line = y + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--obstruct")) || 58) + 24;
       var idx = 0;
