@@ -8,6 +8,14 @@ function clean(value, max, keepLines) {
   return String(value || "").replace(pattern, "").trim().slice(0, max);
 }
 
+
+function escapeHtml(value) {
+  return String(value)
+    .replace(/&/g, "\u0026amp;")
+    .replace(/</g, "\u0026lt;")
+    .replace(/>/g, "\u0026gt;");
+}
+
 function clientIp(req) {
   const forwarded = req.headers["x-forwarded-for"];
   const raw = Array.isArray(forwarded) ? forwarded[0] : forwarded || req.socket.remoteAddress || "";
@@ -73,6 +81,12 @@ module.exports = async function handler(req, res) {
     socketTimeout: 8000
   });
   const text = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + eligibility + "\nמשהו נוסף שתרצה שנדע?: " + note + "\n";
+  const html = "<div dir=\"rtl\" lang=\"he\" style=\"direction:rtl;text-align:right;font-family:Arial,sans-serif;font-size:16px;line-height:1.5\">"
+    + "<p style=\"margin:0 0 12px\"><b>שם מלא</b><br>" + escapeHtml(name) + "</p>"
+    + "<p style=\"margin:0 0 12px\"><b>טלפון</b><br><bdi dir=\"ltr\">" + escapeHtml(phone) + "</bdi></p>"
+    + "<p style=\"margin:0 0 12px\"><b>האם אני</b><br>" + escapeHtml(eligibility) + "</p>"
+    + "<p style=\"margin:0 0 12px\"><b>משהו נוסף שתרצה שנדע?</b><br>" + escapeHtml(note).replace(/\n/g, "<br>") + "</p>"
+    + "</div>";
 
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
@@ -80,7 +94,9 @@ module.exports = async function handler(req, res) {
         from: user,
         to: to,
         subject: "פנייה חדשה — מתנת חיים",
-        text: text
+        text: text,
+        html: html,
+        headers: { "Content-Language": "he" }
       });
       return res.status(200).json({ ok: true });
     } catch (err) {
