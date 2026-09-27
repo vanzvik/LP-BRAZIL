@@ -73,7 +73,7 @@ module.exports = async function handler(req, res) {
     greetingTimeout: 8000,
     socketTimeout: 8000
   });
-  const text = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + eligibility + "\nפרטים נוספים: " + note + "\n";
+  const text = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + eligibility + "\nמשהו נוסף שתרצה שנדע?: " + note + "\n";
 
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
