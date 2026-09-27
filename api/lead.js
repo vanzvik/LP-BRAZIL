@@ -3,8 +3,9 @@ const nodemailer = require("nodemailer");
 const ELIGIBILITY = ["מוכר משרד הביטחון", "שרתתי למעלה מ-200 יום"];
 const hits = new Map();
 
-function clean(value, max) {
-  return String(value || "").replace(/[\u0000-\u001F\u007F]/g, "").trim().slice(0, max);
+function clean(value, max, keepLines) {
+  var pattern = keepLines ? /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/g : /[\u0000-\u001F\u007F]/g;
+  return String(value || "").replace(pattern, "").trim().slice(0, max);
 }
 
 function clientIp(req) {
@@ -49,6 +50,7 @@ module.exports = async function handler(req, res) {
 
   const name = clean(body.name, 80);
   const phone = clean(body.phone, 20);
+  const note = clean(body.note, 1000, true);
   const eligibility = clean(body.eligibility, 80);
   const digits = phone.replace(/\D/g, "");
   if (!name || digits.length < 9 || digits.length > 15 || ELIGIBILITY.indexOf(eligibility) === -1) {
@@ -71,7 +73,7 @@ module.exports = async function handler(req, res) {
     greetingTimeout: 8000,
     socketTimeout: 8000
   });
-  const text = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + eligibility + "\n";
+  const text = "שם מלא: " + name + "\nטלפון: " + phone + "\nהאם אני: " + eligibility + "\nפרטים נוספים: " + note + "\n";
 
   for (let attempt = 0; attempt < 3; attempt++) {
     try {

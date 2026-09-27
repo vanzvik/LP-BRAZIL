@@ -248,12 +248,13 @@
     form { display: grid; gap: 1.6rem; position: relative; }
     .hp { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
     label, legend { font-size: 0.85rem; font-weight: 500; color: var(--muted); }
-    input[type="text"], input[type="tel"] {
+    input[type="text"], input[type="tel"], textarea {
       width: 100%; border: 0; border-bottom: 1px solid rgb(26 51 68 / 0.35);
       border-radius: 0; background: transparent; color: var(--fg);
-      padding: 0.7rem 0; font-size: 1.35rem; outline: none;
+      padding: 0.7rem 0; font: inherit; font-size: 1.35rem; outline: none;
     }
-    input:focus { border-bottom-color: var(--fg); }
+    textarea { resize: vertical; min-height: 5.5rem; }
+    input:focus, textarea:focus { border-bottom-color: var(--fg); }
     fieldset { border: 0; padding: 0; margin: 0; display: grid; gap: 0.7rem; }
     .choice { display: flex; align-items: center; gap: 0.7rem; font-size: 1.15rem; cursor: pointer; color: var(--fg); }
     .choice input { accent-color: var(--green); width: 1.05rem; height: 1.05rem; }
@@ -780,12 +781,13 @@
 
       /* ---- form: the desktop's bare underline, at a touch size ---- */
       form { gap: 1.4rem; }
-      input[type="text"], input[type="tel"] {
+      input[type="text"], input[type="tel"], textarea {
         min-height: 52px; font-size: 1.15rem; padding: .7rem .9rem;
         border: 1px solid var(--rule); border-radius: 12px; background: #fff;
       }
-      input[type="text"]:focus, input[type="tel"]:focus { border-color: var(--fg); }
-      input[type="text"]:focus-visible, input[type="tel"]:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
+      textarea { min-height: 7rem; }
+      input[type="text"]:focus, input[type="tel"]:focus, textarea:focus { border-color: var(--fg); }
+      input[type="text"]:focus-visible, input[type="tel"]:focus-visible, textarea:focus-visible { outline: 2px solid var(--fg); outline-offset: 4px; }
       button:focus-visible, a:focus-visible, .faq-q:focus-visible { outline: 2px solid var(--fg); outline-offset: 3px; }
       .choice {
         min-height: 52px; font-size: 1.05rem; padding-inline: .9rem;
@@ -940,6 +942,10 @@
           <div>
             <label for="phone">טלפון</label>
             <input id="phone" name="phone" type="tel" dir="ltr" autocomplete="tel" inputmode="tel" required />
+          </div>
+          <div>
+            <label for="note">פרטים נוספים</label>
+            <textarea id="note" name="note" dir="auto" rows="3"></textarea>
           </div>
           <fieldset>
             <legend>האם אני</legend>
@@ -1796,6 +1802,7 @@
         body: JSON.stringify({
           name: name,
           phone: phone,
+          note: document.getElementById("note").value.trim(),
           eligibility: elig.value,
           company: document.getElementById("company").value
         })
