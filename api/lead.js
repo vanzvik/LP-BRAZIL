@@ -53,9 +53,8 @@ module.exports = async function handler(req, res) {
   const note = clean(body.note, 1000, true);
   const eligibility = clean(body.eligibility, 80);
   const digits = phone.replace(/\D/g, "");
-  if (!name || digits.length < 9 || digits.length > 15 || ELIGIBILITY.indexOf(eligibility) === -1) {
-    return res.status(400).json({ ok: false });
-  }
+  if (!name || ELIGIBILITY.indexOf(eligibility) === -1) return res.status(400).json({ ok: false, error: "required" });
+  if (digits.length < 9 || digits.length > 15) return res.status(400).json({ ok: false, error: "phone" });
 
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;

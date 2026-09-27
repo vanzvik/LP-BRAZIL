@@ -1793,7 +1793,10 @@
       var elig = document.querySelector('input[name="eligibility"]:checked');
       var err = document.getElementById("form-err");
       var submit = form.querySelector('button[type="submit"]');
-      if (!name || !phone || !elig) { err.textContent = "שדה חובה"; err.hidden = false; return; }
+      var digits = phone.replace(/\D/g, "");
+      if (!name || !phone || !elig) { err.textContent = "יש למלא שם מלא, טלפון, ולבחור אחת מהאפשרויות."; err.hidden = false; return; }
+      if (digits.length < 9) { err.textContent = "מספר הטלפון אינו שלם. יש להזין מספר מלא, כולל קידומת."; err.hidden = false; return; }
+      if (digits.length > 15) { err.textContent = "מספר הטלפון ארוך מדי."; err.hidden = false; return; }
       err.hidden = true;
       submit.disabled = true;
       fetch("/api/lead", {
@@ -1807,13 +1810,24 @@
           company: document.getElementById("company").value
         })
       }).then(function (res) {
-        if (!res.ok) throw new Error(res.status === 429 ? "later" : "fail");
+        if (res.ok) return null;
+        return res.json().catch(function () { return {}; }).then(function (data) {
+          if (res.status === 429) throw new Error("later");
+          if (data && data.error === "phone") throw new Error("phone");
+          if (res.status === 400) throw new Error("required");
+          throw new Error("fail");
+        });
+      }).then(function () {
         form.hidden = true;
         document.getElementById("lead-ok").hidden = false;
         document.getElementById("lead-ok-title").focus({ preventScroll: true });
       }).catch(function (ex) {
         submit.disabled = false;
-        err.textContent = ex && ex.message === "later" ? "נסו שוב בעוד כמה דקות." : "לא הצלחנו לשלוח. נסו שוב.";
+        var message = "לא הצלחנו לשלוח. נסו שוב.";
+        if (ex && ex.message === "later") message = "נסו שוב בעוד כמה דקות.";
+        if (ex && ex.message === "phone") message = "מספר הטלפון אינו שלם. יש להזין מספר מלא, כולל קידומת.";
+        if (ex && ex.message === "required") message = "יש למלא שם מלא, טלפון, ולבחור אחת מהאפשרויות.";
+        err.textContent = message;
         err.hidden = false;
       });
     });
