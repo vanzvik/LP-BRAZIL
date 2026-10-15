@@ -54,7 +54,11 @@ module.exports = async function handler(req, res) {
   if (limited(clientIp(req))) return res.status(429).json({ ok: false });
 
   const body = req.body || {};
-  if (clean(body.company, 200)) return res.status(200).json({ ok: true });
+  const trap = clean(body.hp_x, 200) || clean(body.company, 200);
+  if (trap) {
+    console.warn("lead honeypot hit", JSON.stringify({ ip: clientIp(req), trap: trap.slice(0, 80), name: clean(body.name, 80), phone: clean(body.phone, 20) }));
+    return res.status(200).json({ ok: true });
+  }
 
   const name = clean(body.name, 80);
   const phone = clean(body.phone, 20);

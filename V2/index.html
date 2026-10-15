@@ -1044,8 +1044,8 @@
           <p class="err" id="form-err" hidden>שדה חובה</p>
           <button class="btn" type="submit">אני רוצה לשמוע יותר</button>
           <div class="hp" aria-hidden="true">
-            <label for="company">Company</label>
-            <input id="company" name="company" type="text" tabindex="-1" autocomplete="off" />
+            <label for="hp_x">Leave empty</label>
+            <input id="hp_x" name="hp_x" type="text" tabindex="-1" autocomplete="off" data-lpignore="true" data-1p-ignore="true" />
           </div>
         </form>
         <div id="lead-ok" role="status" aria-live="polite" hidden>
@@ -1896,7 +1896,7 @@
           phone: phone,
           note: document.getElementById("note").value.trim(),
           eligibility: elig.value,
-          company: document.getElementById("company").value
+          hp_x: document.getElementById("hp_x").value
         })
       }).then(function (res) {
         if (res.ok) return null;
