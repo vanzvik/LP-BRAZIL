@@ -937,6 +937,43 @@
     .faq-a > div { visibility: hidden; }
     .faq-item.is-open .faq-a > div { visibility: visible; }
 
+      /* ---- form screen: always fit heading + fields + status + button in one viewport ---- */
+    #form .copy { justify-content: center; overflow: hidden; position: relative; }
+    #form form { gap: clamp(0.45rem, 1.9vh, 1.4rem); }
+    #form .copy h3 { margin-top: 0; font-size: clamp(1.5rem, min(4.2vh, 3.4vw), 3.2rem); line-height: 1.08; }
+    #form input[type="text"], #form input[type="tel"], #form textarea { font-size: clamp(1rem, 2.4vh, 1.3rem); padding: clamp(0.3rem, 1vh, 0.65rem) 0; }
+    #form textarea { min-height: 0; height: clamp(2.6rem, 8vh, 5rem); }
+    #form fieldset { gap: clamp(0.2rem, 0.9vh, 0.6rem); }
+    #form .choice { font-size: clamp(0.95rem, 2.1vh, 1.15rem); }
+    #form label, #form legend { font-size: clamp(0.75rem, 1.7vh, 0.85rem); }
+    #form .err { font-size: clamp(0.85rem, 1.9vh, 1rem); line-height: 1.3; margin: 0; }
+    #form button[type="submit"] { margin-top: 0; }
+    #form #lead-ok { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; padding: inherit; }
+    #form #lead-ok[hidden] { display: none !important; }
+    #form .is-sent { visibility: hidden; }
+    @media (min-width: 900px) {
+      #form .copy { padding-top: max(4.6rem, 9vh); padding-bottom: max(1rem, 3vh); }
+    }
+    @media (min-width: 900px) and (max-height: 760px) {
+      #form .copy { padding-top: 4.4rem; padding-bottom: 0.8rem; }
+    }
+    @media (width < 900px) {
+      #form .media { height: clamp(5.5rem, 17dvh, 11rem); min-height: 0; }
+      #form .media > .on-photo-m { font-size: clamp(1.25rem, 3.4dvh, 1.8rem); padding-block: 0.6rem; }
+      #form .copy { padding-top: clamp(0.6rem, 2dvh, 1.4rem); padding-bottom: clamp(0.6rem, 2dvh, 1.4rem); }
+      #form .btn { min-height: 2.6rem; }
+      #form { scroll-margin-top: var(--obstruct); }
+      #form .choice { min-height: clamp(2.2rem, 5.5dvh, 3.25rem); }
+    }
+    @media (width < 900px) and (max-height: 700px) {
+      #form .media { height: 3.9rem; }
+      #form .media > .on-photo-m { font-size: 1.15rem; padding-block: 0.4rem; }
+      #form form { gap: 0.32rem; }
+      #form textarea { height: 2.4rem; }
+      #form input[type="text"], #form input[type="tel"], #form textarea { padding: 0.25rem 0; }
+      #form .copy { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -1723,7 +1760,10 @@
          back the moment that range is left. Do not tie it to other sections. */
       var docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
       var atEnd = (y + window.innerHeight) >= docHeight - 12;
-      ctaFixed.classList.toggle("is-away", atEnd);
+      var formSec = document.getElementById("form");
+      var fr = formSec.getBoundingClientRect();
+      var formInView = fr.top < window.innerHeight * 0.6 && fr.bottom > window.innerHeight * 0.4;
+      ctaFixed.classList.toggle("is-away", atEnd || formInView);
       rail.classList.remove("is-away");
 
       var line = y + (parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--obstruct")) || 58) + 24;
@@ -1874,6 +1914,29 @@
     }
     applyMode(isMobile());
 
+// Normalize an Israeli (or international) phone number. Returns { ok, phone } .
+    function normalizePhone(raw) {
+      var s = String(raw || "").trim();
+      var plus = /^\s*(\+|00)/.test(s);
+      var d = s.replace(/\D/g, "");
+      if (/^00/.test(d)) d = d.slice(2);
+      // browser autofill bug: "+1" glued in front of a local Israeli number (+10523366593)
+      if (/^10\d{8,9}$/.test(d)) d = d.slice(1);
+      // +972 / 972 → 0
+      if (/^9720?\d{8,9}$/.test(d)) { d = "0" + d.slice(3); if (/^00/.test(d)) d = d.slice(1); }
+      // local number missing the leading 0 (521234567)
+      if (!plus && /^[23489]\d{7}$|^5\d{8}$|^7\d{8}$/.test(d)) d = "0" + d;
+      if (/^0(5\d|7\d)\d{7}$|^0[23489]\d{7}$/.test(d)) return { ok: true, phone: d };
+      if (plus && d.length >= 9 && d.length <= 15) return { ok: true, phone: "+" + d };
+      return { ok: false, phone: d };
+    }
+    function keepScroll(fn) {
+      var se = document.scrollingElement || document.documentElement;
+      var y = se.scrollTop;
+      fn();
+      se.scrollTop = y;
+      requestAnimationFrame(function () { se.scrollTop = y; requestAnimationFrame(function () { se.scrollTop = y; }); });
+    }
     document.getElementById("lead-form").addEventListener("submit", function (e) {
       e.preventDefault();
       var form = document.getElementById("lead-form");
@@ -1882,10 +1945,11 @@
       var elig = document.querySelector('input[name="eligibility"]:checked');
       var err = document.getElementById("form-err");
       var submit = form.querySelector('button[type="submit"]');
-      var digits = phone.replace(/\D/g, "");
       if (!name || !phone || !elig) { err.textContent = "יש למלא שם מלא, טלפון, ולבחור אחת מהאפשרויות."; err.hidden = false; return; }
-      if (digits.length < 9) { err.textContent = "מספר הטלפון אינו שלם. יש להזין מספר מלא, כולל קידומת."; err.hidden = false; return; }
-      if (digits.length > 15) { err.textContent = "מספר הטלפון ארוך מדי."; err.hidden = false; return; }
+      var np = normalizePhone(phone);
+      if (!np.ok) { err.textContent = "מספר הטלפון אינו תקין. יש להזין מספר ישראלי, למשל 050-1234567."; err.hidden = false; return; }
+      phone = np.phone;
+      document.getElementById("phone").value = phone;
       err.hidden = true;
       submit.disabled = true;
       var payload = JSON.stringify({
@@ -1910,21 +1974,26 @@
         return res.json().catch(function () { return {}; }).then(function (data) {
           if (res.status === 429) throw new Error("later");
           if (data && data.error === "phone") throw new Error("phone");
+          if (res.status === 403) throw new Error("origin");
           if (res.status === 400) throw new Error("required");
           throw new Error("fail");
         });
       }).then(function () {
-        form.hidden = true;
-        document.getElementById("lead-ok").hidden = false;
-        document.getElementById("lead-ok-title").focus({ preventScroll: true });
+        keepScroll(function () {
+          if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
+          form.classList.add("is-sent");
+          form.setAttribute("aria-hidden", "true");
+          document.getElementById("lead-ok").hidden = false;
+          document.getElementById("lead-ok-title").focus({ preventScroll: true });
+        });
       }).catch(function (ex) {
         submit.disabled = false;
         var message = "לא הצלחנו לשלוח את הפרטים. הפרטים לא אבדו מהטופס — אנא לחצו שוב על הכפתור כדי לנסות שוב.";
         if (ex && ex.message === "later") message = "נסו שוב בעוד כמה דקות.";
-        if (ex && ex.message === "phone") message = "מספר הטלפון אינו שלם. יש להזין מספר מלא, כולל קידומת.";
+        if (ex && ex.message === "phone") message = "מספר הטלפון אינו תקין. יש להזין מספר ישראלי, למשל 050-1234567.";
+        if (ex && ex.message === "origin") message = "לא הצלחנו לשלוח מהכתובת הזו. נסו לרענן את הדף ולשלוח שוב.";
         if (ex && ex.message === "required") message = "יש למלא שם מלא, טלפון, ולבחור אחת מהאפשרויות.";
-        err.textContent = message;
-        err.hidden = false;
+        keepScroll(function () { err.textContent = message; err.hidden = false; });
       });
     });
   </script>
