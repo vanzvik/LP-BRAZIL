@@ -1,4 +1,21 @@
 const nodemailer = require("nodemailer");
+const crypto = require("crypto");
+const { put } = require("@vercel/blob");
+const { normalizePhone } = require("../lib/phone");
+
+async function saveLead(lead) {
+  if (!process.env.BLOB_READ_WRITE_TOKEN) { console.error("lead backup skipped: BLOB_READ_WRITE_TOKEN missing"); return false; }
+  const day = lead.at.slice(0, 10);
+  const path = "leads/" + day + "/" + lead.at.replace(/[:.]/g, "-") + "-" + crypto.randomBytes(4).toString("hex") + ".json";
+  try {
+    await put(path, JSON.stringify(lead), { access: "private", contentType: "application/json", addRandomSuffix: false });
+    console.log("lead backed up", JSON.stringify({ path: path }));
+    return true;
+  } catch (err) {
+    console.error("lead backup failed", JSON.stringify({ message: String(err && err.message || err).slice(0, 300) }));
+    return false;
+  }
+}
 
 const ELIGIBILITY = ["מוכר משרד הביטחון", "שרתתי למעלה מ-200 יום"];
 const hits = new Map();
@@ -50,10 +67,11 @@ module.exports = async function handler(req, res) {
     res.setHeader("Allow", "POST");
     return res.status(405).json({ ok: false });
   }
-  if (!sameOrigin(req)) return res.status(403).json({ ok: false });
-  if (limited(clientIp(req))) return res.status(429).json({ ok: false });
-
   const body = req.body || {};
+  const peek = function () { return JSON.stringify({ origin: req.headers.origin || "", host: req.headers.host || "", name: clean(body.name, 80), phone: clean(body.phone, 30) }); };
+  if (!sameOrigin(req)) { console.warn("lead rejected 403 origin", peek()); return res.status(403).json({ ok: false, error: "origin" }); }
+  if (limited(clientIp(req))) { console.warn("lead rejected 429 rate", peek()); return res.status(429).json({ ok: false }); }
+
   const trap = clean(body.hp_x, 200) || clean(body.company, 200);
   if (trap) {
     console.warn("lead honeypot hit", JSON.stringify({ ip: clientIp(req), trap: trap.slice(0, 80), name: clean(body.name, 80), phone: clean(body.phone, 20) }));
@@ -61,14 +79,17 @@ module.exports = async function handler(req, res) {
   }
 
   const name = clean(body.name, 80);
-  const phone = clean(body.phone, 20);
+  const rawPhone = clean(body.phone, 30);
+  const normalized = normalizePhone(rawPhone);
+  const phone = normalized.phone;
   const note = clean(body.note, 1000, true);
   const eligibility = clean(body.eligibility, 80);
-  const digits = phone.replace(/\D/g, "");
-  if (!name || ELIGIBILITY.indexOf(eligibility) === -1) return res.status(400).json({ ok: false, error: "required" });
-  if (digits.length < 9 || digits.length > 15) return res.status(400).json({ ok: false, error: "phone" });
+  if (!name || ELIGIBILITY.indexOf(eligibility) === -1) { console.warn("lead rejected 400 required", peek()); return res.status(400).json({ ok: false, error: "required" }); }
+  if (!normalized.ok) { console.warn("lead rejected 400 phone", peek()); return res.status(400).json({ ok: false, error: "phone" }); }
 
-  console.log("lead received", JSON.stringify({ at: new Date().toISOString(), name: name, phone: phone, eligibility: eligibility, note: note }));
+  const lead = { at: new Date().toISOString(), name: name, phone: phone, rawPhone: rawPhone, eligibility: eligibility, note: note, host: req.headers.host || "" };
+  console.log("lead received", JSON.stringify(lead));
+  await saveLead(lead);
 
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;

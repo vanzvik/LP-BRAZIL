@@ -1,6 +1,10 @@
 {
   "private": true,
   "dependencies": {
+    "@vercel/blob": "^2.8.2",
     "nodemailer": "6.10.1"
+  },
+  "scripts": {
+    "test": "node test/phone.test.js && node test/handlers.test.js"
   }
 }
