@@ -100,6 +100,7 @@ module.exports = async function handler(req, res) {
       });
       return res.status(200).json({ ok: true });
     } catch (err) {
+      console.error("lead send failed", JSON.stringify({ attempt: attempt + 1, code: err && err.code, command: err && err.command, responseCode: err && err.responseCode, response: err && String(err.response || err.message || "").slice(0, 300) }));
       if (attempt === 2) return res.status(502).json({ ok: false });
     }
   }
