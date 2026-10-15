@@ -68,12 +68,15 @@ module.exports = async function handler(req, res) {
   if (!name || ELIGIBILITY.indexOf(eligibility) === -1) return res.status(400).json({ ok: false, error: "required" });
   if (digits.length < 9 || digits.length > 15) return res.status(400).json({ ok: false, error: "phone" });
 
+  console.log("lead received", JSON.stringify({ at: new Date().toISOString(), name: name, phone: phone, eligibility: eligibility, note: note }));
+
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
   const to = process.env.LEAD_TO;
   const port = Number(process.env.SMTP_PORT || 587);
-  if (!host || !user || !pass || !to) return res.status(503).json({ ok: false });
+  if (!host || !user || !pass || !to) { console.error("lead send skipped: SMTP env missing"); return res.status(503).json({ ok: false }); }
+  if (false) return res.status(503).json({ ok: false });
 
   const transporter = nodemailer.createTransport({
     host: host,
@@ -102,9 +105,11 @@ module.exports = async function handler(req, res) {
         html: html,
         headers: { "Content-Language": "he" }
       });
+      console.log("lead sent", JSON.stringify({ phone: phone }));
       return res.status(200).json({ ok: true });
     } catch (err) {
       console.error("lead send failed", JSON.stringify({ attempt: attempt + 1, code: err && err.code, command: err && err.command, responseCode: err && err.responseCode, response: err && String(err.response || err.message || "").slice(0, 300) }));
+      if (err && err.responseCode === 535) return res.status(502).json({ ok: false });
       if (attempt === 2) return res.status(502).json({ ok: false });
     }
   }
