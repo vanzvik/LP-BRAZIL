@@ -76,7 +76,6 @@ module.exports = async function handler(req, res) {
   const to = process.env.LEAD_TO;
   const port = Number(process.env.SMTP_PORT || 587);
   if (!host || !user || !pass || !to) { console.error("lead send skipped: SMTP env missing"); return res.status(503).json({ ok: false }); }
-  if (false) return res.status(503).json({ ok: false });
 
   const transporter = nodemailer.createTransport({
     host: host,

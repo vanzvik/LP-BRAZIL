@@ -1888,17 +1888,24 @@
       if (digits.length > 15) { err.textContent = "מספר הטלפון ארוך מדי."; err.hidden = false; return; }
       err.hidden = true;
       submit.disabled = true;
-      fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      var payload = JSON.stringify({
           name: name,
           phone: phone,
           note: document.getElementById("note").value.trim(),
           eligibility: elig.value,
           hp_x: document.getElementById("hp_x").value
-        })
-      }).then(function (res) {
+        });
+      function post(left) {
+        return fetch("/api/lead", { method: "POST", headers: { "Content-Type": "application/json" }, body: payload })
+          .then(function (res) {
+            if (res.status >= 500 && left > 0) return new Promise(function (r) { setTimeout(r, 1500); }).then(function () { return post(left - 1); });
+            return res;
+          }, function (netErr) {
+            if (left > 0) return new Promise(function (r) { setTimeout(r, 1500); }).then(function () { return post(left - 1); });
+            throw netErr;
+          });
+      }
+      post(1).then(function (res) {
         if (res.ok) return null;
         return res.json().catch(function () { return {}; }).then(function (data) {
           if (res.status === 429) throw new Error("later");
@@ -1912,7 +1919,7 @@
         document.getElementById("lead-ok-title").focus({ preventScroll: true });
       }).catch(function (ex) {
         submit.disabled = false;
-        var message = "לא הצלחנו לשלוח. נסו שוב.";
+        var message = "לא הצלחנו לשלוח את הפרטים. הפרטים לא אבדו מהטופס — אנא לחצו שוב על הכפתור כדי לנסות שוב.";
         if (ex && ex.message === "later") message = "נסו שוב בעוד כמה דקות.";
         if (ex && ex.message === "phone") message = "מספר הטלפון אינו שלם. יש להזין מספר מלא, כולל קידומת.";
         if (ex && ex.message === "required") message = "יש למלא שם מלא, טלפון, ולבחור אחת מהאפשרויות.";
